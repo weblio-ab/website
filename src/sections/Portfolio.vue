@@ -41,5 +41,5 @@
 </template>
 
 <script setup>
-import Project from './Project.vue'
+import Project from '../components/Project.vue'
 </script>
