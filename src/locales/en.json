@@ -140,7 +140,7 @@
   "about": {
     "title": "About us",
     "subtitle": "Passionate web developers focused on local businesses",
-    "story": "We started WebbenKelt with a simple idea: to make professional websites accessible to all local businesses. As experienced developers, we saw that many small businesses needed help being visible online, but most solutions were either too expensive or too complicated.",
+    "story": "We started WebbEnkelt with a simple idea: to make professional websites accessible to all local businesses. As experienced developers, we saw that many small businesses needed help being visible online, but most solutions were either too expensive or too complicated.",
     "mission": "Our mission is to help local businesses grow by giving them the tools they need to succeed online. We believe in transparency, simplicity and personal service.",
     "team": {
       "title": "Our team",
@@ -184,7 +184,7 @@
     "title": "What our customers say",
     "items": {
       "testimonial1": {
-        "text": "WebbenKelt helped us get a professional website that truly represents our restaurant. Bookings have increased by 40% since launch!",
+        "text": "WebbEnkelt helped us get a professional website that truly represents our restaurant. Bookings have increased by 40% since launch!",
         "author": "Maria Lindström",
         "company": "Bistro Göta"
       },
@@ -207,7 +207,7 @@
     "phone": "+46 8-123 45 67",
     "email": "hello@webbenkelt.se",
     "address": "Stockholm, Sweden",
-    "copyright": "© 2025 WebbenKelt. All rights reserved."
+    "copyright": "© 2025 WebbEnkelt. All rights reserved."
   },
   "common": {
     "readMore": "Read more",

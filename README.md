@@ -1,6 +1,6 @@
-# WebbenKelt - Webbyrå Hemsida
+# WebbEnkelt - Webbyrå Hemsida
 
-En modern, professionell hemsida för webbyrån WebbenKelt, byggd med Vue.js 3, Pinia, Bootstrap 5 och Vue i18n för flerspråkighet.
+En modern, professionell hemsida för webbyrån WebbEnkelt, byggd med Vue.js 3, Pinia, Bootstrap 5 och Vue i18n för flerspråkighet.
 
 ## 🚀 Funktioner
 
@@ -90,4 +90,4 @@ Webbplatsen stödjer svenska och engelska. Språkfiler finns i:
 
 ---
 
-Byggd med ❤️ av WebbenKelt teamet
+Byggd med ❤️ av WebbEnkelt teamet

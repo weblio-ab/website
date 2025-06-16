@@ -33,7 +33,7 @@ onUnmounted(() => {
         <div class="loader-logo">
           <img src="/icon.svg" alt="WebbEnkelt" class="loader-logo-image">
         </div>
-        <h2>WebbenKelt</h2>
+        <h2>WebbEnkelt</h2>
         <div class="loader-spinner"></div>
       </div>
     </div>
@@ -110,7 +110,7 @@ main {
 }
 
 .loader-logo {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
   animation: pulse 2s infinite;
 }
 
