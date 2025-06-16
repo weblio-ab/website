@@ -2,22 +2,14 @@
   <div class="col-lg-4 col-md-6">
     <div class="portfolio-card">
       <div class="portfolio-image">
-        <div class="mockup-browser">
-          <div class="browser-header">
-            <div class="browser-dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="browser-url">{{ displayUrl }}</div>
-          </div>
-          <div class="browser-content">
+        <div class="portfolio-browser-wrapper">
+          <BrowserMockup :url="url">
             <img 
               :src="imageUrl" 
               :alt="`${title} website screenshot`"
               class="project-image"
             />
-          </div>
+          </BrowserMockup>
         </div>
         <div class="portfolio-overlay">
           <a 
@@ -41,7 +33,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { computed } from 'vue'
+import BrowserMockup from './BrowserMockup.vue'
 
 const { t } = useI18n()
 
@@ -67,11 +59,6 @@ const props = defineProps({
     required: true
   }
 })
-
-// Remove protocol from URL for display
-const displayUrl = computed(() => {
-  return props.url.replace(/^https?:\/\//, '')
-})
 </script>
 
 <style scoped>
@@ -95,61 +82,13 @@ const displayUrl = computed(() => {
   overflow: hidden;
 }
 
-.mockup-browser {
+.portfolio-browser-wrapper {
   width: 90%;
   height: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.browser-header {
-  height: 25px;
-  background: #f1f3f5;
-  border-bottom: 1px solid #e9ecef;
-  display: flex;
-  align-items: center;
-  padding: 0 8px;
-  gap: 8px;
-}
-
-.browser-dots {
-  display: flex;
-  gap: 4px;
-}
-
-.browser-dots span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #dee2e6;
-}
-
-.browser-dots span:nth-child(1) { background: #ff5f56; }
-.browser-dots span:nth-child(2) { background: #ffbd2e; }
-.browser-dots span:nth-child(3) { background: #27ca3f; }
-
-.browser-url {
-  flex: 1;
-  height: 15px;
-  background: white;
-  border-radius: 3px;
-  font-size: 8px;
-  display: flex;
-  align-items: center;
-  padding: 0 6px;
-  color: #666;
-}
-
-.browser-content {
-  height: calc(100% - 25px);
-  padding: 0;
-  overflow: hidden;
 }
 
 .project-image {

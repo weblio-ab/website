@@ -30,44 +30,30 @@
             <div class="mockup-container">
               <!-- Desktop Mockup -->
               <div class="device-mockup desktop">
-                <div class="screen">
-                  <div class="mockup-content">
-                    <div class="mockup-header">
-                      <div class="dots">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                    <div class="mockup-body">
-                      <div class="mockup-nav"></div>
-                      <div class="mockup-hero"></div>
-                      <div class="mockup-sections">
-                        <div class="section"></div>
-                        <div class="section"></div>
-                        <div class="section"></div>
-                      </div>
+                <BrowserMockup>
+                  <div class="hero-mockup-content">
+                    <div class="mockup-nav"></div>
+                    <div class="mockup-hero"></div>
+                    <div class="mockup-sections">
+                      <div class="section"></div>
+                      <div class="section"></div>
+                      <div class="section"></div>
                     </div>
                   </div>
-                </div>
+                </BrowserMockup>
               </div>
               <!-- Mobile Mockup -->
               <div class="device-mockup mobile">
-                <div class="screen">
-                  <div class="mockup-content">
-                    <div class="mockup-header mobile-header">
-                      <div class="notch"></div>
-                    </div>
-                    <div class="mockup-body">
-                      <div class="mockup-nav mobile-nav"></div>
-                      <div class="mockup-hero mobile-hero"></div>
-                      <div class="mockup-sections">
-                        <div class="section small"></div>
-                        <div class="section small"></div>
-                      </div>
+                <MobileMockup>
+                  <div class="hero-mockup-content mobile">
+                    <div class="mockup-nav mobile-nav"></div>
+                    <div class="mockup-hero mobile-hero"></div>
+                    <div class="mockup-sections">
+                      <div class="section small"></div>
+                      <div class="section small"></div>
                     </div>
                   </div>
-                </div>
+                </MobileMockup>
               </div>
             </div>
           </div>
@@ -84,7 +70,8 @@
 </template>
 
 <script setup>
-// No script needed for this component
+import BrowserMockup from '../components/BrowserMockup.vue'
+import MobileMockup from '../components/MobileMockup.vue'
 </script>
 
 <style scoped>
@@ -120,7 +107,6 @@
   position: absolute;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 123, 255, 0.15);
-  background: #fff;
   overflow: hidden;
 }
 
@@ -141,66 +127,14 @@
   z-index: 3;
 }
 
-.screen {
-  width: 100%;
+.hero-mockup-content {
   height: 100%;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.mockup-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.mockup-header {
-  height: 30px;
-  background: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
-  display: flex;
-  align-items: center;
-  padding: 0 12px;
-}
-
-.dots {
-  display: flex;
-  gap: 6px;
-}
-
-.dots span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #dee2e6;
-}
-
-.dots span:nth-child(1) { background: #ff5f56; }
-.dots span:nth-child(2) { background: #ffbd2e; }
-.dots span:nth-child(3) { background: #27ca3f; }
-
-.mobile-header {
-  height: 25px;
-  background: #000;
-  position: relative;
-}
-
-.notch {
-  width: 100px;
-  height: 20px;
-  background: #000;
-  border-radius: 0 0 12px 12px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.mockup-body {
-  flex: 1;
   padding: 8px;
   background: #fff;
+}
+
+.hero-mockup-content.mobile {
+  padding: 6px;
 }
 
 .mockup-nav {
