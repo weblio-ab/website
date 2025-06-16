@@ -12,6 +12,7 @@ En modern, professionell hemsida för webbyrån WebbenKelt, byggd med Vue.js 3, 
 - **Responsiv design** som fungerar på alla enheter
 - **SEO-optimerad** med meta tags och strukturerad data
 - **Tillgänglighetsoptimerad** med fokusindikation och semantisk HTML
+- **Varumärkeskoherent** med WebbEnkelt-logotyp genom hela sajten
 
 ## 📱 Sektioner
 

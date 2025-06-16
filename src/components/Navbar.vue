@@ -2,8 +2,8 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
       <router-link class="navbar-brand fw-bold text-primary" to="/">
-        <i class="bi bi-globe2 me-2"></i>
-        WebbenKelt
+        <img src="/icon.svg" alt="WebbEnkelt" class="navbar-logo me-2">
+        WebbEnkelt
       </router-link>
 
       <button 
@@ -113,6 +113,17 @@ onUnmounted(() => {
   border-radius: 1px;
 }
 
+.navbar-logo {
+  height: 40px;
+  width: auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
 @media (max-width: 991.98px) {
   .navbar-collapse {
     margin-top: 1rem;
@@ -120,6 +131,10 @@ onUnmounted(() => {
   
   .nav-link.active::after {
     display: none;
+  }
+  
+  .navbar-logo {
+    height: 35px;
   }
 }
 </style>

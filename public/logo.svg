@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lager_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 128.4 38.8">
+  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#Namnlös_övertoning1);
+      }
+
+      .st0, .st1, .st2, .st3, .st4, .st5, .st6, .st7 {
+        isolation: isolate;
+      }
+
+      .st0, .st4, .st7 {
+        opacity: .9;
+      }
+
+      .st1 {
+        fill: url(#Namnlös_övertoning_21);
+      }
+
+      .st1, .st6 {
+        opacity: .7;
+      }
+
+      .st2 {
+        fill: url(#Namnlös_övertoning_41);
+      }
+
+      .st2, .st5 {
+        opacity: .8;
+      }
+
+      .st8 {
+        fill: #1f2937;
+      }
+
+      .st9 {
+        fill: url(#Namnlös_övertoning_6);
+      }
+
+      .st10 {
+        fill: #fff;
+      }
+
+      .st3 {
+        fill: url(#Namnlös_övertoning_5);
+        opacity: .6;
+      }
+
+      .st4 {
+        fill: url(#Namnlös_övertoning_3);
+      }
+
+      .st5 {
+        fill: url(#Namnlös_övertoning_4);
+      }
+
+      .st6 {
+        fill: url(#Namnlös_övertoning_2);
+      }
+
+      .st11 {
+        fill: url(#Namnlös_övertoning_61);
+      }
+
+      .st7 {
+        fill: url(#Namnlös_övertoning);
+      }
+    </style>
+    <linearGradient id="Namnlös_övertoning_6" data-name="Namnlös övertoning 6" x1="-293" y1="368.5" x2="-292" y2="368.5" gradientTransform="translate(3530.1 2960.6) scale(12 -8)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_61" data-name="Namnlös övertoning 6" x1="-293" x2="-292" xlink:href="#Namnlös_övertoning_6"/>
+    <linearGradient id="Namnlös_övertoning_5" data-name="Namnlös övertoning 5" x1="-293" y1="368.5" x2="-292" y2="368.5" gradientTransform="translate(3537.1 2970.6) scale(12 -8)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_4" data-name="Namnlös övertoning 4" x1="-293" y1="368.5" x2="-292" y2="368.5" gradientTransform="translate(3523.1 2970.6) scale(12 -8)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_41" data-name="Namnlös övertoning 4" x1="-293" xlink:href="#Namnlös_övertoning_4"/>
+    <linearGradient id="Namnlös_övertoning_3" data-name="Namnlös övertoning 3" x1="-293" y1="368.5" x2="-292" y2="368.5" gradientTransform="translate(3544.1 2980.6) scale(12 -8)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_2" data-name="Namnlös övertoning 2" x1="-293" y1="368.5" x2="-292" y2="368.5" gradientTransform="translate(3530.1 2980.6) scale(12 -8)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning_21" data-name="Namnlös övertoning 2" x1="-293" xlink:href="#Namnlös_övertoning_2"/>
+    <linearGradient id="Namnlös_övertoning" data-name="Namnlös övertoning" x1="-293" y1="368.5" x2="-292" y2="368.5" gradientTransform="translate(3516.1 2980.6) scale(12 -8)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="Namnlös_övertoning1" data-name="Namnlös övertoning" x1="-293" xlink:href="#Namnlös_övertoning"/>
+  </defs>
+  <path d="M73.2,32.7c0-2-.9-5-4.4-5s-5,2.5-5,5.7,2,5.4,5.2,5.4,2.9-.4,3.5-.7l-.3-1.4c-.7.3-1.6.5-2.9.5s-3.6-1.1-3.7-3.7h7.5c0-.2,0-.5,0-.9ZM65.7,32.3c.2-1.3,1-3.1,3-3.1s2.7,1.9,2.7,3.1h-5.7Z"/>
+  <path d="M80.9,27.7c-1.8,0-3,1-3.5,2h0v-1.8h-1.8c0,.9,0,1.8,0,2.9v7.8h1.9v-6.4c0-.3,0-.7.1-.9.3-1.1,1.3-2,2.6-2,1.8,0,2.5,1.4,2.5,3.1v6.1h1.9v-6.4c0-3.7-2.3-4.5-3.8-4.5Z"/>
+  <path d="M87.8,23v15.6h1.9v-4l1-1.1,3.7,5.1h2.4l-4.7-6.3,4.1-4.4h-2.3l-3.1,3.7c-.3.4-.7.8-.9,1.2h0v-9.9h-1.9Z"/>
+  <path d="M97.4,33.5c0,3.2,2,5.4,5.2,5.4s2.9-.4,3.5-.7l-.3-1.4c-.7.3-1.6.5-2.9.5s-3.6-1.1-3.7-3.7h7.5c0-.2,0-.5,0-.9,0-2-.9-5-4.4-5s-5,2.5-5,5.7ZM102.2,29.1c2.2,0,2.7,1.9,2.7,3.1h-5.7c.2-1.3,1-3.1,3-3.1Z"/>
+  <rect x="109.2" y="23" width="1.9" height="15.6"/>
+  <path d="M114.8,25.4v2.6h-1.7v1.5h1.7v5.8c0,1.3.2,2.2.7,2.8.5.5,1.2.8,2.1.8s1.3-.1,1.7-.3v-1.5c-.3,0-.7.1-1.2.1-1.1,0-1.5-.7-1.5-2.1v-5.7h2.8v-1.5h-2.8v-3.1l-1.9.5Z"/>
+  <rect x="121.7" y="36.5" width="1.9" height="2.1"/>
+  <polygon class="st8" points="77.1 14 74.9 5.1 71.4 5.1 69.1 14 66.6 5.1 63.1 5.1 67.4 18.6 70.8 18.6 73.1 9.9 75.5 18.6 78.9 18.6 83.2 5.1 79.7 5.1 77.1 14"/>
+  <path class="st8" d="M95,6.8c-1.2-1.3-2.7-2-4.7-2s-3.3.6-4.4,1.9c-1.2,1.3-1.8,3-1.8,5.2s.4,3.4,1.3,4.6c1.1,1.5,2.9,2.3,5.2,2.3s2.7-.3,3.7-1c1-.7,1.7-1.7,2.2-3l-3.6-.6c-.2.7-.5,1.2-.9,1.5s-.9.5-1.4.5c-.8,0-1.5-.3-2.1-.9-.6-.6-.8-1.4-.9-2.5h8.9c0-2.7-.5-4.8-1.7-6.1ZM87.8,10.7c0-1,.2-1.7.7-2.3s1.2-.9,1.9-.9,1.3.3,1.9.8c.5.5.8,1.3.8,2.4h-5.3Z"/>
+  <path class="st8" d="M99.4,0v18.6h3.3v-2c.5.8,1.2,1.3,1.9,1.7.7.4,1.5.6,2.3.6,1.6,0,2.9-.6,4-1.9s1.6-3,1.6-5.3-.5-3.9-1.6-5.1c-1.1-1.2-2.4-1.8-4.1-1.8s-2.8.6-3.9,1.9V0h-3.6ZM103.8,8.6c.6-.7,1.3-1,2.1-1s1.6.3,2.1,1c.6.7.8,1.8.8,3.3s-.3,2.5-.8,3.2c-.6.7-1.2,1-2,1s-1.8-.5-2.5-1.4c-.4-.7-.7-1.7-.7-3.1s.3-2.4.9-3Z"/>
+  <path class="st8" d="M122.8,4.8c-1.5,0-2.8.6-3.9,1.9V0h-3.6v18.6h3.3v-2c.5.8,1.2,1.3,1.9,1.7.7.4,1.5.6,2.3.6,1.6,0,2.9-.6,4-1.9s1.6-3,1.6-5.3-.5-3.9-1.6-5.1c-1.1-1.2-2.4-1.8-4.1-1.8ZM124,15.1c-.6.7-1.2,1-2,1s-1.8-.5-2.5-1.4c-.4-.7-.7-1.7-.7-3.1s.3-2.4.9-3c.6-.7,1.3-1,2.1-1s1.6.3,2.1,1c.6.7.8,1.8.8,3.3s-.3,2.5-.8,3.2Z"/>
+  <path class="st10" d="M20,22.6c0-.6-.4-1-1-1v2c.6,0,1-.4,1-1Z"/>
+  <path class="st10" d="M27,32.6c0-.6-.4-1-1-1v2c.6,0,1-.4,1-1Z"/>
+  <path class="st10" d="M13,32.6c0-.6-.4-1-1-1v2c.6,0,1-.4,1-1Z"/>
+  <path class="st9" d="M25,8.6h-10c-.6,0-1,.4-1,1v6c0,.6.4,1,1,1h10c.6,0,1-.4,1-1v-6c0-.6-.4-1-1-1ZM20,13.6c-.6,0-1-.4-1-1s.4-1,1-1,1,.4,1,1-.4,1-1,1Z"/>
+  <circle class="st10" cx="20" cy="12.6" r="1"/>
+  <circle class="st11" cx="20" cy="12.6" r="1"/>
+  <rect class="st3" x="21" y="18.6" width="12" height="8" rx="1" ry="1"/>
+  <path class="st5" d="M7,19.6v6c0,.6.4,1,1,1h10c.6,0,1-.4,1-1v-2c-.6,0-1-.4-1-1s.4-1,1-1v-2c0-.6-.4-1-1-1h-10c-.6,0-1,.4-1,1Z"/>
+  <path class="st10" d="M18,22.6c0,.6.4,1,1,1v-2c-.6,0-1,.4-1,1Z"/>
+  <path class="st2" d="M18,22.6c0,.6.4,1,1,1v-2c-.6,0-1,.4-1,1Z"/>
+  <rect class="st4" x="28" y="28.6" width="12" height="8" rx="1" ry="1"/>
+  <path class="st6" d="M15,36.6h10c.6,0,1-.4,1-1v-2c-.6,0-1-.4-1-1s.4-1,1-1v-2c0-.6-.4-1-1-1h-10c-.6,0-1,.4-1,1v6c0,.6.4,1,1,1Z"/>
+  <path class="st10" d="M25,32.6c0,.6.4,1,1,1v-2c-.6,0-1,.4-1,1Z"/>
+  <path class="st1" d="M25,32.6c0,.6.4,1,1,1v-2c-.6,0-1,.4-1,1Z"/>
+  <path class="st7" d="M1,36.6h10c.6,0,1-.4,1-1v-2c-.6,0-1-.4-1-1s.4-1,1-1v-2c0-.6-.4-1-1-1H1c-.6,0-1,.4-1,1v6c0,.6.4,1,1,1Z"/>
+  <path class="st10" d="M11,32.6c0,.6.4,1,1,1v-2c-.6,0-1,.4-1,1Z"/>
+  <path class="st0" d="M11,32.6c0,.6.4,1,1,1v-2c-.6,0-1,.4-1,1Z"/>
+</svg>

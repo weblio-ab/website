@@ -4,10 +4,9 @@
       <div class="row g-4">
         <div class="col-lg-4">
           <div class="footer-brand">
-            <h4 class="text-white mb-3">
-              <i class="bi bi-globe2 me-2"></i>
-              WebbenKelt
-            </h4>
+            <div class="d-flex align-items-center mb-3">
+              <img src="/logo.svg" alt="WebbEnkelt" class="footer-logo me-2">
+            </div>
             <p class="text-light-emphasis">{{ $t('footer.tagline') }}</p>
             <div class="social-links">
               <a href="#" class="social-link">
@@ -94,6 +93,12 @@
 <style scoped>
 .footer {
   background: linear-gradient(135deg, #1a1a2e, #16213e) !important;
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .footer-brand h4 {
