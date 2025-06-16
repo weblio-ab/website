@@ -1,0 +1,218 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "We build professional websites for local businesses",
+    "subtitle": "From idea to live website - we handle everything",
+    "description": "Specialized in websites for restaurants, salons and small businesses that want to be visible online and attract more customers.",
+    "cta": "Get a free consultation",
+    "ctaSecondary": "View our projects"
+  },
+  "services": {
+    "title": "Our services",
+    "subtitle": "Everything you need for a professional online presence",
+    "items": {
+      "design": {
+        "title": "Design & UX",
+        "description": "Modern, responsive design that works perfectly on all devices"
+      },
+      "development": {
+        "title": "Development",
+        "description": "Built with Vue.js and modern technology for speed and security"
+      },
+      "hosting": {
+        "title": "Web Hosting & Domain",
+        "description": "We handle all technical aspects - you don't need to worry about anything"
+      },
+      "support": {
+        "title": "Support & Maintenance",
+        "description": "Ongoing support and updates to keep your site secure"
+      }
+    },
+    "process": {
+      "title": "How it works",
+      "step1": {
+        "title": "Consultation",
+        "description": "We meet and discuss your needs and wishes"
+      },
+      "step2": {
+        "title": "Design",
+        "description": "We create a design that fits your business perfectly"
+      },
+      "step3": {
+        "title": "Development",
+        "description": "We build the website with modern technology"
+      },
+      "step4": {
+        "title": "Launch",
+        "description": "We publish the site and you're ready to receive customers"
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Our projects",
+    "subtitle": "See examples of websites we've created for other businesses",
+    "viewProject": "View project",
+    "projects": {
+      "restaurant": {
+        "title": "Bistro Göta",
+        "description": "Elegant website for restaurant with online booking",
+        "category": "Restaurant"
+      },
+      "salon": {
+        "title": "Beauty Studio",
+        "description": "Modern site for beauty salon with booking system",
+        "category": "Beauty Salon"
+      },
+      "company": {
+        "title": "Construction Nord",
+        "description": "Professional website for construction company",
+        "category": "Construction"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Transparent pricing",
+    "subtitle": "Choose the package that best fits your business",
+    "packages": {
+      "basic": {
+        "title": "Starter",
+        "price": "1,500",
+        "currency": "€",
+        "description": "Perfect for small businesses getting started",
+        "features": [
+          "5 pages",
+          "Responsive design",
+          "Contact form",
+          "SEO optimization",
+          "1 year web hosting",
+          "Domain first year"
+        ]
+      },
+      "professional": {
+        "title": "Professional",
+        "price": "2,500",
+        "currency": "€",
+        "description": "Most popular package with extended features",
+        "features": [
+          "10 pages",
+          "Custom design",
+          "Booking system",
+          "Image gallery",
+          "Google Maps integration",
+          "Social media integration",
+          "1 year web hosting",
+          "Domain first year"
+        ],
+        "popular": true
+      },
+      "premium": {
+        "title": "Premium",
+        "price": "3,500",
+        "currency": "€",
+        "description": "Complete solution for ambitious businesses",
+        "features": [
+          "Unlimited pages",
+          "Fully custom design",
+          "Advanced booking system",
+          "E-commerce (up to 50 products)",
+          "Blog/news system",
+          "Advanced SEO",
+          "Analytics and reports",
+          "1 year web hosting",
+          "Domain first year"
+        ]
+      }
+    },
+    "recurring": {
+      "title": "Recurring costs",
+      "hosting": "Web hosting: €20/month",
+      "domain": "Domain renewal: €15/year",
+      "support": "Support & maintenance: €50/month (optional)"
+    }
+  },
+  "about": {
+    "title": "About us",
+    "subtitle": "Passionate web developers focused on local businesses",
+    "story": "We started WebbenKelt with a simple idea: to make professional websites accessible to all local businesses. As experienced developers, we saw that many small businesses needed help being visible online, but most solutions were either too expensive or too complicated.",
+    "mission": "Our mission is to help local businesses grow by giving them the tools they need to succeed online. We believe in transparency, simplicity and personal service.",
+    "team": {
+      "title": "Our team",
+      "member1": {
+        "name": "Anna Karlsson",
+        "role": "Founder & Lead Developer",
+        "description": "10+ years of web development experience and passion for clean code"
+      },
+      "member2": {
+        "name": "Erik Johansson",
+        "role": "UX/UI Designer",
+        "description": "Specialist in user-friendly design that converts visitors to customers"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Ready to take the next step? Let's talk about your project",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "message": "Tell us about your project",
+      "submit": "Send message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+46 70-123 45 67",
+      "companyPlaceholder": "Your company",
+      "messagePlaceholder": "Tell us briefly what you need help with..."
+    },
+    "info": {
+      "title": "Contact information",
+      "phone": "Phone: +46 8-123 45 67",
+      "email": "Email: hello@webbenkelt.se",
+      "consultation": "Free consultation",
+      "consultationText": "We always offer a free consultation where we go through your needs and give you advice regardless of whether you choose to work with us or not."
+    }
+  },
+  "testimonials": {
+    "title": "What our customers say",
+    "items": {
+      "testimonial1": {
+        "text": "WebbenKelt helped us get a professional website that truly represents our restaurant. Bookings have increased by 40% since launch!",
+        "author": "Maria Lindström",
+        "company": "Bistro Göta"
+      },
+      "testimonial2": {
+        "text": "Fantastic service and a team that really understands what small businesses need. Our new website has given us so much more credibility.",
+        "author": "Johan Eriksson",
+        "company": "Construction Nord"
+      },
+      "testimonial3": {
+        "text": "They handled everything from A to Z. I didn't have to think about technology at all, but could focus on my business.",
+        "author": "Lisa Andersson",
+        "company": "Beauty Studio"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Professional websites for local businesses",
+    "quickLinks": "Quick links",
+    "contact": "Contact",
+    "phone": "+46 8-123 45 67",
+    "email": "hello@webbenkelt.se",
+    "address": "Stockholm, Sweden",
+    "copyright": "© 2025 WebbenKelt. All rights reserved."
+  },
+  "common": {
+    "readMore": "Read more",
+    "getStarted": "Get started",
+    "learnMore": "Learn more",
+    "viewAll": "View all"
+  }
+}

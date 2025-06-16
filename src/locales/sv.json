@@ -1,0 +1,218 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "services": "Tjänster",
+    "portfolio": "Portfolio",
+    "pricing": "Priser",
+    "about": "Om oss",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Vi bygger professionella hemsidor för lokala företag",
+    "subtitle": "Från idé till färdig hemsida på webben - vi sköter allt",
+    "description": "Specialiserade på hemsidor för restauranger, salonger och småföretag som vill synas online och locka fler kunder.",
+    "cta": "Få en kostnadsfri konsultation",
+    "ctaSecondary": "Se våra projekt"
+  },
+  "services": {
+    "title": "Våra tjänster",
+    "subtitle": "Allt du behöver för en professionell närvaro online",
+    "items": {
+      "design": {
+        "title": "Design & UX",
+        "description": "Modern, responsiv design som fungerar perfekt på alla enheter"
+      },
+      "development": {
+        "title": "Utveckling",
+        "description": "Byggt med Vue.js och modern teknik för snabbhet och säkerhet"
+      },
+      "hosting": {
+        "title": "Webbhotell & Domän",
+        "description": "Vi sköter allt tekniskt - du behöver inte oroa dig för något"
+      },
+      "support": {
+        "title": "Support & Underhåll",
+        "description": "Löpande support och uppdateringar för att hålla din sajt säker"
+      }
+    },
+    "process": {
+      "title": "Så här fungerar det",
+      "step1": {
+        "title": "Konsultation",
+        "description": "Vi träffas och pratar om dina behov och önskemål"
+      },
+      "step2": {
+        "title": "Design",
+        "description": "Vi skapar en design som passar ditt företag perfekt"
+      },
+      "step3": {
+        "title": "Utveckling",
+        "description": "Vi bygger hemsidan med modern teknik"
+      },
+      "step4": {
+        "title": "Lansering",
+        "description": "Vi publicerar sajten och du är redo att ta emot kunder"
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Våra projekt",
+    "subtitle": "Se exempel på hemsidor vi skapat för andra företag",
+    "viewProject": "Se projekt",
+    "projects": {
+      "restaurant": {
+        "title": "Bistro Göta",
+        "description": "Elegant hemsida för restaurang med onlinebokning",
+        "category": "Restaurang"
+      },
+      "salon": {
+        "title": "Beauty Studio",
+        "description": "Modern sajt för skönhetssalong med bokningssystem",
+        "category": "Skönhetssalong"
+      },
+      "company": {
+        "title": "Byggfirma Nord",
+        "description": "Professionell hemsida för byggföretag",
+        "category": "Byggföretag"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Transparenta priser",
+    "subtitle": "Välj det paket som passar ditt företag bäst",
+    "packages": {
+      "basic": {
+        "title": "Start",
+        "price": "15 000",
+        "currency": "kr",
+        "description": "Perfekt för små företag som vill komma igång",
+        "features": [
+          "5 sidor",
+          "Responsiv design",
+          "Kontaktformulär",
+          "SEO-optimering",
+          "1 års webbhotell",
+          "Domän första året"
+        ]
+      },
+      "professional": {
+        "title": "Professionell",
+        "price": "25 000",
+        "currency": "kr",
+        "description": "Mest populära paketet med utökade funktioner",
+        "features": [
+          "10 sidor",
+          "Anpassad design",
+          "Bokningssystem",
+          "Bildgalleri",
+          "Google Maps integration",
+          "Sociala medier-integration",
+          "1 års webbhotell",
+          "Domän första året"
+        ],
+        "popular": true
+      },
+      "premium": {
+        "title": "Premium",
+        "price": "35 000",
+        "currency": "kr",
+        "description": "Fullständig lösning för ambitiösa företag",
+        "features": [
+          "Obegränsat antal sidor",
+          "Helt anpassad design",
+          "Avancerat bokningssystem",
+          "E-handel (upp till 50 produkter)",
+          "Blogg/nyhetssystem",
+          "Avancerad SEO",
+          "Analyser och rapporter",
+          "1 års webbhotell",
+          "Domän första året"
+        ]
+      }
+    },
+    "recurring": {
+      "title": "Löpande kostnader",
+      "hosting": "Webbhotell: 200 kr/månad",
+      "domain": "Domänförnyelse: 150 kr/år",
+      "support": "Support & underhåll: 500 kr/månad (valfritt)"
+    }
+  },
+  "about": {
+    "title": "Om oss",
+    "subtitle": "Passionerade webbutvecklare med fokus på lokala företag",
+    "story": "Vi startade WebbenKelt med en enkel idé: att göra professionella hemsidor tillgängliga för alla lokala företag. Som erfarna utvecklare såg vi att många småföretag behövde hjälp att synas online, men att de flesta lösningar var antingen för dyra eller för komplicerade.",
+    "mission": "Vår mission är att hjälpa lokala företag att växa genom att ge dem verktyg de behöver för att lyckas online. Vi tror på transparens, enkelhet och personlig service.",
+    "team": {
+      "title": "Vårt team",
+      "member1": {
+        "name": "Anna Karlsson",
+        "role": "Grundare & Lead Developer",
+        "description": "10+ års erfarenhet av webbutveckling och passion för clean code"
+      },
+      "member2": {
+        "name": "Erik Johansson",
+        "role": "UX/UI Designer",
+        "description": "Specialist på användarvänlig design som konverterar besökare till kunder"
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "subtitle": "Redo att ta nästa steg? Låt oss prata om ditt projekt",
+    "form": {
+      "name": "Namn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "company": "Företag",
+      "message": "Berätta om ditt projekt",
+      "submit": "Skicka meddelande",
+      "namePlaceholder": "Ditt namn",
+      "emailPlaceholder": "din@email.se",
+      "phonePlaceholder": "070-123 45 67",
+      "companyPlaceholder": "Ditt företag",
+      "messagePlaceholder": "Berätta kort om vad du behöver hjälp med..."
+    },
+    "info": {
+      "title": "Kontaktinformation",
+      "phone": "Telefon: 08-123 45 67",
+      "email": "E-post: hej@webbenkelt.se",
+      "consultation": "Gratis konsultation",
+      "consultationText": "Vi erbjuder alltid en kostnadsfri konsultation där vi går igenom dina behov och ger dig råd oavsett om du väljer att jobba med oss eller inte."
+    }
+  },
+  "testimonials": {
+    "title": "Vad våra kunder säger",
+    "items": {
+      "testimonial1": {
+        "text": "WebbenKelt hjälpte oss att få en professionell hemsida som verkligen representerar vår restaurang. Bookingarna har ökat med 40% sedan lansering!",
+        "author": "Maria Lindström",
+        "company": "Bistro Göta"
+      },
+      "testimonial2": {
+        "text": "Fantastisk service och ett team som verkligen förstår vad småföretag behöver. Vår nya hemsida har gett oss så mycket mer trovärdighet.",
+        "author": "Johan Eriksson",
+        "company": "Byggfirma Nord"
+      },
+      "testimonial3": {
+        "text": "De skötte allt från A till Z. Jag behövde inte tänka på teknik alls, utan kunde fokusera på mitt företag.",
+        "author": "Lisa Andersson",
+        "company": "Beauty Studio"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Professionella hemsidor för lokala företag",
+    "quickLinks": "Snabblänkar",
+    "contact": "Kontakt",
+    "phone": "08-123 45 67",
+    "email": "hej@webbenkelt.se",
+    "address": "Stockholm, Sverige",
+    "copyright": "© 2025 WebbenKelt. Alla rättigheter förbehållna."
+  },
+  "common": {
+    "readMore": "Läs mer",
+    "getStarted": "Kom igång",
+    "learnMore": "Lär dig mer",
+    "viewAll": "Se alla"
+  }
+}
