@@ -5,7 +5,7 @@
         <div class="col-lg-4">
           <div class="footer-brand">
             <div class="d-flex align-items-center mb-3">
-              <img src="/logo.svg" alt="WebbEnkelt" class="footer-logo me-2">
+              <img src="/assets/logo.svg" alt="WebbEnkelt" class="footer-logo me-2">
             </div>
             <p class="text-light-emphasis">{{ $t('footer.tagline') }}</p>
             <div class="social-links">

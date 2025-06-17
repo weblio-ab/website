@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
       <router-link class="navbar-brand fw-bold text-primary" to="/">
-        <img src="/icon.svg" alt="WebbEnkelt" class="navbar-logo me-2">
+        <img src="/assets/icon.svg" alt="WebbEnkelt" class="navbar-logo me-2">
         WebbEnkelt
       </router-link>
 
