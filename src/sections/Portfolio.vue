@@ -24,7 +24,7 @@
           :title="$t('portfolio.projects.salon.title')"
           :description="$t('portfolio.projects.salon.description')"
           url="https://ameasalong.se"
-          image-url="/projects/ameasalong.png"
+          image-url="/assets/projects/ameasalong.png"
         />
 
         <!-- Construction Company Project -->

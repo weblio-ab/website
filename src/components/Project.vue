@@ -3,13 +3,13 @@
     <div class="portfolio-card">
       <div class="portfolio-image">
         <div class="portfolio-browser-wrapper">
-          <BrowserMockup :url="url">
+          <WindowMockup :url="url">
             <img 
               :src="imageUrl" 
               :alt="`${title} website screenshot`"
               class="project-image"
             />
-          </BrowserMockup>
+          </WindowMockup>
         </div>
         <div class="portfolio-overlay">
           <a 
@@ -33,7 +33,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-import BrowserMockup from './BrowserMockup.vue'
+import WindowMockup from './WindowMockup.vue'
 
 const { t } = useI18n()
 

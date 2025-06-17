@@ -30,7 +30,7 @@
             <div class="mockup-container">
               <!-- Desktop Mockup -->
               <div class="device-mockup desktop">
-                <BrowserMockup>
+                <WindowMockup>
                   <div class="hero-mockup-content">
                     <div class="mockup-nav"></div>
                     <div class="mockup-hero"></div>
@@ -40,7 +40,7 @@
                       <div class="section"></div>
                     </div>
                   </div>
-                </BrowserMockup>
+                </WindowMockup>
               </div>
               <!-- Mobile Mockup -->
               <div class="device-mockup mobile">
@@ -70,7 +70,7 @@
 </template>
 
 <script setup>
-import BrowserMockup from '../components/BrowserMockup.vue'
+import WindowMockup from '../components/WindowMockup.vue'
 import MobileMockup from '../components/MobileMockup.vue'
 </script>
 
