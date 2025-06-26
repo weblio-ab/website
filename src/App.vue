@@ -31,9 +31,9 @@ onUnmounted(() => {
     <div v-if="isLoading" class="loader-overlay">
       <div class="loader-content">
         <div class="loader-logo">
-          <img src="/assets/icon.svg" alt="WebbEnkelt" class="loader-logo-image">
+          <img src="/assets/icon.svg" alt="Weblio" class="loader-logo-image">
         </div>
-        <h2>WebbEnkelt</h2>
+        <h2>Weblio</h2>
         <div class="loader-spinner"></div>
       </div>
     </div>
@@ -111,11 +111,10 @@ main {
 
 .loader-logo {
   margin-bottom: 1rem;
-  animation: pulse 2s infinite;
 }
 
 .loader-logo-image {
-  height: 64px;
+  height: 80px;
   width: auto;
 }
 
@@ -133,15 +132,6 @@ main {
   border-top: 3px solid #007bff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
 }
 
 @keyframes spin {

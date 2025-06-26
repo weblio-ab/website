@@ -1,6 +1,6 @@
-# WebbEnkelt - Webbyrå Hemsida
+# Weblio - Webbyrå Hemsida
 
-En modern, professionell hemsida för webbyrån WebbEnkelt, byggd med Vue.js 3, Pinia, Bootstrap 5 och Vue i18n för flerspråkighet.
+En modern, professionell hemsida för webbyrån Weblio, byggd med Vue.js 3, Pinia, Bootstrap 5 och Vue i18n för flerspråkighet.
 
 ## 🚀 Funktioner
 
@@ -12,7 +12,7 @@ En modern, professionell hemsida för webbyrån WebbEnkelt, byggd med Vue.js 3, 
 - **Responsiv design** som fungerar på alla enheter
 - **SEO-optimerad** med meta tags och strukturerad data
 - **Tillgänglighetsoptimerad** med fokusindikation och semantisk HTML
-- **Varumärkeskoherent** med WebbEnkelt-logotyp genom hela sajten
+- **Varumärkeskoherent** med Weblio-logotyp genom hela sajten
 
 ## 📱 Sektioner
 
@@ -90,4 +90,4 @@ Webbplatsen stödjer svenska och engelska. Språkfiler finns i:
 
 ---
 
-Byggd med ❤️ av WebbEnkelt teamet
+Byggd med ❤️ av Weblio teamet

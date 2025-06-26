@@ -2,12 +2,12 @@
   <footer class="footer bg-dark text-light py-5">
     <div class="container">
       <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="footer-brand">
-            <div class="d-flex align-items-center mb-3">
-              <img src="/assets/logo.svg" alt="WebbEnkelt" class="footer-logo me-2">
-            </div>
-            <p class="text-light-emphasis">{{ $t('footer.tagline') }}</p>
+        <div class="col-lg-4">        <div class="footer-brand">
+          <div class="d-flex align-items-center mb-3">
+            <img src="/assets/icon.svg" alt="Weblio" class="footer-logo me-2">
+            <span class="footer-brand-text h5 mb-0 text-white">Weblio</span>
+          </div>
+          <p class="text-light-emphasis">{{ $t('footer.tagline') }}</p>
             <div class="social-links">
               <a href="#" class="social-link">
                 <i class="bi bi-facebook"></i>

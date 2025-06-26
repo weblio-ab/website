@@ -2,8 +2,8 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
       <router-link class="navbar-brand fw-bold text-primary" to="/">
-        <img src="/assets/icon.svg" alt="WebbEnkelt" class="navbar-logo me-2">
-        WebbEnkelt
+        <img src="/assets/icon.svg" alt="Weblio" class="navbar-logo me-2">
+        Weblio
       </router-link>
 
       <button 
@@ -114,7 +114,7 @@ onUnmounted(() => {
 }
 
 .navbar-logo {
-  height: 40px;
+  height: 60px;
   width: auto;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -134,7 +134,7 @@ onUnmounted(() => {
   }
   
   .navbar-logo {
-    height: 35px;
+    height: 45px;
   }
 }
 </style>

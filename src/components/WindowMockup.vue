@@ -45,7 +45,7 @@ const isCode = computed(() => props.type === 'code')
 
 // Remove protocol from URL for display
 const displayUrl = computed(() => {
-  if (!props.url) return 'webbenkelt.se'
+  if (!props.url) return 'weblio.se'
   return props.url.replace(/^https?:\/\//, '')
 })
 </script>
