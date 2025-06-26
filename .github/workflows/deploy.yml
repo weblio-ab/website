@@ -1,5 +1,4 @@
 name: Deploy to FTP
-
 on:
   push:
     branches:
@@ -10,19 +9,36 @@ on:
       - master
       - development
     types: [closed]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'development'
+        type: string
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
-    environment: ${{ github.ref == 'refs/heads/master' && 'production' || 'staging' }}
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true) || github.event_name == 'workflow_dispatch'
+    environment: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || (github.ref == 'refs/heads/master' && 'production' || 'staging') }}
     
     env:
-      ENVIRONMENT_NAME: ${{ github.ref == 'refs/heads/master' && 'production' || 'staging' }}
+      ENVIRONMENT_NAME: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || (github.ref == 'refs/heads/master' && 'production' || 'staging') }}
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref }}
       
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
@@ -55,3 +71,8 @@ jobs:
       run: |
         echo "✅ Successfully deployed to ${{ env.ENVIRONMENT_NAME }} environment"
         echo "📁 Deployed to: ${{ secrets.DEPLOY_PATH }}"
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "🚀 Manual deployment triggered"
+          echo "📋 Branch: ${{ github.event.inputs.branch }}"
+          echo "🎯 Environment: ${{ github.event.inputs.environment }}"
+        fi
