@@ -23,7 +23,7 @@
             </div>
             <div class="pricing-features">
               <ul class="list-unstyled">
-                <li v-for="feature in $t('pricing.packages.basic.features')" :key="feature">
+                <li v-for="feature in basicFeatures" :key="feature">
                   <i class="bi bi-check-circle-fill text-success me-2"></i>
                   {{ feature }}
                 </li>
@@ -49,7 +49,7 @@
             </div>
             <div class="pricing-features">
               <ul class="list-unstyled">
-                <li v-for="feature in $t('pricing.packages.professional.features')" :key="feature">
+                <li v-for="feature in professionalFeatures" :key="feature">
                   <i class="bi bi-check-circle-fill text-success me-2"></i>
                   {{ feature }}
                 </li>
@@ -74,7 +74,7 @@
             </div>
             <div class="pricing-features">
               <ul class="list-unstyled">
-                <li v-for="feature in $t('pricing.packages.premium.features')" :key="feature">
+                <li v-for="feature in premiumFeatures" :key="feature">
                   <i class="bi bi-check-circle-fill text-success me-2"></i>
                   {{ feature }}
                 </li>
@@ -120,7 +120,15 @@
 </template>
 
 <script setup>
-// No script needed for this component
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { tm } = useI18n()
+
+// Use tm() to get arrays directly from i18n
+const basicFeatures = computed(() => tm('pricing.packages.basic.features'))
+const professionalFeatures = computed(() => tm('pricing.packages.professional.features'))
+const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
 </script>
 
 <style scoped>
