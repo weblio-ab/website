@@ -166,6 +166,8 @@
       "company": "Company",
       "message": "Tell us about your project",
       "submit": "Send message",
+      "submitting": "Sending...",
+      "recaptchaNotice": "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.",
       "namePlaceholder": "Your name",
       "emailPlaceholder": "{'your@email.com'}",
       "phonePlaceholder": "+46 70-123 45 67",

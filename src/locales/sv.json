@@ -166,6 +166,8 @@
       "company": "Företag",
       "message": "Berätta om ditt projekt",
       "submit": "Skicka meddelande",
+      "submitting": "Skickar...",
+      "recaptchaNotice": "Denna webbplats skyddas av reCAPTCHA och Googles integritetspolicy och användarvillkor gäller.",
       "namePlaceholder": "Ditt namn",
       "emailPlaceholder": "{'din@email.se'}",
       "phonePlaceholder": "070-123 45 67",

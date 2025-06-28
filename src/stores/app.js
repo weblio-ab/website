@@ -1,7 +1,11 @@
 import { defineStore } from 'pinia'
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRecaptcha } from '../composables/useRecaptcha'
 
 export const useAppStore = defineStore('app', () => {
+  // Composables
+  const { getToken: getRecaptchaToken } = useRecaptcha()
+  
   // State
   const locale = ref('sv')
   const isMenuOpen = ref(false)
@@ -9,12 +13,16 @@ export const useAppStore = defineStore('app', () => {
   const showBackToTop = ref(false)
   const isSubmittingForm = ref(false)
   const isLoading = ref(true)
+  const formSubmissionStatus = ref(null) // 'success', 'error', or null
+  const formSubmissionMessage = ref('')
   const contactForm = ref({
     name: '',
     email: '',
     phone: '',
     company: '',
-    message: ''
+    message: '',
+    website: '', // Honeypot field
+    form_timestamp: Math.floor(Date.now() / 1000) // Timing check
   })
 
   // Actions
@@ -36,23 +44,78 @@ export const useAppStore = defineStore('app', () => {
       email: '',
       phone: '',
       company: '',
-      message: ''
+      message: '',
+      website: '', // Honeypot field
+      form_timestamp: Math.floor(Date.now() / 1000) // Reset timestamp for new form
     }
+    formSubmissionStatus.value = null
+    formSubmissionMessage.value = ''
   }
 
-  function submitContactForm() {
-    // Här kan ni integrera med er backend eller e-posttjänst
-    isSubmittingForm.value = true
+  function clearFormStatus() {
+    formSubmissionStatus.value = null
+    formSubmissionMessage.value = ''
+  }
+
+  async function submitContactForm() {
+    if (isSubmittingForm.value) return
     
-    // Simulera API-anrop
-    setTimeout(() => {
-      console.log('Contact form submitted:', contactForm.value)
+    isSubmittingForm.value = true
+    clearFormStatus()
+    
+    try {
+      // Get reCAPTCHA token
+      const recaptchaToken = await getRecaptchaToken()
       
-      // Simulera framgångsrik skickande
-      alert('Tack för ditt meddelande! Vi återkommer inom 24 timmar.')
-      resetContactForm()
+      if (!recaptchaToken) {
+        throw new Error('Failed to get reCAPTCHA token')
+      }
+      
+      // Prepare form data with reCAPTCHA token
+      const formData = {
+        ...contactForm.value,
+        recaptcha_token: recaptchaToken
+      }
+      
+      // Remove old CAPTCHA fields if present
+      delete formData.captcha_answer
+      delete formData.captcha_session
+      
+      const response = await fetch('/api/contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+      
+      const result = await response.json()
+      
+      if (response.ok && result.success) {
+        // Success
+        formSubmissionStatus.value = 'success'
+        formSubmissionMessage.value = result.message || 'Tack för ditt meddelande! Vi återkommer inom 24 timmar.'
+        resetContactForm()
+      } else {
+        // Handle API errors
+        console.error('API Error:', result)
+        formSubmissionStatus.value = 'error'
+        
+        if (result.details && Array.isArray(result.details)) {
+          formSubmissionMessage.value = result.details.join(', ')
+        } else if (result.error) {
+          formSubmissionMessage.value = result.error
+        } else {
+          formSubmissionMessage.value = 'Ett fel uppstod. Försök igen senare.'
+        }
+      }
+    } catch (error) {
+      console.error('Network Error:', error)
+      formSubmissionStatus.value = 'error'
+      formSubmissionMessage.value = 'Det gick inte att skicka meddelandet. Kontrollera din internetanslutning och försök igen.'
+    } finally {
       isSubmittingForm.value = false
-    }, 2000)
+    }
   }
 
   function handleScroll() {
@@ -115,12 +178,15 @@ export const useAppStore = defineStore('app', () => {
     isSubmittingForm,
     isLoading,
     contactForm,
+    formSubmissionStatus,
+    formSubmissionMessage,
     
     // Actions
     setLocale,
     toggleMenu,
     closeMenu,
     resetContactForm,
+    clearFormStatus,
     submitContactForm,
     scrollToTop,
     initScrollListener,
