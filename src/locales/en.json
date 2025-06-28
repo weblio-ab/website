@@ -167,7 +167,7 @@
       "message": "Tell us about your project",
       "submit": "Send message",
       "namePlaceholder": "Your name",
-      "emailPlaceholder": "your@email.com",
+      "emailPlaceholder": "{'your@email.com'}",
       "phonePlaceholder": "+46 70-123 45 67",
       "companyPlaceholder": "Your company",
       "messagePlaceholder": "Tell us briefly what you need help with..."
@@ -175,7 +175,7 @@
     "info": {
       "title": "Contact information",
       "phone": "Phone: +46 8-123 45 67",
-      "email": "Email: info@weblio.se",
+      "email": "{'Email: info@weblio.se'}",
       "consultation": "Free consultation",
       "consultationText": "We always offer a free consultation where we go through your needs and give you advice regardless of whether you choose to work with us or not."
     }
@@ -205,7 +205,7 @@
     "quickLinks": "Quick links",
     "contact": "Contact",
     "phone": "+46 8-123 45 67",
-    "email": "info@weblio.se",
+    "email": "{'info@weblio.se'}",
     "address": "Stockholm, Sweden",
     "copyright": "© 2025 Weblio. All rights reserved."
   },

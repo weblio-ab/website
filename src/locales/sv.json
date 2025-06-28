@@ -167,7 +167,7 @@
       "message": "Berätta om ditt projekt",
       "submit": "Skicka meddelande",
       "namePlaceholder": "Ditt namn",
-      "emailPlaceholder": "din@email.se",
+      "emailPlaceholder": "{'din@email.se'}",
       "phonePlaceholder": "070-123 45 67",
       "companyPlaceholder": "Ditt företag",
       "messagePlaceholder": "Berätta kort om vad du behöver hjälp med..."
@@ -175,7 +175,7 @@
     "info": {
       "title": "Kontaktinformation",
       "phone": "Telefon: 08-123 45 67",
-      "email": "E-post: info@weblio.se",
+      "email": "{'E-post: info@weblio.se'}",
       "consultation": "Gratis konsultation",
       "consultationText": "Vi erbjuder alltid en kostnadsfri konsultation där vi går igenom dina behov och ger dig råd oavsett om du väljer att jobba med oss eller inte."
     }
@@ -205,7 +205,7 @@
     "quickLinks": "Snabblänkar",
     "contact": "Kontakt",
     "phone": "08-123 45 67",
-    "email": "info@weblio.se",
+    "email": "{'info@weblio.se'}",
     "address": "Stockholm, Sverige",
     "copyright": "© 2025 Weblio. Alla rättigheter förbehållna."
   },
