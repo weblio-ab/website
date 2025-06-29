@@ -36,6 +36,36 @@ Update your site key in two places:
 const siteKey = 'YOUR_SITE_KEY_HERE'
 ```
 
+### Step 3: Configure the Backend
+
+Update `api/config.php`:
+
+```php
+'recaptcha_v3' => [
+    'site_key' => 'YOUR_SITE_KEY_HERE',     // From Google Console
+    'secret_key' => 'YOUR_SECRET_KEY_HERE', // From Google Console
+    'min_score' => 0.5,                     // Minimum score (0.0 to 1.0)
+    'action' => 'contact_form'              // Action name
+]
+```
+
+### Step 4: Deploy and Test
+
+1. **Upload files** to your server
+2. **Test the form** - it should work seamlessly
+3. **Check logs** for any reCAPTCHA errors
+
+## ⚙️ Configuration Options
+
+### Security Levels
+
+Adjust the minimum score based on your needs:
+
+- **0.1-0.3**: Very permissive (allows most traffic)
+- **0.4-0.6**: Balanced (recommended)
+- **0.7-0.9**: Strict (blocks suspicious traffic)
+- **0.9+**: Very strict (may block some legitimate users)
+
 ## 📊 Monitoring
 
 ### Google reCAPTCHA Admin Console

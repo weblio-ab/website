@@ -1,0 +1,88 @@
+name: Deploy Frontend
+on:
+  push:
+    branches:
+      - master
+      - development
+    paths-ignore:
+      - 'api/**'
+  pull_request:
+    branches:
+      - master
+      - development
+    types: [closed]
+    paths-ignore:
+      - 'api/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'development'
+        type: string
+
+jobs:
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true) || github.event_name == 'workflow_dispatch'
+    environment: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || (github.ref == 'refs/heads/master' && 'production' || 'staging') }}
+    
+    env:
+      ENVIRONMENT_NAME: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || (github.ref == 'refs/heads/master' && 'production' || 'staging') }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref }}
+      
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: ${{ vars.PNPM_VERSION || '9' }}
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ vars.NODE_VERSION || '18' }}
+        cache: 'pnpm'
+        
+    - name: Install dependencies
+      run: ${{ vars.INSTALL_COMMAND || 'pnpm install --frozen-lockfile' }}
+      
+    - name: Build application
+      run: ${{ vars.BUILD_COMMAND || 'pnpm run build' }}
+        
+    - name: Deploy Frontend to FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ${{ vars.BUILD_DIR || './dist/' }}
+        server-dir: ${{ secrets.FRONTEND_DEPLOY_PATH || secrets.DEPLOY_PATH }}
+        dangerous-clean-slate: false
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.DS_Store
+          **/api/**
+          
+    - name: Frontend deployment notification
+      run: |
+        echo "✅ Frontend successfully deployed to ${{ env.ENVIRONMENT_NAME }} environment"
+        echo "📁 Deployed to: ${{ secrets.FRONTEND_DEPLOY_PATH || secrets.DEPLOY_PATH }}"
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "🚀 Manual deployment triggered"
+          echo "📋 Branch: ${{ github.event.inputs.branch }}"
+          echo "🎯 Environment: ${{ github.event.inputs.environment }}"
+        fi
