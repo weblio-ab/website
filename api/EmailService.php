@@ -7,9 +7,31 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require_once __DIR__ . '/PHPMailer/src/Exception.php';
-require_once __DIR__ . '/PHPMailer/src/PHPMailer.php';
-require_once __DIR__ . '/PHPMailer/src/SMTP.php';
+// Try different possible PHPMailer paths
+$phpmailerPaths = [
+    __DIR__ . '/phpmailer/phpmailer/src/',     // Actual Composer installation
+    __DIR__ . '/PHPMailer/src/',               // Legacy structure
+    __DIR__ . '/vendor/phpmailer/phpmailer/src/',  // Standard Composer
+];
+
+$phpmailerPath = null;
+foreach ($phpmailerPaths as $path) {
+    if (file_exists($path . 'Exception.php')) {
+        $phpmailerPath = $path;
+        break;
+    }
+}
+
+if (!$phpmailerPath) {
+    error_log("PHPMailer not found in any expected location");
+    throw new Exception("PHPMailer library not found");
+}
+
+error_log("Using PHPMailer from: " . $phpmailerPath);
+
+require_once $phpmailerPath . 'Exception.php';
+require_once $phpmailerPath . 'PHPMailer.php';
+require_once $phpmailerPath . 'SMTP.php';
 
 class EmailService {
     

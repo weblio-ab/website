@@ -7,13 +7,6 @@
         "phpmailer/phpmailer": "^6.9"
     },
     "config": {
-        "vendor-dir": "."
-    },
-    "autoload": {
-        "files": [
-            "PHPMailer/src/PHPMailer.php",
-            "PHPMailer/src/SMTP.php",
-            "PHPMailer/src/Exception.php"
-        ]
+        "optimize-autoloader": true
     }
 }

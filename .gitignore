@@ -13,9 +13,11 @@ dist-ssr
 *.local
 
 # PHP dependencies
-api/PHPMailer/
+api/phpmailer/
 api/composer.lock
-api/vendor/
+
+# Legacy PHPMailer (remove after migration)
+api/PHPMailer/
 
 # Editor directories and files
 .vscode/*
