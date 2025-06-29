@@ -21,11 +21,8 @@ return [
     'security' => [
         // Allowed origins for CORS
         'allowed_origins' => [
-            'https://webbenkelt.vercel.app',
             'https://weblio.se',
-            'https://www.weblio.se',
-            'http://localhost:5173', // Development
-            'http://localhost:4173'  // Preview
+            'https://www.weblio.se'
         ]
     ],
     
