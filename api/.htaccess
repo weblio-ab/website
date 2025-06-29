@@ -10,21 +10,13 @@
     Header always set X-Content-Type-Options nosniff
 </IfModule>
 
-# Allow API endpoints
+# Allow only contact.php endpoint
 <Files "contact.php">
     Require all granted
 </Files>
 
-<Files "recaptcha.php">
-    Require all granted
-</Files>
-
-# Protect config files
-<Files "config.php">
+# Deny access to all other files
+<FilesMatch "^(?!contact\.php$).*">
     Require all denied
-</Files>
-
-<Files ".htaccess">
-    Require all denied
-</Files>
+</FilesMatch>
 
