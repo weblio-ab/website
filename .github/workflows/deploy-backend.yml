@@ -45,18 +45,32 @@ jobs:
         ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref }}
     
     - name: Configure backend settings
+      env:
+        RECAPTCHA_SECRET: ${{ secrets.RECAPTCHA_SECRET_KEY }}
       run: |
         echo "🔧 Configuring backend for ${{ env.ENVIRONMENT_NAME }} environment"
         
-        # Create temporary config with populated secrets
+        # Create backup
         cp api/config.php api/config.php.backup
         
-        # Replace placeholder with actual secret key from environment
-        sed -i "s/YOUR_SECRET_KEY_HERE/${{ secrets.RECAPTCHA_SECRET_KEY }}/g" api/config.php
+        # Debug: Check if secret is available
+        if [ -z "$RECAPTCHA_SECRET" ]; then
+          echo "❌ RECAPTCHA_SECRET_KEY is empty or not set in environment"
+          exit 1
+        else
+          echo "✅ RECAPTCHA_SECRET_KEY is available (${#RECAPTCHA_SECRET} characters)"
+        fi
+        
+        # Use PHP for reliable string replacement
+        php -r "
+          \$config = file_get_contents('api/config.php');
+          \$config = str_replace('YOUR_SECRET_KEY_HERE', getenv('RECAPTCHA_SECRET'), \$config);
+          file_put_contents('api/config.php', \$config);
+        "
         
         # Verify the replacement worked
         if grep -q "YOUR_SECRET_KEY_HERE" api/config.php; then
-          echo "❌ Secret key replacement failed"
+          echo "❌ Secret key replacement failed - placeholder still exists"
           exit 1
         else
           echo "✅ Secret key configured successfully"
