@@ -41,7 +41,7 @@ return [
         'site_key' => '6LfQvXArAAAAAEc6eycVp2Bkq6FfCVW0RUg2lOQf', // Get from Google reCAPTCHA console
         'secret_key' => 'YOUR_SECRET_KEY_HERE', // Get from Google reCAPTCHA console
         'min_score' => 0.5, // Minimum score (0.0 to 1.0, higher = more human-like)
-        'action' => 'contact_form' // Action name for this form
+        'action' => 'form_submission' // Action name for this form
     ]
 ];
 ?>
