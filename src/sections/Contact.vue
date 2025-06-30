@@ -11,99 +11,7 @@
       <div class="row g-5">
         <!-- Contact Form -->
         <div class="col-lg-8">
-          <div class="contact-form-wrapper">
-            <!-- Success/Error Messages -->
-            <div v-if="formSubmissionStatus" class="alert mb-4" :class="formSubmissionStatus === 'success' ? 'alert-success' : 'alert-danger'">
-              <div class="d-flex align-items-center">
-                <i class="bi me-2" :class="formSubmissionStatus === 'success' ? 'bi-check-circle' : 'bi-exclamation-triangle'"></i>
-                <span>{{ formSubmissionMessage }}</span>
-                <button type="button" class="btn-close ms-auto" @click="clearFormStatus" aria-label="Stäng"></button>
-              </div>
-            </div>
-            
-            <form @submit.prevent="handleSubmit" class="contact-form">
-              <!-- Honeypot field (hidden from users, catches bots) -->
-              <input 
-                type="text" 
-                name="website" 
-                v-model="contactForm.website"
-                style="display: none !important; position: absolute; left: -9999px;"
-                tabindex="-1"
-                autocomplete="off"
-              >
-              
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="name" class="form-label">{{ $t('contact.form.name') }}</label>
-                  <input 
-                    type="text" 
-                    class="form-control" 
-                    id="name"
-                    v-model="contactForm.name"
-                    :placeholder="$t('contact.form.namePlaceholder')"
-                    required
-                  >
-                </div>
-                <div class="col-md-6">
-                  <label for="email" class="form-label">{{ $t('contact.form.email') }}</label>
-                  <input 
-                    type="email" 
-                    class="form-control" 
-                    id="email"
-                    v-model="contactForm.email"
-                    :placeholder="$t('contact.form.emailPlaceholder')"
-                    required
-                  >
-                </div>
-                <div class="col-md-6">
-                  <label for="phone" class="form-label">{{ $t('contact.form.phone') }}</label>
-                  <input 
-                    type="tel" 
-                    class="form-control" 
-                    id="phone"
-                    v-model="contactForm.phone"
-                    :placeholder="$t('contact.form.phonePlaceholder')"
-                  >
-                </div>
-                <div class="col-md-6">
-                  <label for="company" class="form-label">{{ $t('contact.form.company') }}</label>
-                  <input 
-                    type="text" 
-                    class="form-control" 
-                    id="company"
-                    v-model="contactForm.company"
-                    :placeholder="$t('contact.form.companyPlaceholder')"
-                  >
-                </div>
-                <div class="col-12">
-                  <label for="message" class="form-label">{{ $t('contact.form.message') }}</label>
-                  <textarea 
-                    class="form-control" 
-                    id="message" 
-                    rows="5"
-                    v-model="contactForm.message"
-                    :placeholder="$t('contact.form.messagePlaceholder')"
-                    required
-                  ></textarea>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary btn-lg" :disabled="isSubmittingForm">
-                    <span v-if="isSubmittingForm" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                    <i v-else class="bi bi-send me-2"></i>
-                    {{ isSubmittingForm ? $t('contact.form.submitting') : $t('contact.form.submit') }}
-                  </button>
-                  
-                  <!-- reCAPTCHA v3 notice -->
-                  <div class="recaptcha-notice mt-3">
-                    <small class="text-muted">
-                      <i class="bi bi-shield-check me-1"></i>
-                      {{ $t('contact.form.recaptchaNotice') }}
-                    </small>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
+          <ContactForm />
         </div>
 
         <!-- Contact Info -->
@@ -144,72 +52,10 @@
 </template>
 
 <script setup>
-import { useAppStore } from '../stores/app'
-import { storeToRefs } from 'pinia'
-
-const appStore = useAppStore()
-const { contactForm, isSubmittingForm, formSubmissionStatus, formSubmissionMessage } = storeToRefs(appStore)
-const { submitContactForm, clearFormStatus } = appStore
-
-function handleSubmit() {
-  submitContactForm()
-}
+import ContactForm from '../components/ContactForm.vue'
 </script>
 
 <style scoped>
-.contact-form-wrapper {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
-}
-
-.alert {
-  border: none;
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
-}
-
-.alert-success {
-  background: linear-gradient(135deg, #d4edda, #c3e6cb);
-  color: #155724;
-}
-
-.alert-danger {
-  background: linear-gradient(135deg, #f8d7da, #f5c6cb);
-  color: #721c24;
-}
-
-.btn-close {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.btn-close:hover {
-  opacity: 1;
-}
-
-.form-label {
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.form-control {
-  border: 2px solid #f1f3f5;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  transition: all 0.3s ease;
-}
-
-.form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
-}
-
 .contact-info {
   background: white;
   padding: 2.5rem;
@@ -272,10 +118,6 @@ function handleSubmit() {
   margin-bottom: 1rem;
 }
 
-.recaptcha-notice {
-  text-align: center;
-}
-
 @media (max-width: 991.98px) {
   .contact-info {
     margin-top: 2rem;
@@ -283,7 +125,6 @@ function handleSubmit() {
 }
 
 @media (max-width: 767.98px) {
-  .contact-form-wrapper,
   .contact-info {
     padding: 1.5rem;
   }

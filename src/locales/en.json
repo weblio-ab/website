@@ -172,7 +172,11 @@
       "emailPlaceholder": "{'your@email.com'}",
       "phonePlaceholder": "+46 70-123 45 67",
       "companyPlaceholder": "Your company",
-      "messagePlaceholder": "Tell us briefly what you need help with..."
+      "messagePlaceholder": "Tell us briefly what you need help with...",
+      "success": "Thank you for your message! We'll get back to you within 24 hours.",
+      "validationError": "Form data is invalid. Please check that all required fields are filled in.",
+      "serverError": "A server error occurred. Please try again later.",
+      "networkError": "Could not send the message. Please check your internet connection and try again."
     },
     "info": {
       "title": "Contact information",

@@ -172,7 +172,11 @@
       "emailPlaceholder": "{'din@email.se'}",
       "phonePlaceholder": "070-123 45 67",
       "companyPlaceholder": "Ditt företag",
-      "messagePlaceholder": "Berätta kort om vad du behöver hjälp med..."
+      "messagePlaceholder": "Berätta kort om vad du behöver hjälp med...",
+      "success": "Tack för ditt meddelande! Vi återkommer inom 24 timmar.",
+      "validationError": "Formulärdata är ogiltig. Kontrollera att alla obligatoriska fält är ifyllda.",
+      "serverError": "Ett serverfel uppstod. Försök igen senare.",
+      "networkError": "Det gick inte att skicka meddelandet. Kontrollera din internetanslutning och försök igen."
     },
     "info": {
       "title": "Kontaktinformation",
