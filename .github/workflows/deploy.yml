@@ -98,15 +98,16 @@ jobs:
         
         # Create environment configuration file
         cat > api/.env << EOF
-        SMTP_HOST=${SMTP_HOST}
+        SMTP_HOST=${SMTP_HOST:-mailcluster.loopia.se}
         SMTP_USERNAME=${SMTP_USERNAME}
         SMTP_PASSWORD=${SMTP_PASSWORD}
         SMTP_PORT=${SMTP_PORT:-587}
         SMTP_ENCRYPTION=${SMTP_ENCRYPTION:-tls}
         SMTP_FROM_EMAIL=${SMTP_FROM_EMAIL}
-        SMTP_FROM_NAME=${SMTP_FROM_NAME:-Weblio}
+        SMTP_FROM_NAME=${BUSINESS_NAME}
         CONTACT_EMAIL=${CONTACT_EMAIL}
         RECAPTCHA_SECRET=${RECAPTCHA_SECRET}
+        RECAPTCHA_MIN_SCORE=${RECAPTCHA_MIN_SCORE:-0.5}
         EOF
         
         echo "✅ Backend configuration completed successfully"

@@ -8,7 +8,7 @@ class RecaptchaV3 {
     private $secretKey;
     private $minScore;
     
-    public function __construct($secretKey, $minScore = 0.5) {
+    public function __construct($secretKey, $minScore) {
         $this->secretKey = $secretKey;
         $this->minScore = $minScore;
     }
@@ -64,11 +64,9 @@ class RecaptchaV3 {
         
         // Check if verification was successful
         if (!$result['success']) {
-            $errorCodes = $result['error-codes'] ?? [];
             return [
                 'success' => false,
-                'error' => 'reCAPTCHA verification failed',
-                'error_codes' => $errorCodes
+                'error' => 'reCAPTCHA verification failed'
             ];
         }
         
@@ -92,10 +90,7 @@ class RecaptchaV3 {
         
         return [
             'success' => true,
-            'score' => $score,
-            'action' => $result['action'] ?? null,
-            'challenge_ts' => $result['challenge_ts'] ?? null,
-            'hostname' => $result['hostname'] ?? null
+            'score' => $score
         ];
     }
 }

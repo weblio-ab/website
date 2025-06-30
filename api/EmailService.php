@@ -28,17 +28,17 @@ class EmailService {
         try {
             // SMTP Configuration from environment variables
             $mail->isSMTP();
-            $mail->Host = getenv('SMTP_HOST') ?: 'smtp.gmail.com';
+            $mail->Host = getenv('SMTP_HOST');
             $mail->SMTPAuth = true;
-            $mail->Username = getenv('SMTP_USERNAME');
+            $mail->Username = getenv('SMTP_USERNAME') ?: getenv('SMTP_FROM_EMAIL');
             $mail->Password = getenv('SMTP_PASSWORD');
             $mail->SMTPSecure = getenv('SMTP_ENCRYPTION') ?: PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = getenv('SMTP_PORT') ?: 587;
             $mail->CharSet = 'UTF-8';
             
             // Sender configuration from environment variables
-            $fromEmail = getenv('SMTP_FROM_EMAIL') ?: getenv('SMTP_USERNAME');
-            $fromName = getenv('SMTP_FROM_NAME') ?: 'Weblio';
+            $fromEmail = getenv('SMTP_FROM_EMAIL');
+            $fromName = getenv('BUSINESS_NAME');
             
             $mail->setFrom($fromEmail, $fromName);
             $mail->addAddress($to);
@@ -58,8 +58,7 @@ class EmailService {
             
             if ($result) {
                 return [
-                    'success' => true,
-                    'message' => 'Email sent successfully'
+                    'success' => true
                 ];
             } else {
                 return [
