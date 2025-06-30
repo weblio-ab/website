@@ -2,6 +2,13 @@
 
 En modern, professionell hemsida för webbyrån Weblio, byggd med Vue.js 3, Pinia, Bootstrap 5 och Vue i18n för flerspråkighet.
 
+## 🚀 Deployment Status
+
+| Environment | Status |
+|-------------|--------|
+| **Production** | [![Deploy Application](https://github.com/WebbEnkelt/website/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/WebbEnkelt/website/actions/workflows/deploy.yml) |
+| **Staging** | [![Deploy Application](https://github.com/WebbEnkelt/website/actions/workflows/deploy.yml/badge.svg?branch=development)](https://github.com/WebbEnkelt/website/actions/workflows/deploy.yml) |
+
 ## 🛠️ Installation
 
 1. **Installera dependencies**
