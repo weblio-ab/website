@@ -19,14 +19,17 @@ class HttpHelper {
      * Set CORS headers
      */
     public static function setCorsHeaders() {
-        $allowedOrigins = [
-            'https://weblio.se',
-            'https://www.weblio.se',
-            'https://staging.weblio.se',
-            'https://www.staging.weblio.se',
-            'http://localhost:5173', // For development
-            'http://localhost:4173'  // For preview
-        ];
+        // Always include current host as allowed origin
+        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+        $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $allowedOrigins = ["$protocol://$host"];
+        
+        // Append additional origins from environment variables
+        $allowedOriginsEnv = getenv('ALLOWED_ORIGINS');
+        if ($allowedOriginsEnv) {
+            $envOrigins = array_map('trim', explode(',', $allowedOriginsEnv));
+            $allowedOrigins = array_merge($allowedOrigins, $envOrigins);
+        }
         
         $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
         if (in_array($origin, $allowedOrigins)) {

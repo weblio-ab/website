@@ -53,6 +53,7 @@ Följande environment secrets måste konfigureras i GitHub Actions/Secrets
 | `SMTP_FROM_EMAIL` | Avsändarens e-postadress | `info@weblio.se` | ❌ |
 | `RECAPTCHA_SECRET_KEY` | Google reCAPTCHA v3 secret key | `6Lc...` | ✅ |
 | `RECAPTCHA_MIN_SCORE` | Minimum score för reCAPTCHA validering (0.0-1.0) | `0.5` | ❌ |
+| `ALLOWED_ORIGINS` | Tillåtna CORS origins (kommaseparerade) | `https://weblio.se,https://www.weblio.se` | ❌ |
 | `FTP_SERVER` | FTP server för deployment | `ftp.loopia.se` | ❌ |
 | `FTP_USERNAME` | FTP användarnamn | `your-ftp-user` | ✅ |
 | `FTP_PASSWORD` | FTP lösenord | `your-ftp-password` | ✅ |
