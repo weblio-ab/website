@@ -1,13 +1,9 @@
 <?php
-// Debug mode - enable for troubleshooting
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+// Error reporting
 error_reporting(E_ALL);
+ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/error.log');
-
-// Log script start
-error_log("=== Contact.php script started at " . date('Y-m-d H:i:s') . " ===");
 
 // Security headers
 header('Content-Type: application/json; charset=utf-8');
@@ -64,33 +60,15 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 
 // Get client IP for logging and reCAPTCHA
 $clientIP = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
-error_log("Client IP detected: " . $clientIP);
 
 // Load environment variables
-error_log("Loading environment variables...");
 require_once __DIR__ . '/env.php';
-error_log("Environment variables loaded");
-
-// Check critical environment variables
-$requiredEnvVars = ['CONTACT_EMAIL', 'SMTP_HOST', 'SMTP_USERNAME', 'SMTP_PASSWORD'];
-foreach ($requiredEnvVars as $var) {
-    $value = getenv($var);
-    if ($value) {
-        error_log("$var is set (length: " . strlen($value) . ")");
-    } else {
-        error_log("WARNING: $var is not set!");
-    }
-}
 
 // Load reCAPTCHA class
-error_log("Loading reCAPTCHA class...");
 require_once __DIR__ . '/recaptcha.php';
-error_log("reCAPTCHA class loaded");
 
 // Load Email service
-error_log("Loading EmailService class...");
 require_once __DIR__ . '/EmailService.php';
-error_log("EmailService class loaded");
 
 // Validation function
 function validateInput($data, $clientIP) {
@@ -127,7 +105,6 @@ function validateInput($data, $clientIP) {
             
             if (!$result['success']) {
                 $errors[] = $result['error'];
-                error_log("reCAPTCHA validation failed: " . json_encode($result));
             }
         }
     }
@@ -195,23 +172,14 @@ $cleanData = sanitizeInput($data);
 
 // Send email using EmailService
 function sendContactEmail($data) {
-    error_log("sendContactEmail() called with data: " . json_encode([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'has_message' => !empty($data['message'])
-    ]));
-    
     try {
         $emailService = new EmailService();
-        error_log("EmailService instantiated successfully");
         
         // Create email content
         $to = getenv('CONTACT_EMAIL');
         if (!$to) {
-            error_log("ERROR: CONTACT_EMAIL environment variable not set");
             return false;
         }
-        error_log("Sending email to: " . $to);
         
         $subject = '[Weblio] Ny kontaktförfrågan från ' . $data['name'];
         
@@ -225,25 +193,12 @@ function sendContactEmail($data) {
         $body .= "Skickat från: " . ($_SERVER['HTTP_REFERER'] ?? 'Okänd källa') . "\n";
         $body .= "Tidpunkt: " . date('Y-m-d H:i:s') . "\n";
         
-        error_log("Email subject: " . $subject);
-        error_log("Email body length: " . strlen($body));
-        error_log("Reply-to email: " . $data['email']);
-        
         $result = $emailService->sendEmail($to, $subject, $body, $data['email']);
         
-        error_log("EmailService result: " . json_encode($result));
-        
-        if ($result['success']) {
-            error_log("Email sent successfully via EmailService");
-            return true;
-        } else {
-            error_log("EmailService failed: " . $result['error']);
-            return false;
-        }
+        return $result['success'];
         
     } catch (Exception $e) {
         error_log("Exception in sendContactEmail(): " . $e->getMessage());
-        error_log("Exception trace: " . $e->getTraceAsString());
         return false;
     }
 }
@@ -264,54 +219,27 @@ function logContact($data, $clientIP) {
 }
 
 try {
-    // Log attempt
-    error_log("=== Starting email send process ===");
-    error_log("Contact form submission attempt from: " . ($data['email'] ?? 'unknown'));
-    error_log("Clean data keys: " . implode(', ', array_keys($cleanData)));
-    
     // Send the email
     if (sendContactEmail($cleanData)) {
         // Log successful contact
-        error_log("Email sent successfully, logging contact...");
         logContact($cleanData, $clientIP);
         
-        error_log("Contact logged successfully, sending success response");
         http_response_code(200);
         echo json_encode([
             'success' => true,
             'message' => 'Tack för ditt meddelande! Vi återkommer inom 24 timmar.'
         ]);
     } else {
-        // Log email failure details
-        error_log("=== EMAIL SENDING FAILED ===");
-        error_log("Email sending failed for contact form submission");
-        error_log("Contact data: " . json_encode([
-            'name' => $cleanData['name'],
-            'email' => $cleanData['email'],
-            'to' => getenv('CONTACT_EMAIL')
-        ]));
-        
         throw new Exception('Failed to send email - check server mail configuration');
     }
     
 } catch (Exception $e) {
-    error_log("=== EXCEPTION CAUGHT ===");
     error_log("Contact form error: " . $e->getMessage());
-    error_log("Error details: " . $e->getTraceAsString());
-    error_log("Error file: " . $e->getFile());
-    error_log("Error line: " . $e->getLine());
     
     http_response_code(500);
     echo json_encode([
         'error' => 'Ett fel uppstod när meddelandet skulle skickas. Kontakta oss direkt på info@weblio.se',
-        'details' => 'Mail server configuration error',
-        'debug' => [
-            'message' => $e->getMessage(),
-            'file' => $e->getFile(),
-            'line' => $e->getLine()
-        ]
+        'details' => 'Mail server configuration error'
     ]);
 }
-
-error_log("=== Contact.php script completed at " . date('Y-m-d H:i:s') . " ===");
 ?>
