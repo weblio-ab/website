@@ -37,7 +37,7 @@ class EmailService {
             $mail->CharSet = 'UTF-8';
             
             // Sender configuration from environment variables
-            $fromEmail = getenv('SMTP_FROM_EMAIL') ?: getenv('SMTP_USERNAME');
+            $fromEmail = getenv('SMTP_FROM_EMAIL');
             $fromName = getenv('BUSINESS_NAME');
             
             $mail->setFrom($fromEmail, $fromName);
