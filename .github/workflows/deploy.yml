@@ -93,6 +93,7 @@ jobs:
         SMTP_FROM_EMAIL: ${{ secrets.SMTP_FROM_EMAIL }}
         CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
         ALLOWED_ORIGINS: ${{ secrets.ALLOWED_ORIGINS }}
+        BUSINESS_NAME: ${{ secrets.BUSINESS_NAME }}
       run: |
         echo "🔧 Configuring backend for ${{ env.ENVIRONMENT_NAME }} environment"
         
@@ -108,6 +109,7 @@ jobs:
         RECAPTCHA_SECRET=${RECAPTCHA_SECRET}
         RECAPTCHA_MIN_SCORE=${RECAPTCHA_MIN_SCORE:-0.5}
         ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+        BUSINESS_NAME=${BUSINESS_NAME}
         EOF
         
         echo "✅ Backend configuration completed successfully"
