@@ -91,7 +91,6 @@ jobs:
         SMTP_PORT: ${{ secrets.SMTP_PORT }}
         SMTP_ENCRYPTION: ${{ secrets.SMTP_ENCRYPTION }}
         SMTP_FROM_EMAIL: ${{ secrets.SMTP_FROM_EMAIL }}
-        SMTP_FROM_NAME: ${{ secrets.SMTP_FROM_NAME }}
         CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
       run: |
         echo "🔧 Configuring backend for ${{ env.ENVIRONMENT_NAME }} environment"
@@ -104,7 +103,6 @@ jobs:
         SMTP_PORT=${SMTP_PORT:-587}
         SMTP_ENCRYPTION=${SMTP_ENCRYPTION:-tls}
         SMTP_FROM_EMAIL=${SMTP_FROM_EMAIL}
-        SMTP_FROM_NAME=${BUSINESS_NAME}
         CONTACT_EMAIL=${CONTACT_EMAIL}
         RECAPTCHA_SECRET=${RECAPTCHA_SECRET}
         RECAPTCHA_MIN_SCORE=${RECAPTCHA_MIN_SCORE:-0.5}
@@ -131,7 +129,7 @@ jobs:
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.FTP_SERVER }}
+        server: ${{ secrets.FTP_SERVER || 'ftp.loopia.se' }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ${{ vars.BUILD_DIR || './dist/' }}

@@ -32,19 +32,24 @@ Webbplatsen stödjer svenska och engelska. Språkfiler finns i:
 
 ## 🔐 Environment Secrets
 
-Följande environment secrets måste konfigureras i GitHub Actions/Secrets för att kontaktformuläret ska fungera:
+Följande environment secrets måste konfigureras i GitHub Actions/Secrets
 
 | Secret Name | Beskrivning | Exempel | Obligatorisk |
 |-------------|-------------|---------|--------------|
-| `CONTACT_EMAIL` | E-postadress som tar emot kontaktmeddelanden | `info@weblio.se` | ✅ |
+| `CONTACT_EMAIL` | E-postadress som tar emot kontaktmeddelanden | `info@weblio.se` | ❌ |
 | `BUSINESS_NAME` | Företagsnamn som visas i e-postämnesraden | `Weblio` | ✅ |
-| `RECAPTCHA_SECRET` | Google reCAPTCHA v3 secret key | `6Lc...` | ✅ |
-| `RECAPTCHA_MIN_SCORE` | Minimum score för reCAPTCHA validering (0.0-1.0) | `0.5` | ❌ |
 | `SMTP_HOST` | SMTP server för e-postutskick | `mailcluster.loopia.se` | ❌ |
 | `SMTP_PORT` | SMTP port | `587` | ❌ |
-| `SMTP_USERNAME` | SMTP användarnamn | `your-email@gmail.com` | ❌ |
-| `SMTP_PASSWORD` | SMTP lösenord | `your-app-password` | ✅ |
-| `SMTP_SECURE` | SMTP kryptering (`tls` eller `ssl`) | `tls` | ✅ |
+| `SMTP_USERNAME` | SMTP användarnamn | `info@weblio.se` | ✅ |
+| `SMTP_PASSWORD` | SMTP lösenord | `your-smtp-password` | ✅ |
+| `SMTP_ENCRYPTION` | SMTP kryptering (`tls` eller `ssl`) | `tls` | ❌ |
+| `SMTP_FROM_EMAIL` | Avsändarens e-postadress | `info@weblio.se` | ❌ |
+| `RECAPTCHA_SECRET_KEY` | Google reCAPTCHA v3 secret key | `6Lc...` | ✅ |
+| `RECAPTCHA_MIN_SCORE` | Minimum score för reCAPTCHA validering (0.0-1.0) | `0.5` | ❌ |
+| `FTP_SERVER` | FTP server för deployment | `ftp.loopia.se` | ❌ |
+| `FTP_USERNAME` | FTP användarnamn | `your-ftp-user` | ✅ |
+| `FTP_PASSWORD` | FTP lösenord | `your-ftp-password` | ✅ |
+| `DEPLOY_PATH` | Sökväg på servern för deployment | `/public_html/` | ✅ |
 
 ### Sätta upp secrets:
 1. Gå till ditt GitHub repository
@@ -53,7 +58,8 @@ Följande environment secrets måste konfigureras i GitHub Actions/Secrets för 
 4. Lägg till varje secret från tabellen ovan
 
 ### Noteringar:
-- `SMTP_USERNAME` är valfri och använder `CONTACT_EMAIL` om inte angiven
+- `SMTP_FROM_EMAIL` är valfri och använder `SMTP_USERNAME` om inte angiven
+- `CONTACT_EMAIL` är valfri och använder `SMTP_USERNAME` om inte angiven
 - reCAPTCHA keys kan erhållas från [Google reCAPTCHA Admin Console](https://www.google.com/recaptcha/admin)
 
 ---

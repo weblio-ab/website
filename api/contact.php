@@ -23,7 +23,7 @@ function sendContactEmail($data) {
     try {
         $emailService = new EmailService();
         
-        $to = getenv('CONTACT_EMAIL');
+        $to = getenv('CONTACT_EMAIL') ?: getenv('SMTP_USERNAME');
         $businessName = getenv('BUSINESS_NAME');
         
         $properties = $data['properties'];

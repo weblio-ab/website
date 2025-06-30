@@ -30,14 +30,14 @@ class EmailService {
             $mail->isSMTP();
             $mail->Host = getenv('SMTP_HOST');
             $mail->SMTPAuth = true;
-            $mail->Username = getenv('SMTP_USERNAME') ?: getenv('SMTP_FROM_EMAIL');
+            $mail->Username = getenv('SMTP_USERNAME');
             $mail->Password = getenv('SMTP_PASSWORD');
             $mail->SMTPSecure = getenv('SMTP_ENCRYPTION') ?: PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = getenv('SMTP_PORT') ?: 587;
             $mail->CharSet = 'UTF-8';
             
             // Sender configuration from environment variables
-            $fromEmail = getenv('SMTP_FROM_EMAIL');
+            $fromEmail = getenv('SMTP_FROM_EMAIL') ?: getenv('SMTP_USERNAME');
             $fromName = getenv('BUSINESS_NAME');
             
             $mail->setFrom($fromEmail, $fromName);
