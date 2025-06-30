@@ -1,6 +1,6 @@
 {
-    "name": "webbenkelt/api",
-    "description": "WebbenKelt API backend",
+    "name": "weblio/api",
+    "description": "Weblio API backend",
     "type": "project",
     "require": {
         "php": ">=7.4",

@@ -72,7 +72,7 @@ class EmailService {
             
             // Sender configuration from environment variables
             $fromEmail = getenv('SMTP_FROM_EMAIL') ?: getenv('SMTP_USERNAME');
-            $fromName = getenv('SMTP_FROM_NAME') ?: 'WebbenKelt';
+            $fromName = getenv('SMTP_FROM_NAME') ?: 'Weblio';
             
             error_log("From email: " . $fromEmail);
             error_log("From name: " . $fromName);

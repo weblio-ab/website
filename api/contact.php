@@ -121,7 +121,7 @@ function validateInput($data, $clientIP) {
             
             $result = $recaptcha->verify(
                 $data['recaptcha_token'],
-                'contact',
+                'form_submission', // Action name should match frontend
                 $clientIP
             );
             
@@ -213,7 +213,7 @@ function sendContactEmail($data) {
         }
         error_log("Sending email to: " . $to);
         
-        $subject = '[WebbenKelt] Ny kontaktförfrågan från ' . $data['name'];
+        $subject = '[Weblio] Ny kontaktförfrågan från ' . $data['name'];
         
         $body = "En ny kontaktförfrågan har skickats från webbsidan.\n\n";
         $body .= "Namn: " . $data['name'] . "\n";

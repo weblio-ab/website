@@ -9,7 +9,7 @@ export function useRecaptcha() {
   
   // This should match your reCAPTCHA site key
   const siteKey = '6LfQvXArAAAAAEc6eycVp2Bkq6FfCVW0RUg2lOQf'
-  const actionName = 'form_submission' // Default action name, can be customized
+  const actionName = 'contact' // Must match backend expectation
   
   /**
    * Wait for reCAPTCHA to be loaded

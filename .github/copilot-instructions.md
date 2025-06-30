@@ -1,4 +1,4 @@
-# GitHub Copilot Instructions för WebbenKelt
+# GitHub Copilot Instructions för Weblio
 
 Detta är en Vue.js 3 webbyrå-hemsida med modern teknik stack. Följ dessa riktlinjer när du assisterar med kod.
 
