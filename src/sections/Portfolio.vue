@@ -44,6 +44,7 @@
           <div 
             ref="sliderRef" 
             class="portfolio-slider"
+            :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
           >
             <div class="portfolio-slide">
               <Project
@@ -100,7 +101,6 @@ import { useTouchSlider } from '../composables/useTouchSlider'
 const { 
   sliderRef, 
   currentSlide, 
-  translateX, 
   goToSlide 
 } = useTouchSlider(3, {
   itemsPerView: { mobile: 1, tablet: 2, desktop: 3 }
@@ -113,12 +113,15 @@ const {
   overflow: hidden;
   position: relative;
   width: 100%;
+  touch-action: pan-y; /* Tillåt vertikal scroll, förhindra horisontell */
 }
 
 .portfolio-slider {
   display: flex;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .portfolio-slide {
@@ -157,11 +160,6 @@ const {
 }
 
 /* Förbättra touch-interaktion */
-.portfolio-slider {
-  touch-action: pan-x;
-  -webkit-overflow-scrolling: touch;
-}
-
 .portfolio-slider-container {
   -webkit-user-select: none;
   -moz-user-select: none;

@@ -11,10 +11,14 @@ export function useTouchSlider(itemsCount, options = {}) {
   const currentSlide = ref(0)
   const isDragging = ref(false)
   const startX = ref(0)
+  const startY = ref(0)
   const currentX = ref(0)
+  const currentY = ref(0)
   const translateX = ref(0)
   const itemWidth = ref(0)
   const visibleItems = ref(1)
+  const isHorizontalSwipe = ref(false)
+  const hasDetectedDirection = ref(false)
 
   let autoSlideTimer = null
 
@@ -71,14 +75,19 @@ export function useTouchSlider(itemsCount, options = {}) {
     }
   }
 
-  // Touch events
+  // Touch events med förbättrad scroll-hantering
   const handleTouchStart = (e) => {
     // På mobil visar vi alltid en slide åt gången
-    if (window.innerWidth >= 768) return // Ingen sliding på desktop med denna implementation
+    if (window.innerWidth >= 768) return
     
-    isDragging.value = true
+    isDragging.value = false // Börja inte dragga direkt
+    hasDetectedDirection.value = false
+    isHorizontalSwipe.value = false
+    
     startX.value = e.touches[0].clientX
+    startY.value = e.touches[0].clientY
     currentX.value = startX.value
+    currentY.value = startY.value
     
     // Stoppa auto-slide under touch
     if (autoSlideTimer) {
@@ -88,11 +97,31 @@ export function useTouchSlider(itemsCount, options = {}) {
   }
 
   const handleTouchMove = (e) => {
-    if (!isDragging.value) return
+    if (window.innerWidth >= 768) return
     
     currentX.value = e.touches[0].clientX
-    const deltaX = currentX.value - startX.value
-    const newTranslateX = translateX.value + deltaX
+    currentY.value = e.touches[0].clientY
+    
+    const deltaX = Math.abs(currentX.value - startX.value)
+    const deltaY = Math.abs(currentY.value - startY.value)
+    
+    // Endast detektera riktning om användaren har rört sig tillräckligt
+    if (!hasDetectedDirection.value && (deltaX > 10 || deltaY > 10)) {
+      hasDetectedDirection.value = true
+      isHorizontalSwipe.value = deltaX > deltaY
+      
+      // Om det är en horisontell swipe, börja dragga
+      if (isHorizontalSwipe.value) {
+        isDragging.value = true
+        e.preventDefault() // Förhindra scroll endast för horisontella swipes
+      }
+    }
+    
+    // Endast hantera touch move om det är en horisontell swipe
+    if (!isDragging.value || !isHorizontalSwipe.value) return
+    
+    const deltaXMovement = currentX.value - startX.value
+    const newTranslateX = translateX.value + deltaXMovement
     
     // Begränsa sliding
     const maxTranslate = 0
@@ -104,8 +133,14 @@ export function useTouchSlider(itemsCount, options = {}) {
     }
   }
 
-  const handleTouchEnd = () => {
-    if (!isDragging.value) return
+  const handleTouchEnd = (e) => {
+    if (window.innerWidth >= 768) return
+    
+    // Endast hantera touch end om vi hade en horisontell swipe
+    if (!isDragging.value || !isHorizontalSwipe.value) {
+      startAutoSlide()
+      return
+    }
     
     isDragging.value = false
     const deltaX = currentX.value - startX.value
@@ -124,7 +159,7 @@ export function useTouchSlider(itemsCount, options = {}) {
     startAutoSlide()
   }
 
-  // Mouse events för desktop
+  // Mouse events för desktop (behålls för test)
   const handleMouseDown = (e) => {
     e.preventDefault()
     isDragging.value = true
@@ -191,12 +226,12 @@ export function useTouchSlider(itemsCount, options = {}) {
   const addEventListeners = () => {
     if (!sliderRef.value) return
     
-    // Touch events
+    // Touch events med passive: false för att kunna preventDefault
     sliderRef.value.addEventListener('touchstart', handleTouchStart, { passive: true })
-    sliderRef.value.addEventListener('touchmove', handleTouchMove, { passive: true })
+    sliderRef.value.addEventListener('touchmove', handleTouchMove, { passive: false })
     sliderRef.value.addEventListener('touchend', handleTouchEnd, { passive: true })
     
-    // Mouse events
+    // Mouse events (för desktop testing)
     sliderRef.value.addEventListener('mousedown', handleMouseDown)
     document.addEventListener('mousemove', handleMouseMove)
     document.addEventListener('mouseup', handleMouseUp)

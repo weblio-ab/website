@@ -43,6 +43,7 @@
                 <div 
                   ref="sliderRef" 
                   class="stats-slider"
+                  :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
                 >
                   <div class="stat-slide">
                     <div class="stat-item">
@@ -73,7 +74,6 @@
                   </div>
                 </div>
               </div>
-              
               <!-- Slide indicators -->
               <div class="stats-indicators mt-3">
                 <button 
@@ -236,13 +236,14 @@ const {
   overflow: hidden;
   position: relative;
   width: 100%;
+  touch-action: pan-y;
 }
 
 .stats-slider {
   display: flex;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
-  touch-action: pan-x;
+  touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
 }
 

@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import { useAppStore } from './stores/app'
+import { useViewportStore } from './stores/viewport'
 import { storeToRefs } from 'pinia'
 import Navbar from './sections/Navbar.vue'
 import Hero from './sections/Hero.vue'
@@ -13,15 +14,18 @@ import Contact from './sections/Contact.vue'
 import Footer from './sections/Footer.vue'
 
 const appStore = useAppStore()
+const viewportStore = useViewportStore()
 const { showBackToTop, isLoading } = storeToRefs(appStore)
 const { scrollToTop, initScrollListener, removeScrollListener } = appStore
 
 onMounted(() => {
   initScrollListener()
+  viewportStore.initViewport()
 })
 
 onUnmounted(() => {
   removeScrollListener()
+  viewportStore.destroyViewport()
 })
 </script>
 

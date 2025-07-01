@@ -110,10 +110,12 @@ const props = defineProps({
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none; /* Låt touch events gå igenom när overlay inte syns */
 }
 
 .portfolio-card:hover .portfolio-overlay {
   opacity: 1;
+  pointer-events: auto; /* Aktivera endast när synlig */
 }
 
 .portfolio-info {

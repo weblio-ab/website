@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Förhindra horizontal scroll */
+}
+
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -19,6 +24,12 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Förhindra horizontal scroll på alla nivåer */
+.container-fluid,
+.container {
+  overflow-x: hidden;
 }
 
 /* Remove default button styles */

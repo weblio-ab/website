@@ -5,9 +5,7 @@
         <div class="col-lg-8 mx-auto text-center mb-5">
           <h2 class="display-5 fw-bold text-dark mb-3">{{ $t('testimonials.title') }}</h2>
         </div>
-      </div>
-
-      <!-- Desktop Grid -->
+      </div>      <!-- Desktop Grid -->
       <div class="row g-4 d-none d-md-flex">
         <div class="col-lg-4 col-md-6">
           <Testimonial 
@@ -35,11 +33,11 @@
       </div>
 
       <!-- Mobile Slider -->
-      <div class="d-md-none">
-        <div class="testimonials-slider-container">
+      <div class="d-md-none">        <div class="testimonials-slider-container">
           <div 
             ref="sliderRef" 
             class="testimonials-slider"
+            :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
           >
             <div class="testimonial-slide">
               <Testimonial 
@@ -66,7 +64,6 @@
             </div>
           </div>
         </div>
-        
         <!-- Slide indicators -->
         <div class="testimonials-indicators mt-4">
           <button 
@@ -93,7 +90,7 @@ const {
   translateX, 
   goToSlide 
 } = useTouchSlider(3, {
-  autoSlide: true,
+  autoSlide: false,
   autoSlideInterval: 6000,
   itemsPerView: { mobile: 1, tablet: 2, desktop: 3 }
 })
@@ -105,13 +102,14 @@ const {
   overflow: hidden;
   position: relative;
   width: 100%;
+  touch-action: pan-y;
 }
 
 .testimonials-slider {
   display: flex;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
-  touch-action: pan-x;
+  touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
 }
 

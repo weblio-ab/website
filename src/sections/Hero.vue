@@ -10,7 +10,7 @@
             <p class="lead text-muted mb-4">
               {{ $t('hero.subtitle') }}
             </p>
-            <p class="fs-5 mb-4 d-none d-md-block">
+            <p class="fs-5 mb-4 d-none d-lg-block">
               {{ $t('hero.description') }}
             </p>
             <div class="d-flex flex-column flex-sm-row gap-3">
@@ -25,7 +25,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6 d-none d-md-block">
+        <div class="col-lg-6 d-none d-lg-block">
           <div class="hero-image">
             <div class="mockup-container">
               <!-- Desktop Mockup -->

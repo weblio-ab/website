@@ -54,6 +54,7 @@
           <div 
             ref="sliderRef" 
             class="services-slider"
+            :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
           >
             <div class="service-slide">
               <div class="service-card h-100">
@@ -96,7 +97,6 @@
             </div>
           </div>
         </div>
-        
         <!-- Slide indicators -->
         <div class="services-indicators mt-4">
           <button 
@@ -115,32 +115,11 @@
           <div class="process-section" :class="{ 'fade-in-up': isVisible }" style="animation-delay: 0.5s">
             <h3 class="text-center mb-5">{{ $t('services.process.title') }}</h3>
             <div class="row g-4">
-              <div class="col-md-6 col-lg-3">
+              <div class="col-md-6 col-lg-3" v-for="(step, idx) in 4" :key="idx">
                 <div class="process-step text-center">
-                  <div class="step-number">1</div>
-                  <h5>{{ $t('services.process.step1.title') }}</h5>
-                  <p class="text-muted">{{ $t('services.process.step1.description') }}</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="process-step text-center">
-                  <div class="step-number">2</div>
-                  <h5>{{ $t('services.process.step2.title') }}</h5>
-                  <p class="text-muted">{{ $t('services.process.step2.description') }}</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="process-step text-center">
-                  <div class="step-number">3</div>
-                  <h5>{{ $t('services.process.step3.title') }}</h5>
-                  <p class="text-muted">{{ $t('services.process.step3.description') }}</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="process-step text-center">
-                  <div class="step-number">4</div>
-                  <h5>{{ $t('services.process.step4.title') }}</h5>
-                  <p class="text-muted">{{ $t('services.process.step4.description') }}</p>
+                  <div class="step-number">{{ idx + 1 }}</div>
+                  <h5>{{ $t(`services.process.step${idx+1}.title`) }}</h5>
+                  <p class="text-muted">{{ $t(`services.process.step${idx+1}.description`) }}</p>
                 </div>
               </div>
             </div>
@@ -251,13 +230,14 @@ const {
   overflow: hidden;
   position: relative;
   width: 100%;
+  touch-action: pan-y;
 }
 
 .services-slider {
   display: flex;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
-  touch-action: pan-x;
+  touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
 }
 
