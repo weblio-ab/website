@@ -7,7 +7,8 @@
         </div>
       </div>
 
-      <div class="row g-4">
+      <!-- Desktop Grid -->
+      <div class="row g-4 d-none d-md-flex">
         <div class="col-lg-4 col-md-6">
           <Testimonial 
             :text="$t('testimonials.items.testimonial1.text')"
@@ -32,14 +33,150 @@
           />
         </div>
       </div>
+
+      <!-- Mobile Slider -->
+      <div class="d-md-none">
+        <div class="testimonials-slider-container">
+          <div 
+            ref="sliderRef" 
+            class="testimonials-slider"
+          >
+            <div class="testimonial-slide">
+              <Testimonial 
+                :text="$t('testimonials.items.testimonial1.text')"
+                :author="$t('testimonials.items.testimonial1.author')"
+                :company="$t('testimonials.items.testimonial1.company')"
+              />
+            </div>
+            
+            <div class="testimonial-slide">
+              <Testimonial 
+                :text="$t('testimonials.items.testimonial2.text')"
+                :author="$t('testimonials.items.testimonial2.author')"
+                :company="$t('testimonials.items.testimonial2.company')"
+              />
+            </div>
+            
+            <div class="testimonial-slide">
+              <Testimonial 
+                :text="$t('testimonials.items.testimonial3.text')"
+                :author="$t('testimonials.items.testimonial3.author')"
+                :company="$t('testimonials.items.testimonial3.company')"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide indicators -->
+        <div class="testimonials-indicators mt-4">
+          <button 
+            v-for="(_, index) in 3" 
+            :key="index"
+            @click="goToSlide(index)"
+            :class="['indicator', { active: currentSlide === index }]"
+            :aria-label="`Gå till testimonial ${index + 1}`"
+          ></button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
 import Testimonial from '../components/Testimonial.vue'
+import { useTouchSlider } from '../composables/useTouchSlider'
+
+// Touch slider för mobil
+const { 
+  sliderRef, 
+  currentSlide, 
+  translateX, 
+  goToSlide 
+} = useTouchSlider(3, {
+  autoSlide: true,
+  autoSlideInterval: 6000,
+  itemsPerView: { mobile: 1, tablet: 2, desktop: 3 }
+})
 </script>
 
 <style scoped>
-/* No styles needed - all styling is in Testimonial.vue component */
+/* Mobile slider styles */
+.testimonials-slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.testimonials-slider {
+  display: flex;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonial-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Slide indicators */
+.testimonials-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #dee2e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #007bff;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: #6c757d;
+}
+
+/* Förbättra touch-interaktion */
+.testimonials-slider-container {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth transitions */
+.testimonials-slider:not(.dragging) {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (max-width: 767.98px) {
+  .testimonials-slider-container {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .testimonial-slide {
+    padding: 0 15px;
+  }
+
+  /* Se till att testimonial kortet tar full bredd */
+  .testimonial-slide :deep(.testimonial-card) {
+    width: 100%;
+    max-width: none;
+  }
+}
 </style>

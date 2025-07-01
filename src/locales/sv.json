@@ -84,7 +84,7 @@
     "toggle": {
       "monthly": "Månadsvis",
       "annually": "Årsvis",
-      "save": "Bespara"
+      "save": "Spara"
     },
     "packages": {
       "basic": {
@@ -168,7 +168,7 @@
       "member2": {
         "name": "Albin Médoc",
         "role": "Delägare & Lead Developer",
-        "description": "8+ års erfarenhet av systemutveckling och specialist på användarvänlig design & clean code."
+        "description": "8+ års erfarenhet av systemutveckling, specialiserad på användarvänlig design och funktionalitet."
       }
     }
   },

@@ -15,9 +15,10 @@
           <div class="about-content">
             <h3 class="mb-4">{{ $t("about.ourStory") }}</h3>
             <p class="mb-4">{{ $t("about.story") }}</p>
-            <p class="mb-4">{{ $t("about.mission") }}</p>
+            <p class="mb-4 d-none d-md-block">{{ $t("about.mission") }}</p>
 
-            <div class="stats-grid">
+            <!-- Desktop Stats Grid -->
+            <div class="stats-grid d-none d-md-block">
               <div class="stat-item">
                 <div class="stat-number">50+</div>
                 <div class="stat-label">{{ $t("about.stats.customers") }}</div>
@@ -35,10 +36,59 @@
                 <div class="stat-label">{{ $t("about.stats.support") }}</div>
               </div>
             </div>
+
+            <!-- Mobile Stats Slider -->
+            <div class="d-md-none mt-4">
+              <div class="stats-slider-container">
+                <div 
+                  ref="sliderRef" 
+                  class="stats-slider"
+                >
+                  <div class="stat-slide">
+                    <div class="stat-item">
+                      <div class="stat-number">50+</div>
+                      <div class="stat-label">{{ $t("about.stats.customers") }}</div>
+                    </div>
+                  </div>
+                  
+                  <div class="stat-slide">
+                    <div class="stat-item">
+                      <div class="stat-number">3+</div>
+                      <div class="stat-label">{{ $t("about.stats.experience") }}</div>
+                    </div>
+                  </div>
+                  
+                  <div class="stat-slide">
+                    <div class="stat-item">
+                      <div class="stat-number">100%</div>
+                      <div class="stat-label">{{ $t("about.stats.mobile") }}</div>
+                    </div>
+                  </div>
+                  
+                  <div class="stat-slide">
+                    <div class="stat-item">
+                      <div class="stat-number">24/7</div>
+                      <div class="stat-label">{{ $t("about.stats.support") }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Slide indicators -->
+              <div class="stats-indicators mt-3">
+                <button 
+                  v-for="(_, index) in 4" 
+                  :key="index"
+                  @click="goToSlide(index)"
+                  :class="['indicator', { active: currentSlide === index }]"
+                  :aria-label="`Gå till statistik ${index + 1}`"
+                ></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-6 d-none d-md-block">
           <div class="about-visual">
             <WindowMockup theme="dark" type="code" title="main.js">
               <CodeBlock />
@@ -94,6 +144,16 @@
 <script setup>
 import WindowMockup from "../components/WindowMockup.vue";
 import CodeBlock from "../components/CodeBlock.vue";
+import { useTouchSlider } from '../composables/useTouchSlider'
+
+// Touch slider för statistik på mobil
+const { 
+  sliderRef, 
+  currentSlide, 
+  goToSlide 
+} = useTouchSlider(4, {
+  itemsPerView: { mobile: 1, tablet: 2, desktop: 4 }
+})
 </script>
 
 <style scoped>
@@ -169,6 +229,86 @@ import CodeBlock from "../components/CodeBlock.vue";
 .team-info h5 {
   margin-bottom: 0.5rem;
   color: #333;
+}
+
+/* Mobile stats slider styles */
+.stats-slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.stats-slider {
+  display: flex;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+
+.stat-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Slide indicators för stats */
+.stats-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #dee2e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #007bff;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: #6c757d;
+}
+
+/* Förbättra touch-interaktion för stats */
+.stats-slider-container {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.stats-slider:not(.dragging) {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Mobile responsive för stat items */
+@media (max-width: 767.98px) {
+  .stat-slide .stat-item {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .stats-slider-container {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .stat-slide {
+    padding: 0 10px;
+  }
 }
 
 @media (max-width: 991.98px) {

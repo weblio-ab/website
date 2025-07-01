@@ -162,10 +162,11 @@ function handleSubmit() {
   
   /* Centrera labels i mobilvy */
   .form-label {
-    text-align: center;
+    text-align: start;
     display: block;
     width: 100%;
     margin-bottom: 0.5rem;
+    margin-left: 3px;
   }
   
   /* Centrera skicka meddelande knappen i mobilvy */
