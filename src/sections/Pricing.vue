@@ -332,12 +332,39 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
   }
   
   .pricing-toggle {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
   }
   
   .pricing-toggle .btn {
-    margin: 0.25rem 0;
+    margin: 0;
+    padding: 0.375rem 1rem;
+    font-size: 0.8rem;
+    flex: 1;
+  }
+  
+  /* Mer marginal mellan Populärast och priset */
+  .popular-badge {
+    margin-bottom: 1rem;
+  }
+  
+  .pricing-card.popular .pricing-header {
+    margin-top: 1rem;
+  }
+  
+  /* Textjustering för features - bättre linjering */
+  .pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f8f9fa;
+  }
+  
+  .pricing-features li i {
+    margin-top: 0.25rem;
+    flex-shrink: 0;
   }
 }
 </style>

@@ -159,5 +159,23 @@ function handleSubmit() {
   .contact-form-wrapper {
     padding: 1.5rem;
   }
+  
+  /* Centrera labels i mobilvy */
+  .form-label {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Centrera skicka meddelande knappen i mobilvy */
+  .col-12 {
+    text-align: center;
+  }
+  
+  .btn.btn-primary.btn-lg {
+    display: inline-block;
+    margin: 0 auto;
+  }
 }
 </style>

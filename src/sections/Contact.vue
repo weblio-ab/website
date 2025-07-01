@@ -132,5 +132,10 @@ import ContactForm from '../components/ContactForm.vue'
   .consultation-card {
     padding: 1.5rem;
   }
+  
+  /* Centrera Kontaktinformation rubriken i mobilvy */
+  .contact-info h4 {
+    text-align: center;
+  }
 }
 </style>
