@@ -7,7 +7,6 @@
             <img src="/assets/icon.svg" alt="Weblio" class="footer-logo me-2">
             <span class="footer-brand-text h5 mb-0 text-white">Weblio</span>
           </div>
-          <p class="text-light-emphasis">{{ $t('footer.tagline') }}</p>
             <div class="social-links">
               <a href="#" class="social-link">
                 <i class="bi bi-facebook"></i>

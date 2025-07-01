@@ -13,26 +13,26 @@
       <div class="row g-5 align-items-center">
         <div class="col-lg-6">
           <div class="about-content">
-            <h3 class="mb-4">Vår historia</h3>
+            <h3 class="mb-4">{{ $t("about.ourStory") }}</h3>
             <p class="mb-4">{{ $t("about.story") }}</p>
             <p class="mb-4">{{ $t("about.mission") }}</p>
 
             <div class="stats-grid">
               <div class="stat-item">
                 <div class="stat-number">50+</div>
-                <div class="stat-label">Nöjda kunder</div>
+                <div class="stat-label">{{ $t("about.stats.customers") }}</div>
               </div>
               <div class="stat-item">
                 <div class="stat-number">3+</div>
-                <div class="stat-label">År i branschen</div>
+                <div class="stat-label">{{ $t("about.stats.experience") }}</div>
               </div>
               <div class="stat-item">
                 <div class="stat-number">100%</div>
-                <div class="stat-label">Mobilanpassat</div>
+                <div class="stat-label">{{ $t("about.stats.mobile") }}</div>
               </div>
               <div class="stat-item">
                 <div class="stat-number">24/7</div>
-                <div class="stat-label">Support</div>
+                <div class="stat-label">{{ $t("about.stats.support") }}</div>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
             <div class="col-lg-5 col-md-6">
               <div class="team-card">
                 <div class="team-avatar">
-                  <i class="bi bi-person-circle"></i>
+                  <img src="/assets/1725475557070.jpg" alt="Francisco Mouat" class="team-photo">
                 </div>
                 <div class="team-info">
                   <h5>{{ $t("about.team.member1.name") }}</h5>
@@ -71,7 +71,7 @@
             <div class="col-lg-5 col-md-6">
               <div class="team-card">
                 <div class="team-avatar">
-                  <i class="bi bi-person-circle"></i>
+                  <img src="/assets/20250614_101238_9856F75C.jpg" alt="Albin Médoc" class="team-photo">
                 </div>
                 <div class="team-info">
                   <h5>{{ $t("about.team.member2.name") }}</h5>
@@ -152,6 +152,18 @@ import CodeBlock from "../components/CodeBlock.vue";
   font-size: 4rem;
   color: #007bff;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007bff;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
 }
 
 .team-info h5 {

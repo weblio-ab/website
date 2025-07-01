@@ -5,19 +5,39 @@
         <div class="col-lg-8 mx-auto text-center mb-5">
           <h2 class="display-5 fw-bold text-dark mb-3">{{ $t('pricing.title') }}</h2>
           <p class="lead text-muted">{{ $t('pricing.subtitle') }}</p>
+          
+          <!-- Price Toggle -->
+          <div class="pricing-toggle d-inline-flex bg-white rounded-pill p-1 mb-4">
+            <button 
+              @click="isAnnual = false" 
+              :class="['btn', 'btn-sm', 'px-4', 'rounded-pill', !isAnnual ? 'btn-primary' : 'btn-light']"
+            >
+              {{ $t('pricing.toggle.monthly') }}
+            </button>
+            <button 
+              @click="isAnnual = true" 
+              :class="['btn', 'btn-sm', 'px-4', 'rounded-pill', isAnnual ? 'btn-primary' : 'btn-light']"
+            >
+              {{ $t('pricing.toggle.annually') }} <span class="badge bg-success ms-1">{{ $t('pricing.toggle.save') }}</span>
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Pricing Cards -->
       <div class="row g-4 mb-5">
-        <!-- Basic Package -->
+        <!-- Email Package -->
         <div class="col-lg-4">
           <div class="pricing-card h-100">
             <div class="pricing-header">
               <h3>{{ $t('pricing.packages.basic.title') }}</h3>
               <div class="price">
-                <span class="amount">{{ $t('pricing.packages.basic.price') }}</span>
-                <span class="currency">{{ $t('pricing.packages.basic.currency') }}</span>
+                <span class="amount">
+                  {{ isAnnual ? $t('pricing.packages.basic.priceAnnual') : $t('pricing.packages.basic.price') }}
+                </span>
+                <span class="currency">
+                  {{ isAnnual ? $t('pricing.packages.basic.currencyAnnual') : $t('pricing.packages.basic.currency') }}
+                </span>
               </div>
               <p class="text-muted">{{ $t('pricing.packages.basic.description') }}</p>
             </div>
@@ -35,15 +55,19 @@
           </div>
         </div>
 
-        <!-- Professional Package -->
+        <!-- Start Package -->
         <div class="col-lg-4">
           <div class="pricing-card h-100 popular">
-            <div class="popular-badge">Populärast</div>
+            <div class="popular-badge">{{ $t('pricing.popular') }}</div>
             <div class="pricing-header">
               <h3>{{ $t('pricing.packages.professional.title') }}</h3>
               <div class="price">
-                <span class="amount">{{ $t('pricing.packages.professional.price') }}</span>
-                <span class="currency">{{ $t('pricing.packages.professional.currency') }}</span>
+                <span class="amount">
+                  {{ isAnnual ? $t('pricing.packages.professional.priceAnnual') : $t('pricing.packages.professional.price') }}
+                </span>
+                <span class="currency">
+                  {{ isAnnual ? $t('pricing.packages.professional.currencyAnnual') : $t('pricing.packages.professional.currency') }}
+                </span>
               </div>
               <p class="text-muted">{{ $t('pricing.packages.professional.description') }}</p>
             </div>
@@ -61,14 +85,18 @@
           </div>
         </div>
 
-        <!-- Premium Package -->
+        <!-- Start Premium Package -->
         <div class="col-lg-4">
           <div class="pricing-card h-100">
             <div class="pricing-header">
               <h3>{{ $t('pricing.packages.premium.title') }}</h3>
               <div class="price">
-                <span class="amount">{{ $t('pricing.packages.premium.price') }}</span>
-                <span class="currency">{{ $t('pricing.packages.premium.currency') }}</span>
+                <span class="amount">
+                  {{ isAnnual ? $t('pricing.packages.premium.priceAnnual') : $t('pricing.packages.premium.price') }}
+                </span>
+                <span class="currency">
+                  {{ isAnnual ? $t('pricing.packages.premium.currencyAnnual') : $t('pricing.packages.premium.currency') }}
+                </span>
               </div>
               <p class="text-muted">{{ $t('pricing.packages.premium.description') }}</p>
             </div>
@@ -87,7 +115,7 @@
         </div>
       </div>
 
-      <!-- Recurring Costs -->
+      <!-- Pricing Information -->
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="recurring-costs">
@@ -95,19 +123,19 @@
             <div class="row g-3">
               <div class="col-md-4 text-center">
                 <div class="recurring-item">
-                  <i class="bi bi-cloud-arrow-up fs-3 text-primary mb-2"></i>
+                  <i class="bi bi-info-circle fs-3 text-primary mb-2"></i>
                   <p class="mb-0">{{ $t('pricing.recurring.hosting') }}</p>
                 </div>
               </div>
               <div class="col-md-4 text-center">
                 <div class="recurring-item">
-                  <i class="bi bi-globe fs-3 text-primary mb-2"></i>
+                  <i class="bi bi-calendar-check fs-3 text-primary mb-2"></i>
                   <p class="mb-0">{{ $t('pricing.recurring.domain') }}</p>
                 </div>
               </div>
               <div class="col-md-4 text-center">
                 <div class="recurring-item">
-                  <i class="bi bi-headset fs-3 text-primary mb-2"></i>
+                  <i class="bi bi-credit-card fs-3 text-primary mb-2"></i>
                   <p class="mb-0">{{ $t('pricing.recurring.support') }}</p>
                 </div>
               </div>
@@ -120,10 +148,13 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { tm } = useI18n()
+
+// Pricing toggle state
+const isAnnual = ref(false)
 
 // Use tm() to get arrays directly from i18n
 const basicFeatures = computed(() => tm('pricing.packages.basic.features'))
@@ -132,6 +163,20 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
 </script>
 
 <style scoped>
+.pricing-toggle {
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.pricing-toggle .btn {
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.pricing-toggle .btn:focus {
+  box-shadow: none;
+}
+
 .pricing-card {
   background: white;
   border-radius: 16px;
@@ -140,6 +185,8 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
   position: relative;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card:hover {
@@ -198,6 +245,11 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
 
 .pricing-features {
   margin-bottom: 2rem;
+  flex: 1;
+}
+
+.pricing-footer {
+  margin-top: auto;
 }
 
 .pricing-features ul {
@@ -221,10 +273,33 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
 }
 
 .recurring-item {
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 12px;
   background: #f8f9ff;
   transition: all 0.3s ease;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.recurring-item i {
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.recurring-item p {
+  margin: 0;
+  line-height: 1.3;
+  font-size: 0.9rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .recurring-item:hover {
@@ -254,6 +329,15 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
   
   .recurring-costs {
     padding: 1.5rem;
+  }
+  
+  .pricing-toggle {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .pricing-toggle .btn {
+    margin: 0.25rem 0;
   }
 }
 </style>

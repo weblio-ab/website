@@ -80,79 +80,95 @@
   "pricing": {
     "title": "Transparenta priser",
     "subtitle": "Välj det paket som passar ditt företag bäst",
+    "popular": "Populärast",
+    "toggle": {
+      "monthly": "Månadsvis",
+      "annually": "Årsvis",
+      "save": "Bespara"
+    },
     "packages": {
       "basic": {
-        "title": "Start",
-        "price": "15 000",
-        "currency": "kr",
-        "description": "Perfekt för små företag som vill komma igång",
+        "title": "Endast E-post",
+        "price": "139",
+        "priceAnnual": "1 390",
+        "currency": "kr/mån",
+        "currencyAnnual": "kr/år",
+        "description": "Professionell e-postlösning för ditt företag",
         "features": [
-          "5 sidor",
-          "Responsiv design",
-          "Kontaktformulär",
-          "SEO-optimering",
-          "1 års webbhotell",
-          "Domän första året"
+          "Från 25 GB e-postutrymme",
+          "Upp till 5 e-postadresser",
+          "Fritt antal e-postalias",
+          "Webbmail",
+          "Spamfilter och autosvar"
         ]
       },
       "professional": {
-        "title": "Professionell",
-        "price": "25 000",
-        "currency": "kr",
-        "description": "Mest populära paketet med utökade funktioner",
+        "title": "Start Basic",
+        "price": "299",
+        "priceAnnual": "2 999",
+        "currency": "kr/mån",
+        "currencyAnnual": "kr/år",
+        "description": "Komplett lösning med hemsida och e-post",
         "features": [
-          "10 sidor",
-          "Anpassad design",
-          "Bokningssystem",
-          "Bildgalleri",
-          "Google Maps integration",
-          "Sociala medier-integration",
-          "1 års webbhotell",
-          "Domän första året"
+          "75 GB utrymme för hemsida och e-post",
+          "Upp till 5 e-postadresser",
+          "Fritt antal e-postalias",
+          "Webbmail",
+          "Spamfilter och autosvar",
+          "Utveckling av hemsida till rörligt pris"
         ],
         "popular": true
       },
       "premium": {
-        "title": "Premium",
-        "price": "35 000",
-        "currency": "kr",
-        "description": "Fullständig lösning för ambitiösa företag",
+        "title": "Start Premium",
+        "price": "649",
+        "priceAnnual": "6 490",
+        "currency": "kr/mån",
+        "currencyAnnual": "kr/år",
+        "description": "Premium-paket med utvecklingsavgift inkluderad första året",
         "features": [
-          "Obegränsat antal sidor",
-          "Helt anpassad design",
-          "Avancerat bokningssystem",
-          "E-handel (upp till 50 produkter)",
-          "Blogg/nyhetssystem",
-          "Avancerad SEO",
-          "Analyser och rapporter",
-          "1 års webbhotell",
-          "Domän första året"
+          "75 GB utrymme för hemsida och e-post",
+          "Upp till 5 e-postadresser",
+          "Fritt antal e-postalias",
+          "Webbmail",
+          "Spamfilter och autosvar",
+          "Utveckling av hemsida till fast pris",
+          "Utvecklingsavgift 4200 kr (engångsavgift)",
+          "3 månaders kostnadsfri support",
+          "Efter första året: 299 kr/mån"
         ]
       }
     },
     "recurring": {
-      "title": "Löpande kostnader",
-      "hosting": "Webbhotell: 200 kr/månad",
-      "domain": "Domänförnyelse: 150 kr/år",
-      "support": "Support & underhåll: 500 kr/månad (valfritt)"
+      "title": "Information om priser",
+      "hosting": "Alla priser anges per månad eller år",
+      "domain": "Årlig betalning ger bättre pris",
+      "support": "Flexibla betalningsalternativ"
     }
   },
   "about": {
     "title": "Om oss",
-    "subtitle": "Passionerade webbutvecklare med fokus på lokala företag",
-    "story": "Vi startade Weblio med en enkel idé: att göra professionella hemsidor tillgängliga för alla lokala företag. Som erfarna utvecklare såg vi att många småföretag behövde hjälp att synas online, men att de flesta lösningar var antingen för dyra eller för komplicerade.",
-    "mission": "Vår mission är att hjälpa lokala företag att växa genom att ge dem verktyg de behöver för att lyckas online. Vi tror på transparens, enkelhet och personlig service.",
+    "subtitle": "Passionerade webbutvecklare med fokus på både företag och privatpersoner",
+    "ourStory": "Vår historia",
+    "story": "Vi startade Weblio med en enkel idé: att göra professionella hemsidor tillgängliga för alla företag men även för privatpersoner. Som erfarna utvecklare såg vi att främst många företag behövde hjälp att synas online, men att de flesta lösningar var antingen för dyra eller för komplicerade.",
+    "mission": "Vår mission är att hjälpa företag att växa genom att ge dem verktyg de behöver för att lyckas online. Vi tror på transparens, enkelhet och personlig service.",
+    "stats": {
+      "customers": "Nöjda kunder",
+      "experience": "År i branschen", 
+      "mobile": "Mobilanpassat",
+      "support": "Support"
+    },
     "team": {
       "title": "Vårt team",
       "member1": {
-        "name": "Anna Karlsson",
-        "role": "Grundare & Lead Developer",
-        "description": "10+ års erfarenhet av webbutveckling och passion för clean code"
+        "name": "Francisco Mouat",
+        "role": "Grundare & UX/UI Designer",
+        "description": "4+ års erfarenhet av systemutveckling och leverans till kunder."
       },
       "member2": {
-        "name": "Erik Johansson",
-        "role": "UX/UI Designer",
-        "description": "Specialist på användarvänlig design som konverterar besökare till kunder"
+        "name": "Albin Médoc",
+        "role": "Delägare & Lead Developer",
+        "description": "8+ års erfarenhet av systemutveckling och specialist på användarvänlig design & clean code."
       }
     }
   },
@@ -180,7 +196,7 @@
     },
     "info": {
       "title": "Kontaktinformation",
-      "phone": "Telefon: 08-123 45 67",
+      "phone": "Telefon: 040-648 50 43",
       "email": "{'E-post: info@weblio.se'}",
       "consultation": "Gratis konsultation",
       "consultationText": "Vi erbjuder alltid en kostnadsfri konsultation där vi går igenom dina behov och ger dig råd oavsett om du väljer att jobba med oss eller inte."
@@ -207,12 +223,11 @@
     }
   },
   "footer": {
-    "tagline": "Professionella hemsidor för lokala företag",
     "quickLinks": "Snabblänkar",
     "contact": "Kontakt",
-    "phone": "08-123 45 67",
+    "phone": "040-648 50 43",
     "email": "{'info@weblio.se'}",
-    "address": "Stockholm, Sverige",
+    "address": "Malmö, Sverige",
     "copyright": "© 2025 Weblio. Alla rättigheter förbehållna."
   },
   "common": {

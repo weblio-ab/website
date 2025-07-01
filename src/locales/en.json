@@ -80,79 +80,95 @@
   "pricing": {
     "title": "Transparent pricing",
     "subtitle": "Choose the package that best fits your business",
+    "popular": "Most Popular",
+    "toggle": {
+      "monthly": "Monthly",
+      "annually": "Annually",
+      "save": "Save"
+    },
     "packages": {
       "basic": {
-        "title": "Starter",
-        "price": "1,500",
-        "currency": "€",
-        "description": "Perfect for small businesses getting started",
+        "title": "Email",
+        "price": "139",
+        "priceAnnual": "1 390",
+        "currency": "SEK/month",
+        "currencyAnnual": "SEK/year",
+        "description": "Professional email solution for your business",
         "features": [
-          "5 pages",
-          "Responsive design",
-          "Contact form",
-          "SEO optimization",
-          "1 year web hosting",
-          "Domain first year"
+          "From 25 GB email storage",
+          "Up to 5 email addresses",
+          "Unlimited email aliases",
+          "Webmail",
+          "Spam filter and auto-reply"
         ]
       },
       "professional": {
-        "title": "Professional",
-        "price": "2,500",
-        "currency": "€",
-        "description": "Most popular package with extended features",
+        "title": "Start",
+        "price": "299",
+        "priceAnnual": "2 999",
+        "currency": "SEK/month",
+        "currencyAnnual": "SEK/year",
+        "description": "Complete solution with website and email",
         "features": [
-          "10 pages",
-          "Custom design",
-          "Booking system",
-          "Image gallery",
-          "Google Maps integration",
-          "Social media integration",
-          "1 year web hosting",
-          "Domain first year"
+          "75 GB storage for website and email",
+          "Up to 5 email addresses",
+          "Unlimited email aliases",
+          "Webmail",
+          "Spam filter and auto-reply",
+          "Website development"
         ],
         "popular": true
       },
       "premium": {
-        "title": "Premium",
-        "price": "3,500",
-        "currency": "€",
-        "description": "Complete solution for ambitious businesses",
+        "title": "Start Premium",
+        "price": "649",
+        "priceAnnual": "6 499",
+        "currency": "SEK/month",
+        "currencyAnnual": "SEK/year",
+        "description": "Premium package with development fee included first year",
         "features": [
-          "Unlimited pages",
-          "Fully custom design",
-          "Advanced booking system",
-          "E-commerce (up to 50 products)",
-          "Blog/news system",
-          "Advanced SEO",
-          "Analytics and reports",
-          "1 year web hosting",
-          "Domain first year"
+          "75 GB storage for website and email",
+          "Up to 5 email addresses",
+          "Unlimited email aliases",
+          "Webmail",
+          "Spam filter and auto-reply",
+          "Website development",
+          "Development fee SEK 4 200 (one-time fee)",
+          "3 months free support",
+          "After year 1: SEK 299/month (no setup fee)"
         ]
       }
     },
     "recurring": {
-      "title": "Recurring costs",
-      "hosting": "Web hosting: €20/month",
-      "domain": "Domain renewal: €15/year",
-      "support": "Support & maintenance: €50/month (optional)"
+      "title": "Pricing information",
+      "hosting": "All prices are per month or year",
+      "domain": "Annual payment gives better price",
+      "support": "Flexible payment options"
     }
   },
   "about": {
     "title": "About us",
-    "subtitle": "Passionate web developers focused on local businesses",
-    "story": "We started Weblio with a simple idea: to make professional websites accessible to all local businesses. As experienced developers, we saw that many small businesses needed help being visible online, but most solutions were either too expensive or too complicated.",
-    "mission": "Our mission is to help local businesses grow by giving them the tools they need to succeed online. We believe in transparency, simplicity and personal service.",
+    "subtitle": "Passionate web developers focused on businesses",
+    "ourStory": "Our story",
+    "story": "We started Weblio with a simple idea: to make professional websites accessible to all businesses. As experienced developers, we saw that many small businesses needed help being visible online, but most solutions were either too expensive or too complicated.",
+    "mission": "Our mission is to help businesses grow by giving them the tools they need to succeed online. We believe in transparency, simplicity and personal service.",
+    "stats": {
+      "customers": "Happy customers",
+      "experience": "Years in business",
+      "mobile": "Mobile optimized", 
+      "support": "Support"
+    },
     "team": {
       "title": "Our team",
       "member1": {
-        "name": "Anna Karlsson",
-        "role": "Founder & Lead Developer",
-        "description": "10+ years of web development experience and passion for clean code"
+        "name": "Francisco Mouat",
+        "role": "Founder & UX/UI Designer",
+        "description": "4+ years of experience in system development and customer delivery."
       },
       "member2": {
-        "name": "Erik Johansson",
-        "role": "UX/UI Designer",
-        "description": "Specialist in user-friendly design that converts visitors to customers"
+        "name": "Albin Médoc",
+        "role": "Co-owner & Lead Developer",
+        "description": "8+ years of experience in system development and specialist in user-friendly design & clean code."
       }
     }
   },
@@ -207,7 +223,6 @@
     }
   },
   "footer": {
-    "tagline": "Professional websites for local businesses",
     "quickLinks": "Quick links",
     "contact": "Contact",
     "phone": "+46 8-123 45 67",
