@@ -2,15 +2,15 @@
   <section id="services" class="py-5 bg-light" ref="sectionRef">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto text-center mb-5" :class="{ 'fade-in-up': isVisible }">
+        <div class="col-lg-8 mx-auto text-center mb-5">
           <h2 class="display-5 fw-bold text-dark mb-3">{{ $t('services.title') }}</h2>
           <p class="lead text-muted">{{ $t('services.subtitle') }}</p>
         </div>
       </div>
 
-      <!-- Service Cards - Desktop Grid -->
-      <div class="row g-4 mb-5 d-none d-md-flex">
-        <div class="col-md-6 col-lg-3" :class="{ 'fade-in-up': isVisible }" style="animation-delay: 0.1s">
+      <!-- Service Cards - All devices (stacked on mobile, grid on desktop) -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-3">
           <div class="service-card h-100">
             <div class="service-icon">
               <i class="bi bi-palette"></i>
@@ -19,7 +19,7 @@
             <p class="text-muted">{{ $t('services.items.design.description') }}</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3" :class="{ 'fade-in-up': isVisible }" style="animation-delay: 0.2s">
+        <div class="col-md-6 col-lg-3">
           <div class="service-card h-100">
             <div class="service-icon">
               <i class="bi bi-code-slash"></i>
@@ -28,7 +28,7 @@
             <p class="text-muted">{{ $t('services.items.development.description') }}</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3" :class="{ 'fade-in-up': isVisible }" style="animation-delay: 0.3s">
+        <div class="col-md-6 col-lg-3">
           <div class="service-card h-100">
             <div class="service-icon">
               <i class="bi bi-cloud"></i>
@@ -37,7 +37,7 @@
             <p class="text-muted">{{ $t('services.items.hosting.description') }}</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3" :class="{ 'fade-in-up': isVisible }" style="animation-delay: 0.4s">
+        <div class="col-md-6 col-lg-3">
           <div class="service-card h-100">
             <div class="service-icon">
               <i class="bi bi-headset"></i>
@@ -48,73 +48,14 @@
         </div>
       </div>
 
-      <!-- Service Cards - Mobile Slider -->
-      <div class="d-md-none mb-5">
-        <div class="services-slider-container">
-          <div 
-            ref="sliderRef" 
-            class="services-slider"
-            :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
-          >
-            <div class="service-slide">
-              <div class="service-card h-100">
-                <div class="service-icon">
-                  <i class="bi bi-palette"></i>
-                </div>
-                <h4>{{ $t('services.items.design.title') }}</h4>
-                <p class="text-muted">{{ $t('services.items.design.description') }}</p>
-              </div>
-            </div>
-            
-            <div class="service-slide">
-              <div class="service-card h-100">
-                <div class="service-icon">
-                  <i class="bi bi-code-slash"></i>
-                </div>
-                <h4>{{ $t('services.items.development.title') }}</h4>
-                <p class="text-muted">{{ $t('services.items.development.description') }}</p>
-              </div>
-            </div>
-            
-            <div class="service-slide">
-              <div class="service-card h-100">
-                <div class="service-icon">
-                  <i class="bi bi-cloud"></i>
-                </div>
-                <h4>{{ $t('services.items.hosting.title') }}</h4>
-                <p class="text-muted">{{ $t('services.items.hosting.description') }}</p>
-              </div>
-            </div>
-            
-            <div class="service-slide">
-              <div class="service-card h-100">
-                <div class="service-icon">
-                  <i class="bi bi-headset"></i>
-                </div>
-                <h4>{{ $t('services.items.support.title') }}</h4>
-                <p class="text-muted">{{ $t('services.items.support.description') }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Slide indicators -->
-        <div class="services-indicators mt-4">
-          <button 
-            v-for="(_, index) in 4" 
-            :key="index"
-            @click="goToSlide(index)"
-            :class="['indicator', { active: currentSlide === index }]"
-            :aria-label="`Gå till tjänst ${index + 1}`"
-          ></button>
-        </div>
-      </div>
-
       <!-- Process Section -->
       <div class="row">
         <div class="col-12">
-          <div class="process-section" :class="{ 'fade-in-up': isVisible }" style="animation-delay: 0.5s">
+          <div class="process-section">
             <h3 class="text-center mb-5">{{ $t('services.process.title') }}</h3>
-            <div class="row g-4">
+            
+            <!-- Desktop Grid -->
+            <div class="row g-4 d-none d-md-flex">
               <div class="col-md-6 col-lg-3" v-for="(step, idx) in 4" :key="idx">
                 <div class="process-step text-center">
                   <div class="step-number">{{ idx + 1 }}</div>
@@ -122,6 +63,25 @@
                   <p class="text-muted">{{ $t(`services.process.step${idx+1}.description`) }}</p>
                 </div>
               </div>
+            </div>
+
+            <!-- Mobile Swiper -->
+            <div class="d-md-none">
+              <Swiper
+                :modules="[Pagination]"
+                :slides-per-view="1"
+                :space-between="30"
+                :pagination="{ clickable: true }"
+                class="process-swiper"
+              >
+                <SwiperSlide v-for="(step, idx) in 4" :key="idx">
+                  <div class="process-step text-center">
+                    <div class="step-number">{{ idx + 1 }}</div>
+                    <h5>{{ $t(`services.process.step${idx+1}.title`) }}</h5>
+                    <p class="text-muted">{{ $t(`services.process.step${idx+1}.description`) }}</p>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
         </div>
@@ -132,19 +92,14 @@
 
 <script setup>
 import { useIntersectionObserver } from '../composables/useIntersectionObserver'
-import { useTouchSlider } from '../composables/useTouchSlider'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination } from 'swiper/modules'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const { isVisible, target: sectionRef } = useIntersectionObserver(0.1)
-
-// Touch slider för mobil
-const { 
-  sliderRef, 
-  currentSlide, 
-  translateX, 
-  goToSlide 
-} = useTouchSlider(4, {
-  itemsPerView: { mobile: 1, tablet: 2, desktop: 4 }
-})
 </script>
 
 <style scoped>
@@ -156,6 +111,7 @@ const {
   text-align: center;
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 123, 255, 0.1);
+  height: 100%;
 }
 
 .service-card:hover {
@@ -225,92 +181,40 @@ const {
   }
 }
 
-/* Mobile slider styles för services */
-.services-slider-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  touch-action: pan-y;
+/* Process Swiper customization */
+.process-swiper {
+  padding-bottom: 50px;
 }
 
-.services-slider {
-  display: flex;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
+.process-swiper :deep(.swiper-pagination) {
+  bottom: 10px;
 }
 
-.service-slide {
-  flex: 0 0 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Slide indicators för services */
-.services-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.indicator {
+.process-swiper :deep(.swiper-pagination-bullet) {
+  background: #dee2e6;
   width: 12px;
   height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: #dee2e6;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  opacity: 1;
 }
 
-.indicator.active {
+.process-swiper :deep(.swiper-pagination-bullet-active) {
   background: #007bff;
   transform: scale(1.2);
 }
 
-.indicator:hover {
-  background: #6c757d;
-}
-
-/* Förbättra touch-interaktion för services */
-.services-slider-container {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.services-slider:not(.dragging) {
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+.process-swiper :deep(.swiper-slide) {
+  height: auto;
+  padding: 0 20px;
 }
 
 @media (max-width: 767.98px) {
   .service-card {
     padding: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   .process-section {
     padding: 2rem 1rem;
-  }
-  
-  .services-slider-container {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .service-slide {
-    padding: 0 15px;
-  }
-
-  /* Se till att service-kortet centreras */
-  .service-slide .service-card {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
   }
 }
 </style>

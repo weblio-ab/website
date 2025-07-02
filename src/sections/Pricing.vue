@@ -120,7 +120,9 @@
         <div class="col-lg-8 mx-auto">
           <div class="recurring-costs">
             <h4 class="text-center mb-4">{{ $t('pricing.recurring.title') }}</h4>
-            <div class="row g-3">
+            
+            <!-- Desktop Grid -->
+            <div class="row g-3 d-none d-md-flex">
               <div class="col-md-4 text-center">
                 <div class="recurring-item">
                   <i class="bi bi-info-circle fs-3 text-primary mb-2"></i>
@@ -140,6 +142,38 @@
                 </div>
               </div>
             </div>
+
+            <!-- Mobile Swiper -->
+            <div class="d-md-none">
+              <Swiper
+                :modules="[Pagination]"
+                :slides-per-view="1"
+                :space-between="20"
+                :pagination="{ clickable: true }"
+                class="recurring-swiper"
+              >
+                <SwiperSlide>
+                  <div class="recurring-item text-center">
+                    <i class="bi bi-info-circle fs-3 text-primary mb-2"></i>
+                    <p class="mb-0">{{ $t('pricing.recurring.hosting') }}</p>
+                  </div>
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                  <div class="recurring-item text-center">
+                    <i class="bi bi-calendar-check fs-3 text-primary mb-2"></i>
+                    <p class="mb-0">{{ $t('pricing.recurring.domain') }}</p>
+                  </div>
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                  <div class="recurring-item text-center">
+                    <i class="bi bi-credit-card fs-3 text-primary mb-2"></i>
+                    <p class="mb-0">{{ $t('pricing.recurring.support') }}</p>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
         </div>
       </div>
@@ -150,6 +184,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination } from 'swiper/modules'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const { tm } = useI18n()
 
@@ -300,12 +340,36 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
   justify-content: center;
   word-wrap: break-word;
   hyphens: auto;
-}
+}  .recurring-item:hover {
+    background: #e3f2fd;
+    transform: translateY(-2px);
+  }
 
-.recurring-item:hover {
-  background: #e3f2fd;
-  transform: translateY(-2px);
-}
+  /* Recurring Swiper customization */
+  .recurring-swiper {
+    padding-bottom: 50px;
+  }
+
+  .recurring-swiper :deep(.swiper-pagination) {
+    bottom: 10px;
+  }
+
+  .recurring-swiper :deep(.swiper-pagination-bullet) {
+    background: #dee2e6;
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+  }
+
+  .recurring-swiper :deep(.swiper-pagination-bullet-active) {
+    background: #007bff;
+    transform: scale(1.2);
+  }
+
+  .recurring-swiper :deep(.swiper-slide) {
+    height: auto;
+    padding: 0 15px;
+  }
 
 @media (max-width: 991.98px) {
   .pricing-card.popular {

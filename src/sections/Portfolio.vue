@@ -40,54 +40,43 @@
 
       <!-- Mobile Slider -->
       <div class="d-md-none">
-        <div class="portfolio-slider-container">
-          <div 
-            ref="sliderRef" 
-            class="portfolio-slider"
-            :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
-          >
-            <div class="portfolio-slide">
-              <Project
-                :category="$t('portfolio.projects.restaurant.category')"
-                :title="$t('portfolio.projects.restaurant.title')"
-                :description="$t('portfolio.projects.restaurant.description')"
-                url="https://bistrogota.se"
-                image-url="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              />
-            </div>
-            
-            <div class="portfolio-slide">
-              <Project
-                :category="$t('portfolio.projects.salon.category')"
-                :title="$t('portfolio.projects.salon.title')"
-                :description="$t('portfolio.projects.salon.description')"
-                url="https://ameasalong.se"
-                image-url="/assets/projects/ameasalong.png"
-              />
-            </div>
-            
-            <div class="portfolio-slide">
-              <Project
-                :category="$t('portfolio.projects.company.category')"
-                :title="$t('portfolio.projects.company.title')"
-                :description="$t('portfolio.projects.company.description')"
-                url="https://byggfirmanord.se"
-                image-url="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              />
-            </div>
-          </div>
-        </div>
-        
-        <!-- Slide indicators -->
-        <div class="portfolio-indicators mt-4">
-          <button 
-            v-for="(_, index) in 3" 
-            :key="index"
-            @click="goToSlide(index)"
-            :class="['indicator', { active: currentSlide === index }]"
-            :aria-label="`Gå till projekt ${index + 1}`"
-          ></button>
-        </div>
+        <Swiper
+          :modules="[Pagination]"
+          :slides-per-view="1"
+          :space-between="20"
+          :pagination="{ clickable: true }"
+          class="portfolio-swiper"
+        >
+          <SwiperSlide>
+            <Project
+              :category="$t('portfolio.projects.restaurant.category')"
+              :title="$t('portfolio.projects.restaurant.title')"
+              :description="$t('portfolio.projects.restaurant.description')"
+              url="https://bistrogota.se"
+              image-url="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            />
+          </SwiperSlide>
+          
+          <SwiperSlide>
+            <Project
+              :category="$t('portfolio.projects.salon.category')"
+              :title="$t('portfolio.projects.salon.title')"
+              :description="$t('portfolio.projects.salon.description')"
+              url="https://ameasalong.se"
+              image-url="/assets/projects/ameasalong.png"
+            />
+          </SwiperSlide>
+          
+          <SwiperSlide>
+            <Project
+              :category="$t('portfolio.projects.company.category')"
+              :title="$t('portfolio.projects.company.title')"
+              :description="$t('portfolio.projects.company.description')"
+              url="https://byggfirmanord.se"
+              image-url="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   </section>
@@ -95,97 +84,41 @@
 
 <script setup>
 import Project from '../components/Project.vue'
-import { useTouchSlider } from '../composables/useTouchSlider'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination } from 'swiper/modules'
 
-// Touch slider för mobil
-const { 
-  sliderRef, 
-  currentSlide, 
-  goToSlide 
-} = useTouchSlider(3, {
-  itemsPerView: { mobile: 1, tablet: 2, desktop: 3 }
-})
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
 </script>
 
 <style scoped>
-/* Mobile slider styles */
-.portfolio-slider-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  touch-action: pan-y; /* Tillåt vertikal scroll, förhindra horisontell */
+/* Swiper customization for portfolio */
+.portfolio-swiper {
+  padding-bottom: 50px;
 }
 
-.portfolio-slider {
-  display: flex;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
+.portfolio-swiper :deep(.swiper-pagination) {
+  bottom: 10px;
 }
 
-.portfolio-slide {
-  flex: 0 0 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Slide indicators */
-.portfolio-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.indicator {
+.portfolio-swiper :deep(.swiper-pagination-bullet) {
+  background: #dee2e6;
   width: 12px;
   height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: #dee2e6;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  opacity: 1;
 }
 
-.indicator.active {
+.portfolio-swiper :deep(.swiper-pagination-bullet-active) {
   background: #007bff;
   transform: scale(1.2);
 }
 
-.indicator:hover {
-  background: #6c757d;
-}
-
-/* Förbättra touch-interaktion */
-.portfolio-slider-container {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Smooth transitions när inte dragging */
-.portfolio-slider:not(.dragging) {
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-@media (max-width: 767.98px) {
-  .portfolio-slider-container {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .portfolio-slide {
-    padding: 0 15px;
-  }
-
-  /* Se till att projekt-kortet centreras */
-  .portfolio-slide :deep(.col-lg-4) {
-    width: 100%;
-    max-width: none;
-  }
+.portfolio-swiper :deep(.swiper-slide) {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 </style>
