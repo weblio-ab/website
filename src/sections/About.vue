@@ -20,8 +20,8 @@
             <!-- Desktop Stats Grid -->
             <div class="stats-grid d-none d-md-block">
               <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">{{ $t("about.stats.customers") }}</div>
+                <div class="stat-number">4.5<span class="rating-divider">/</span><span class="rating-max">5</span></div>
+                <div class="stat-label">{{ $t("about.stats.rating") }}</div>
               </div>
               <div class="stat-item">
                 <div class="stat-number">3+</div>
@@ -47,8 +47,8 @@
                 >
                   <div class="stat-slide">
                     <div class="stat-item">
-                      <div class="stat-number">50+</div>
-                      <div class="stat-label">{{ $t("about.stats.customers") }}</div>
+                      <div class="stat-number">4.5<span class="rating-divider">/</span><span class="rating-max">5</span></div>
+                      <div class="stat-label">{{ $t("about.stats.rating") }}</div>
                     </div>
                   </div>
                   
@@ -181,6 +181,17 @@ const {
   font-weight: bold;
   color: #007bff;
   margin-bottom: 0.5rem;
+}
+
+.rating-divider {
+  color: #6c757d;
+  font-weight: normal;
+  margin: 0 0.1em;
+}
+
+.rating-max {
+  color: #6c757d;
+  font-weight: normal;
 }
 
 .stat-label {
