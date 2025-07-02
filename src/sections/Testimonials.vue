@@ -4,7 +4,6 @@
       <div class="row">
         <div class="col-lg-8 mx-auto text-center mb-5">
           <h2 class="display-5 fw-bold text-dark mb-3">{{ $t('testimonials.title') }}</h2>
-          <p class="lead text-muted">{{ $t('testimonials.subtitle') }}</p>
         </div>
       </div>
 
