@@ -44,7 +44,7 @@
             <div class="pricing-features">
               <ul class="list-unstyled">
                 <li v-for="feature in basicFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-success"></i>
+                  <i class="bi bi-check-circle-fill text-primary"></i>
                   <span>{{ feature }}</span>
                 </li>
               </ul>
@@ -74,7 +74,7 @@
             <div class="pricing-features">
               <ul class="list-unstyled">
                 <li v-for="feature in professionalFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-success"></i>
+                  <i class="bi bi-check-circle-fill text-primary"></i>
                   <span>{{ feature }}</span>
                 </li>
               </ul>
@@ -103,7 +103,7 @@
             <div class="pricing-features">
               <ul class="list-unstyled">
                 <li v-for="feature in premiumFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-success"></i>
+                  <i class="bi bi-check-circle-fill text-primary"></i>
                   <span>{{ feature }}</span>
                 </li>
               </ul>
