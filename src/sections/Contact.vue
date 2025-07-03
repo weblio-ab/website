@@ -24,7 +24,7 @@
                 <i class="bi bi-telephone"></i>
               </div>
               <div class="contact-details">
-                <p class="mb-0">{{ $t('common.phone') }}: {{ $t('company.phone') }}</p>
+                <p class="mb-0">{{ $t('common.phone') }}: <PhoneObfuscate :phone="$t('company.phone')" /></p>
               </div>
             </div>
             
@@ -54,6 +54,7 @@
 <script setup>
 import ContactForm from '../components/ContactForm.vue'
 import EmailObfuscate from '../components/EmailObfuscate.vue'
+import PhoneObfuscate from '../components/PhoneObfuscate.vue'
 </script>
 
 <style scoped>

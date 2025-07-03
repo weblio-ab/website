@@ -41,7 +41,7 @@
           <div class="contact-info">
             <div class="contact-item">
               <i class="bi bi-telephone me-2"></i>
-              <span>{{ $t('company.phone') }}</span>
+              <PhoneObfuscate :phone="$t('company.phone')" link-class="text-light" />
             </div>
             <div class="contact-item">
               <i class="bi bi-envelope me-2"></i>
@@ -49,7 +49,7 @@
             </div>
             <div class="contact-item">
               <i class="bi bi-geo-alt me-2"></i>
-              <span>{{ $t('company.address') }}</span>
+              <span class="text-light">{{ $t('company.address') }}</span>
             </div>
           </div>
         </div>
@@ -87,6 +87,7 @@
 
 <script setup>
 import EmailObfuscate from '../components/EmailObfuscate.vue'
+import PhoneObfuscate from '../components/PhoneObfuscate.vue'
 </script>
 
 <style scoped>
