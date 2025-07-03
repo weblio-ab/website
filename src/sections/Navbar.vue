@@ -44,8 +44,8 @@
               {{ locale.toUpperCase() }}
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" @click="changeLocale('sv')">Svenska</a></li>
-              <li><a class="dropdown-item" href="#" @click="changeLocale('en')">English</a></li>
+              <li><a class="dropdown-item" href="#" @click="changeLocale('sv')">{{ $t('language.swedish') }}</a></li>
+              <li><a class="dropdown-item" href="#" @click="changeLocale('en')">{{ $t('language.english') }}</a></li>
             </ul>
           </div>
 

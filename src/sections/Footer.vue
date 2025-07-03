@@ -55,14 +55,14 @@
         </div>
         
         <div class="col-lg-3 col-md-6">
-          <h6 class="text-white mb-3">Teknologi</h6>
+          <h6 class="text-white mb-3">{{ $t('footer.technology') }}</h6>
           <div class="tech-badges">
-            <span class="tech-badge">Vue.js</span>
-            <span class="tech-badge">Bootstrap</span>
-            <span class="tech-badge">Responsive</span>
-            <span class="tech-badge">SEO</span>
-            <span class="tech-badge">PWA</span>
-            <span class="tech-badge">Modern</span>
+            <span class="tech-badge">{{ $t('footer.techBadges.vue') }}</span>
+            <span class="tech-badge">{{ $t('footer.techBadges.bootstrap') }}</span>
+            <span class="tech-badge">{{ $t('footer.techBadges.responsive') }}</span>
+            <span class="tech-badge">{{ $t('footer.techBadges.seo') }}</span>
+            <span class="tech-badge">{{ $t('footer.techBadges.pwa') }}</span>
+            <span class="tech-badge">{{ $t('footer.techBadges.modern') }}</span>
           </div>
         </div>
       </div>
@@ -75,9 +75,9 @@
         </div>
         <div class="col-md-6 text-md-end">
           <div class="footer-links-inline">
-            <a href="#" class="text-light-emphasis">Integritetspolicy</a>
-            <a href="#" class="text-light-emphasis">Villkor</a>
-            <a href="#" class="text-light-emphasis">Cookies</a>
+            <a href="#" class="text-light-emphasis">{{ $t('footer.privacy') }}</a>
+            <a href="#" class="text-light-emphasis">{{ $t('footer.terms') }}</a>
+            <a href="#" class="text-light-emphasis">{{ $t('footer.cookies') }}</a>
           </div>
         </div>
       </div>

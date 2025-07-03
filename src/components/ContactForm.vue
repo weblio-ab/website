@@ -5,7 +5,7 @@
       <div class="d-flex align-items-center">
         <i class="bi me-2" :class="formSubmissionStatus === 'success' ? 'bi-check-circle' : 'bi-exclamation-triangle'"></i>
         <span>{{ formSubmissionMessage }}</span>
-        <button type="button" class="btn-close ms-auto" @click="clearFormStatus" aria-label="Stäng"></button>
+        <button type="button" class="btn-close ms-auto" @click="clearFormStatus" :aria-label="$t('common.close')"></button>
       </div>
     </div>
     

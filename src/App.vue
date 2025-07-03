@@ -35,9 +35,9 @@ onUnmounted(() => {
     <div v-if="isLoading" class="loader-overlay">
       <div class="loader-content">
         <div class="loader-logo">
-          <img src="/assets/icon.svg" alt="Weblio" class="loader-logo-image">
+          <img src="/assets/icon.svg" alt="{{ $t('company.name') }}" class="loader-logo-image">
         </div>
-        <h2>Weblio</h2>
+        <h2>{{ $t('company.name') }}</h2>
         <div class="loader-spinner"></div>
       </div>
     </div>
@@ -62,7 +62,7 @@ onUnmounted(() => {
         v-if="showBackToTop && !isLoading"
         @click="scrollToTop"
         class="back-to-top"
-        aria-label="Tillbaka till toppen"
+        :aria-label="$t('navigation.backToTop')"
       >
         <i class="bi bi-chevron-up"></i>
       </button>

@@ -5,7 +5,8 @@
     "portfolio": "Portfolio",
     "pricing": "Priser",
     "about": "Om oss",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "backToTop": "Tillbaka till toppen"
   },
   "company": {
     "name": "Weblio",
@@ -229,7 +230,19 @@
   "footer": {
     "quickLinks": "Snabblänkar",
     "contact": "Kontakt",
-    "copyright": "© 2025 Weblio. Alla rättigheter förbehållna."
+    "technology": "Teknologi",
+    "privacy": "Integritetspolicy",
+    "terms": "Villkor",
+    "cookies": "Cookies",
+    "copyright": "© 2025 Weblio. Alla rättigheter förbehållna.",
+    "techBadges": {
+      "vue": "Vue.js",
+      "bootstrap": "Bootstrap",
+      "responsive": "Responsiv",
+      "seo": "SEO",
+      "pwa": "PWA",
+      "modern": "Modern"
+    }
   },
   "common": {
     "readMore": "Läs mer",
@@ -237,6 +250,11 @@
     "learnMore": "Lär dig mer",
     "viewAll": "Se alla",
     "email": "E-post",
-    "phone": "Telefon"
+    "phone": "Telefon",
+    "close": "Stäng"
+  },
+  "language": {
+    "swedish": "Svenska",
+    "english": "English"
   }
 }

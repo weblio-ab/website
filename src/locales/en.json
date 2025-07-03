@@ -5,7 +5,8 @@
     "portfolio": "Portfolio",
     "pricing": "Pricing",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "backToTop": "Back to top"
   },
   "company": {
     "name": "Weblio",
@@ -14,11 +15,11 @@
     "address": "Skåne, Sweden"
   },
   "hero": {
-    "title": "Professional web solutions for businesses and private clients",
-    "subtitle": "From idea to live website - we handle everything",
-    "description": "We build secure, user-friendly websites designed to grow your business – with lasting impact and measurable results.",
+    "title": "Professional websites for businesses and individuals",
+    "subtitle": "From idea to finished website on the web - we handle everything",
+    "description": "We create secure and intuitive websites that support your business goals - with a focus on long-term value creation.",
     "cta": "Get a free consultation",
-    "ctaSecondary": "View our pricing"
+    "ctaSecondary": "See our prices"
   },
   "services": {
     "title": "Our services",
@@ -155,14 +156,14 @@
   },
   "about": {
     "title": "About us",
-    "subtitle": "Passionate web developers focused on businesses",
+    "subtitle": "Passionate web developers focused on businesses and individuals",
     "ourStory": "Our story",
-    "story": "We started Weblio with a simple idea: to make professional websites accessible to all businesses. As experienced developers, we saw that many small businesses needed help being visible online, but most solutions were either too expensive or too complicated.",
+    "story": "We started Weblio with a simple idea: to make professional websites accessible to all businesses and individuals. As experienced developers, we saw that many businesses needed help being visible online, but most solutions were either too expensive or too complicated.",
     "mission": "Our mission is to help businesses grow by giving them the tools they need to succeed online. We believe in transparency, simplicity and personal service.",
     "stats": {
       "rating": "Customer rating",
       "experience": "Years in business",
-      "mobile": "Mobile optimized", 
+      "mobile": "Mobile optimized",
       "support": "Support"
     },
     "team": {
@@ -175,7 +176,7 @@
       "member2": {
         "name": "Albin Médoc",
         "role": "Co-owner & Lead Developer",
-        "description": "8+ years of experience in system development and specialist in user-friendly design & clean code."
+        "description": "8+ years of experience in system development, specialized in user-friendly design and functionality."
       }
     }
   },
@@ -227,9 +228,21 @@
     }
   },
   "footer": {
-    "quickLinks": "Quick links",
+    "quickLinks": "Quick Links",
     "contact": "Contact",
-    "copyright": "© 2025 Weblio. All rights reserved."
+    "technology": "Technology",
+    "privacy": "Privacy Policy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "copyright": "© 2025 Weblio. All rights reserved.",
+    "techBadges": {
+      "vue": "Vue.js",
+      "bootstrap": "Bootstrap",
+      "responsive": "Responsive",
+      "seo": "SEO",
+      "pwa": "PWA",
+      "modern": "Modern"
+    }
   },
   "common": {
     "readMore": "Read more",
@@ -237,6 +250,11 @@
     "learnMore": "Learn more",
     "viewAll": "View all",
     "email": "Email",
-    "phone": "Phone"
+    "phone": "Phone",
+    "close": "Close"
+  },
+  "language": {
+    "swedish": "Svenska",
+    "english": "English"
   }
 }
