@@ -1,0 +1,12 @@
+{
+    "workbench.editorAssociations": {
+        "*.svg": "default"
+    },
+    "vue-i18n.localesPaths": [
+        "src/locales"
+    ],
+    "vue-i18n.keystyle": "nested",
+    "i18n-ally.localesPaths": [
+        "src/locales"
+    ]
+}
