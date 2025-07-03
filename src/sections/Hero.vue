@@ -13,13 +13,13 @@
             <p class="fs-5 mb-4 d-none d-lg-block">
               {{ $t('hero.description') }}
             </p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
               <a href="#contact" class="btn btn-primary btn-lg">
                 <i class="bi bi-chat-dots me-2"></i>
                 {{ $t('hero.cta') }}
               </a>
-              <a href="#portfolio" class="btn btn-outline-primary btn-lg">
-                <i class="bi bi-eye me-2"></i>
+              <a href="#pricing" class="btn btn-outline-primary btn-lg">
+                <i class="bi bi-tag me-2"></i>
                 {{ $t('hero.ctaSecondary') }}
               </a>
             </div>
