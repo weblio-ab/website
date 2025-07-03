@@ -1,7 +1,7 @@
 <template>
   <section id="home" class="hero-section">
     <div class="container">
-      <div class="row align-items-center min-vh-100 py-5">
+      <div class="row align-items-center min-vh-100 py-0">
         <div class="col-lg-6">
           <div class="hero-content">
             <h1 class="display-4 fw-bold text-dark mb-4">
@@ -212,6 +212,10 @@ import MobileMockup from '../components/MobileMockup.vue'
 @media (max-width: 991.98px) {
   .hero-section {
     text-align: center;
+  }
+  
+  .hero-content {
+    margin-top: -5rem; /* Dra upp innehållet närmare navbaren */
   }
   
   .mockup-container {
