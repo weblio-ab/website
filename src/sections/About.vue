@@ -105,7 +105,7 @@
             <div class="col-lg-5 col-md-6">
               <div class="team-card">
                 <div class="team-avatar">
-                  <img src="/assets/1725475557070.jpg" alt="Francisco Mouat" class="team-photo">
+                  <img src="/assets/persons/francisco.jpg" alt="Francisco Mouat" class="team-photo">
                 </div>
                 <div class="team-info">
                   <h5>{{ $t("about.team.member1.name") }}</h5>
@@ -121,7 +121,7 @@
             <div class="col-lg-5 col-md-6">
               <div class="team-card">
                 <div class="team-avatar">
-                  <img src="/assets/20250614_101238_9856F75C.jpg" alt="Albin Médoc" class="team-photo">
+                  <img src="/assets/persons/albin.jpg" alt="Albin Médoc" class="team-photo">
                 </div>
                 <div class="team-info">
                   <h5>{{ $t("about.team.member2.name") }}</h5>
