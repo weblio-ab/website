@@ -105,7 +105,23 @@ a {
   }
 }
 
-/* reCAPTCHA styles */
+/* reCAPTCHA styles - Hide the badge completely */
 .grecaptcha-badge { 
-    display: none; 
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Additional reCAPTCHA selectors to ensure it's completely hidden */
+.grecaptcha-badge, 
+iframe[src*="recaptcha"],
+iframe[title*="reCAPTCHA"],
+iframe[title*="recaptcha"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -1 !important;
 }

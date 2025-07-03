@@ -1,7 +1,7 @@
 <template>
   <section id="home" class="hero-section">
     <div class="container">
-      <div class="row align-items-center min-vh-100 py-0">
+      <div class="row align-items-center py-0" style="min-height: 93vh;">
         <div class="col-lg-6">
           <div class="hero-content">
             <h1 class="display-4 fw-bold text-dark mb-4">

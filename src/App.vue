@@ -208,7 +208,7 @@ a:focus {
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
   transition: all 0.3s ease;
-  z-index: 1000;
+  z-index: 9999 !important; /* Ensure it's always on top */
 }
 
 .back-to-top:hover {
@@ -219,6 +219,20 @@ a:focus {
 .back-to-top:focus {
   outline: 2px solid #007bff;
   outline-offset: 2px;
+}
+
+/* Additional protection against reCAPTCHA interference */
+.grecaptcha-badge,
+iframe[src*="recaptcha"],
+iframe[title*="reCAPTCHA"],
+iframe[title*="recaptcha"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  z-index: -1 !important;
 }
 
 /* Fade transition for back to top button */

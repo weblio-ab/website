@@ -168,6 +168,15 @@ const {
   margin-top: 2rem;
 }
 
+/* Ensure 2x2 layout on desktop */
+@media (min-width: 768px) {
+  .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem;
+  }
+}
+
 .stat-item {
   text-align: center;
   padding: 1.5rem;
@@ -323,9 +332,9 @@ const {
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 991.98px) and (min-width: 768px) {
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem;
   }
 
@@ -334,7 +343,7 @@ const {
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .stats-grid {
     grid-template-columns: 1fr;
   }
