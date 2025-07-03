@@ -88,54 +88,55 @@
     },
     "packages": {
       "basic": {
-        "title": "Email",
-        "price": "139",
-        "priceAnnual": "1 390",
+        "title": "Start Basic",
+        "price": "199",
+        "priceAnnual": "1 999",
         "currency": "SEK/month",
         "currencyAnnual": "SEK/year",
-        "description": "Professional email solution for your business",
+        "description": "Professional web solution with flexible pricing and email",
         "features": [
-          "From 25 GB email storage",
-          "Up to 5 email addresses",
-          "Unlimited email aliases",
-          "Webmail",
-          "Spam filter and auto-reply"
+          "Website development at flexible price",
+          "Unlimited email addresses",
+          "Spam filter and auto-reply",
+          "Web hosting and domain"
         ]
       },
       "professional": {
-        "title": "Start",
+        "title": "Start Professional",
         "price": "299",
         "priceAnnual": "2 999",
         "currency": "SEK/month",
         "currencyAnnual": "SEK/year",
-        "description": "Complete solution with website and email",
+        "description": "Complete solution with website and email included in price",
         "features": [
-          "75 GB storage for website and email",
-          "Up to 5 email addresses",
-          "Unlimited email aliases",
+          "Website development",
+          "Unlimited email addresses",
           "Webmail",
           "Spam filter and auto-reply",
-          "Website development"
+          "Web hosting and domain",
+          "Technical maintenance",
+          "Five website adjustments per year"
         ],
         "popular": true
       },
       "premium": {
         "title": "Start Premium",
         "price": "649",
-        "priceAnnual": "6 499",
+        "priceAnnual": "6 490",
         "currency": "SEK/month",
         "currencyAnnual": "SEK/year",
-        "description": "Premium package with development fee included first year",
+        "description": "Premium package with development fee and included support",
         "features": [
-          "75 GB storage for website and email",
-          "Up to 5 email addresses",
+          "Website development",
+          "Unlimited email addresses",
           "Unlimited email aliases",
           "Webmail",
           "Spam filter and auto-reply",
-          "Website development",
-          "Development fee SEK 4 200 (one-time fee)",
-          "3 months free support",
-          "After year 1: SEK 299/month (no setup fee)"
+          "Web hosting and domain",
+          "Technical maintenance",
+          "Free support",
+          "Unlimited website adjustments",
+          "SEO optimization"
         ]
       }
     },

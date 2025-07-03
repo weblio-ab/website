@@ -215,8 +215,7 @@ import MobileMockup from '../components/MobileMockup.vue'
   }
   
   .hero-content {
-    margin-top: -10rem; /* Dra upp innehållet närmare navbaren */
-    margin-bottom: -5rem;
+    margin-top: -15rem; /* Dra upp innehållet närmare navbaren */
   }
   
   .mockup-container {

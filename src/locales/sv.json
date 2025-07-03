@@ -88,34 +88,34 @@
     },
     "packages": {
       "basic": {
-        "title": "Endast E-post",
-        "price": "139",
-        "priceAnnual": "1 390",
+        "title": "Start Basic",
+        "price": "199",
+        "priceAnnual": "1 999",
         "currency": "kr/mån",
         "currencyAnnual": "kr/år",
-        "description": "Professionell e-postlösning för ditt företag",
+        "description": "Professionell weblösning till rörligt pris och e-post",
         "features": [
-          "Från 25 GB e-postutrymme",
-          "Upp till 5 e-postadresser",
-          "Fritt antal e-postalias",
-          "Webbmail",
-          "Spamfilter och autosvar"
+          "Utveckling av hemsida till rörligt pris",
+          "Obegränsat med e-postadresser",
+          "Spamfilter och autosvar",
+          "Webbhotell och domän"
         ]
       },
       "professional": {
-        "title": "Start Basic",
+        "title": "Start Professional",
         "price": "299",
         "priceAnnual": "2 999",
         "currency": "kr/mån",
         "currencyAnnual": "kr/år",
-        "description": "Komplett lösning med hemsida och e-post",
+        "description": "Komplett lösning med hemsida och e-post inkluderat i priset",
         "features": [
-          "75 GB utrymme för hemsida och e-post",
-          "Upp till 5 e-postadresser",
-          "Fritt antal e-postalias",
+          "Utveckling av hemsida",
+          "Obegränsat med e-postadresser",
           "Webbmail",
           "Spamfilter och autosvar",
-          "Utveckling av hemsida till rörligt pris"
+          "Webbhotell och domän",
+          "Teknisk underhållning",
+          "Fem justeringar av hemsidan per år"
         ],
         "popular": true
       },
@@ -125,17 +125,18 @@
         "priceAnnual": "6 490",
         "currency": "kr/mån",
         "currencyAnnual": "kr/år",
-        "description": "Premium-paket med utvecklingsavgift inkluderad första året",
+        "description": "Premium-paket med utvecklingsavgift samt inkluderad support",
         "features": [
-          "75 GB utrymme för hemsida och e-post",
-          "Upp till 5 e-postadresser",
+          "Utveckling av hemsida",
+          "Obegränsat med e-postadresser",
           "Fritt antal e-postalias",
           "Webbmail",
           "Spamfilter och autosvar",
-          "Utveckling av hemsida till fast pris",
-          "Utvecklingsavgift 4200 kr (engångsavgift)",
-          "3 månaders kostnadsfri support",
-          "Efter första året: 299 kr/mån"
+          "Webbhotell och domän",
+          "Teknisk underhållning",
+          "Kostnadsfri support",
+          "Obegränsat med justeringar av hemsidan",
+          "SEO - optimering"
         ]
       }
     },

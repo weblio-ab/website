@@ -44,8 +44,8 @@
             <div class="pricing-features">
               <ul class="list-unstyled">
                 <li v-for="feature in basicFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-success me-2"></i>
-                  {{ feature }}
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                  <span>{{ feature }}</span>
                 </li>
               </ul>
             </div>
@@ -74,8 +74,8 @@
             <div class="pricing-features">
               <ul class="list-unstyled">
                 <li v-for="feature in professionalFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-success me-2"></i>
-                  {{ feature }}
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                  <span>{{ feature }}</span>
                 </li>
               </ul>
             </div>
@@ -103,8 +103,8 @@
             <div class="pricing-features">
               <ul class="list-unstyled">
                 <li v-for="feature in premiumFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-success me-2"></i>
-                  {{ feature }}
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                  <span>{{ feature }}</span>
                 </li>
               </ul>
             </div>
@@ -299,6 +299,14 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
 .pricing-features li {
   padding: 0.5rem 0;
   border-bottom: 1px solid #f8f9fa;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.pricing-features li i {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
 }
 
 .pricing-features li:last-child {
@@ -417,13 +425,18 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
     margin-top: 1rem;
   }
   
-  /* Textjustering för features - bättre linjering */
+  /* Textjustering för features - bätter linjering */
   .pricing-features li {
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid #f8f9fa;
+  }
+
+  .pricing-features li i {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
   }
   
   .pricing-features li i {
