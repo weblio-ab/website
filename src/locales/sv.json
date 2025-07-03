@@ -7,6 +7,12 @@
     "about": "Om oss",
     "contact": "Kontakt"
   },
+  "company": {
+    "name": "Weblio",
+    "phone": "040-648 50 43",
+    "email": "{'info@weblio.se'}",
+    "address": "Skåne, Sverige"
+  },
   "hero": {
     "title": "Professionella hemsidor för företag och privatpersoner",
     "subtitle": "Från idé till färdig hemsida på webben - vi sköter allt",
@@ -179,7 +185,6 @@
     "form": {
       "name": "Namn",
       "email": "E-post",
-      "phone": "Telefon",
       "company": "Företag",
       "message": "Berätta om ditt projekt",
       "submit": "Skicka meddelande",
@@ -197,8 +202,6 @@
     },
     "info": {
       "title": "Kontaktinformation",
-      "phone": "Telefon: 040-648 50 43",
-      "email": "{'E-post: info@weblio.se'}",
       "consultation": "Gratis konsultation",
       "consultationText": "Vi erbjuder alltid en kostnadsfri konsultation där vi går igenom dina behov och ger dig råd oavsett om du väljer att jobba med oss eller inte."
     }
@@ -226,15 +229,14 @@
   "footer": {
     "quickLinks": "Snabblänkar",
     "contact": "Kontakt",
-    "phone": "040-648 50 43",
-    "email": "{'info@weblio.se'}",
-    "address": "Malmö, Sverige",
     "copyright": "© 2025 Weblio. Alla rättigheter förbehållna."
   },
   "common": {
     "readMore": "Läs mer",
     "getStarted": "Kom igång",
     "learnMore": "Lär dig mer",
-    "viewAll": "Se alla"
+    "viewAll": "Se alla",
+    "email": "E-post",
+    "phone": "Telefon"
   }
 }

@@ -7,6 +7,12 @@
     "about": "About",
     "contact": "Contact"
   },
+  "company": {
+    "name": "Weblio",
+    "phone": "040-648 50 43",
+    "email": "{'info@weblio.se'}",
+    "address": "Skåne, Sweden"
+  },
   "hero": {
     "title": "Professional web solutions for businesses and private clients",
     "subtitle": "From idea to live website - we handle everything",
@@ -179,7 +185,6 @@
     "form": {
       "name": "Name",
       "email": "Email",
-      "phone": "Phone",
       "company": "Company",
       "message": "Tell us about your project",
       "submit": "Send message",
@@ -197,8 +202,6 @@
     },
     "info": {
       "title": "Contact information",
-      "phone": "Phone: 040-648 50 43",
-      "email": "{'Email: info@weblio.se'}",
       "consultation": "Free consultation",
       "consultationText": "We always offer a free consultation where we go through your needs and give you advice regardless of whether you choose to work with us or not."
     }
@@ -226,15 +229,14 @@
   "footer": {
     "quickLinks": "Quick links",
     "contact": "Contact",
-    "phone": "040-648 50 43",
-    "email": "{'info@weblio.se'}",
-    "address": "Stockholm, Sweden",
     "copyright": "© 2025 Weblio. All rights reserved."
   },
   "common": {
     "readMore": "Read more",
     "getStarted": "Get started",
     "learnMore": "Learn more",
-    "viewAll": "View all"
+    "viewAll": "View all",
+    "email": "Email",
+    "phone": "Phone"
   }
 }

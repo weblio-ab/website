@@ -23,7 +23,7 @@
           >
         </div>
         <div class="col-md-6">
-          <label for="email" class="form-label">{{ $t('contact.form.email') }}</label>
+          <label for="email" class="form-label">{{ $t('common.email') }}</label>
           <input 
             type="email" 
             class="form-control" 
@@ -34,7 +34,7 @@
           >
         </div>
         <div class="col-md-6">
-          <label for="phone" class="form-label">{{ $t('contact.form.phone') }}</label>
+          <label for="phone" class="form-label">{{ $t('common.phone') }}</label>
           <input 
             type="tel" 
             class="form-control" 
