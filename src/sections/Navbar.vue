@@ -23,9 +23,11 @@
           <li class="nav-item">
             <a class="nav-link" :class="{ active: activeSection === 'services' }" href="#services" @click="closeMenu">{{ $t('navigation.services') }}</a>
           </li>
+          <!-- Portfolio temporarily commented out
           <li class="nav-item">
             <a class="nav-link" :class="{ active: activeSection === 'portfolio' }" href="#portfolio" @click="closeMenu">{{ $t('navigation.portfolio') }}</a>
           </li>
+          -->
           <li class="nav-item">
             <a class="nav-link" :class="{ active: activeSection === 'pricing' }" href="#pricing" @click="closeMenu">{{ $t('navigation.pricing') }}</a>
           </li>
@@ -40,12 +42,25 @@
         <div class="d-flex align-items-center">
           <!-- Language Switcher -->
           <div class="dropdown me-3">
-            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-              {{ locale.toUpperCase() }}
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe2"></i>
+              <span class="d-none d-md-inline ms-1">{{ locale === 'sv' ? 'SV' : 'EN' }}</span>
             </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" @click="changeLocale('sv')">{{ $t('language.swedish') }}</a></li>
-              <li><a class="dropdown-item" href="#" @click="changeLocale('en')">{{ $t('language.english') }}</a></li>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" :class="{ active: locale === 'sv' }" href="#" @click="changeLocale('sv')">
+                  <span class="me-2">🇸🇪</span>
+                  <span class="me-auto">Svenska</span>
+                  <span class="text-muted">SV</span>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" :class="{ active: locale === 'en' }" href="#" @click="changeLocale('en')">
+                  <span class="me-2">🇬🇧</span>
+                  <span class="me-auto">English</span>
+                  <span class="text-muted">EN</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -70,6 +85,7 @@ const { locale: i18nLocale } = useI18n()
 function changeLocale(newLocale) {
   setLocale(newLocale)
   i18nLocale.value = newLocale
+  closeMenu() // Close mobile menu when changing language
 }
 
 onMounted(() => {
@@ -122,6 +138,83 @@ onUnmounted(() => {
 
 .navbar-logo:hover {
   transform: scale(1.05);
+}
+
+/* Simple Bootstrap dropdown styling */
+.dropdown-item.active {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Force remove any dropdown scrolling */
+.navbar .dropdown-menu {
+  max-height: none !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+/* Specifically target our dropdown */
+.navbar .dropdown-menu.dropdown-menu-end {
+  max-height: none !important;
+  overflow: visible !important;
+  -webkit-overflow-scrolling: auto !important;
+}
+
+/* Ensure navbar has proper z-index */
+.navbar.sticky-top {
+  z-index: 1030 !important;
+}
+
+/* Ensure dropdown is above everything */
+.navbar .dropdown-menu {
+  z-index: 1031 !important;
+}
+
+/* Nuclear option: Remove all constraints on dropdown */
+.dropdown-menu {
+  max-height: unset !important;
+  height: unset !important;
+  overflow: unset !important;
+  overflow-x: unset !important;
+  overflow-y: unset !important;
+  contain: none !important;
+}
+
+/* Disable any smooth scrolling on dropdown */
+.dropdown-menu * {
+  scroll-behavior: auto !important;
+}
+
+/* Ensure dropdown can escape container constraints */
+.navbar .container {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  position: relative;
+}
+
+/* Make sure dropdown menu can overflow parent containers */
+.navbar .dropdown {
+  position: relative !important;
+}
+
+.navbar .dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: auto !important;
+  right: 0 !important;
+  transform: none !important;
+  margin-top: 0.125rem !important;
+}
+
+/* Language switcher button styling */
+.navbar .dropdown .btn {
+  font-size: 0.8rem;
 }
 
 @media (max-width: 991.98px) {
