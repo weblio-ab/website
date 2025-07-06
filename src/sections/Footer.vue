@@ -7,20 +7,6 @@
             <img src="/assets/icon.svg" alt="Weblio" class="footer-logo me-2">
             <span class="footer-brand-text h5 mb-0 text-white">Weblio</span>
           </div>
-            <div class="social-links">
-              <a href="#" class="social-link">
-                <i class="bi bi-facebook"></i>
-              </a>
-              <a href="#" class="social-link">
-                <i class="bi bi-linkedin"></i>
-              </a>
-              <a href="#" class="social-link">
-                <i class="bi bi-instagram"></i>
-              </a>
-              <a href="#" class="social-link">
-                <i class="bi bi-twitter"></i>
-              </a>
-            </div>
           </div>
         </div>
         
@@ -29,7 +15,6 @@
           <ul class="footer-links">
             <li><a href="#home">{{ $t('navigation.home') }}</a></li>
             <li><a href="#services">{{ $t('navigation.services') }}</a></li>
-            <li><a href="#portfolio">{{ $t('navigation.portfolio') }}</a></li>
             <li><a href="#pricing">{{ $t('navigation.pricing') }}</a></li>
             <li><a href="#about">{{ $t('navigation.about') }}</a></li>
             <li><a href="#contact">{{ $t('navigation.contact') }}</a></li>
