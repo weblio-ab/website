@@ -1,53 +1,54 @@
 <template>
   <footer class="footer bg-dark text-light py-5">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">        <div class="footer-brand">
-          <div class="d-flex align-items-center mb-3">
-            <img src="/assets/icon.svg" alt="Weblio" class="footer-logo me-2">
-            <span class="footer-brand-text h5 mb-0 text-white">Weblio</span>
-          </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-2 col-md-6">
-          <h6 class="text-white mb-3">{{ $t('footer.quickLinks') }}</h6>
-          <ul class="footer-links">
-            <li><a href="#home">{{ $t('navigation.home') }}</a></li>
-            <li><a href="#services">{{ $t('navigation.services') }}</a></li>
-            <li><a href="#pricing">{{ $t('navigation.pricing') }}</a></li>
-            <li><a href="#about">{{ $t('navigation.about') }}</a></li>
-            <li><a href="#contact">{{ $t('navigation.contact') }}</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-3 col-md-6">
-          <h6 class="text-white mb-3">{{ $t('footer.contact') }}</h6>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="bi bi-telephone me-2"></i>
-              <PhoneObfuscate :phone="$t('company.phone')" link-class="text-light" />
-            </div>
-            <div class="contact-item">
-              <i class="bi bi-envelope me-2"></i>
-              <EmailObfuscate :email="$t('company.email')" link-class="text-light" />
-            </div>
-            <div class="contact-item">
-              <i class="bi bi-geo-alt me-2"></i>
-              <span class="text-light">{{ $t('company.address') }}</span>
-            </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-10">
+          <div class="text-center text-xl-start">
+            <h6 class="text-white mb-3">{{ $t('footer.quickLinks') }}</h6>
+            <ul class="footer-links">
+              <li><a href="#home">{{ $t('navigation.home') }}</a></li>
+              <li><a href="#services">{{ $t('navigation.services') }}</a></li>
+              <li><a href="#portfolio">{{ $t('navigation.portfolio') }}</a></li>
+              <li><a href="#pricing">{{ $t('navigation.pricing') }}</a></li>
+              <li><a href="#about">{{ $t('navigation.about') }}</a></li>
+              <li><a href="#contact">{{ $t('navigation.contact') }}</a></li>
+            </ul>
           </div>
         </div>
         
-        <div class="col-lg-3 col-md-6">
-          <h6 class="text-white mb-3">{{ $t('footer.technology') }}</h6>
-          <div class="tech-badges">
-            <span class="tech-badge">{{ $t('footer.techBadges.vue') }}</span>
-            <span class="tech-badge">{{ $t('footer.techBadges.bootstrap') }}</span>
-            <span class="tech-badge">{{ $t('footer.techBadges.responsive') }}</span>
-            <span class="tech-badge">{{ $t('footer.techBadges.seo') }}</span>
-            <span class="tech-badge">{{ $t('footer.techBadges.pwa') }}</span>
-            <span class="tech-badge">{{ $t('footer.techBadges.modern') }}</span>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-10">
+          <div class="text-center text-xl-start">
+            <div class="row g-4">
+              <div class="col-xl-6">
+                <h6 class="text-white mb-3">{{ $t('footer.contact') }}</h6>
+                <div class="contact-info">
+                  <div class="contact-item">
+                    <i class="bi bi-telephone me-2"></i>
+                    <PhoneObfuscate :phone="$t('company.phone')" link-class="text-light" />
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-envelope me-2"></i>
+                    <EmailObfuscate :email="$t('company.email')" link-class="text-light" />
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-geo-alt me-2"></i>
+                    <span class="text-light">{{ $t('company.address') }}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-xl-6">
+                <h6 class="text-white mb-3">{{ $t('footer.technology') }}</h6>
+                <div class="tech-badges">
+                  <span class="tech-badge">{{ $t('footer.techBadges.vue') }}</span>
+                  <span class="tech-badge">{{ $t('footer.techBadges.bootstrap') }}</span>
+                  <span class="tech-badge">{{ $t('footer.techBadges.responsive') }}</span>
+                  <span class="tech-badge">{{ $t('footer.techBadges.seo') }}</span>
+                  <span class="tech-badge">{{ $t('footer.techBadges.pwa') }}</span>
+                  <span class="tech-badge">{{ $t('footer.techBadges.modern') }}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -157,6 +158,35 @@ import PhoneObfuscate from '../components/PhoneObfuscate.vue'
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+@media (max-width: 1199.98px) {
+  .contact-info {
+    align-items: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .tech-badges {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .footer-links-inline {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+  
+  .tech-badges {
+    margin-top: 0.5rem;
+  }
+  
+  .social-links {
+    justify-content: flex-start;
+  }
 }
 
 .tech-badge {
