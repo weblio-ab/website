@@ -18,7 +18,7 @@
             <div class="col-lg-5 col-md-6">
               <div class="team-card">
                 <div class="team-avatar">
-                  <img src="/assets/persons/francisco.jpg" alt="Francisco Mouat" class="team-photo">
+                  <img src="/assets/persons/francisco.png" alt="Francisco Mouat" class="team-photo">
                 </div>
                 <div class="team-info">
                   <h5>{{ $t("about.team.member1.name") }}</h5>
@@ -34,7 +34,7 @@
             <div class="col-lg-5 col-md-6">
               <div class="team-card">
                 <div class="team-avatar">
-                  <img src="/assets/persons/albin.jpg" alt="Albin Médoc" class="team-photo">
+                  <img src="/assets/persons/albin.png" alt="Albin Médoc" class="team-photo">
                 </div>
                 <div class="team-info">
                   <h5>{{ $t("about.team.member2.name") }}</h5>
@@ -134,47 +134,6 @@
             <WindowMockup theme="dark" type="code" title="main.js">
               <CodeBlock />
             </WindowMockup>
-          </div>
-        </div>
-      </div>
-
-      <!-- Team Section -->
-      <div class="row mt-5">
-        <div class="col-12">
-          <h3 class="text-center mb-5">{{ $t("about.team.title") }}</h3>
-          <div class="row g-4 justify-content-center">
-            <div class="col-lg-5 col-md-6">
-              <div class="team-card">
-                <div class="team-avatar">
-                  <img src="/assets/persons/francisco.png" alt="Francisco Mouat" class="team-photo">
-                </div>
-                <div class="team-info">
-                  <h5>{{ $t("about.team.member1.name") }}</h5>
-                  <p class="text-primary mb-2">
-                    {{ $t("about.team.member1.role") }}
-                  </p>
-                  <p class="text-muted">
-                    {{ $t("about.team.member1.description") }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-6">
-              <div class="team-card">
-                <div class="team-avatar">
-                  <img src="/assets/persons/albin.png" alt="Albin Médoc" class="team-photo">
-                </div>
-                <div class="team-info">
-                  <h5>{{ $t("about.team.member2.name") }}</h5>
-                  <p class="text-primary mb-2">
-                    {{ $t("about.team.member2.role") }}
-                  </p>
-                  <p class="text-muted">
-                    {{ $t("about.team.member2.description") }}
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
