@@ -8,7 +8,7 @@ import Footer from './sections/Footer.vue'
 
 const appStore = useAppStore()
 const viewportStore = useViewportStore()
-const { showBackToTop, isLoading } = storeToRefs(appStore)
+const { showBackToTop } = storeToRefs(appStore)
 const { scrollToTop, initScrollListener, removeScrollListener } = appStore
 
 onMounted(() => {
@@ -23,20 +23,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- Loading Screen -->
-  <Transition name="fade-loader">
-    <div v-if="isLoading" class="loader-overlay">
-      <div class="loader-content">
-        <div class="loader-logo">
-          <img src="/assets/icon.svg" alt="{{ $t('company.name') }}" class="loader-logo-image">
-        </div>
-        <h2>{{ $t('company.name') }}</h2>
-        <div class="loader-spinner"></div>
-      </div>
-    </div>
-  </Transition>
-
-  <div id="app" :class="{ 'app-loading': isLoading }">
+  <div id="app">
     <Navbar />
     <router-view />
     <Footer />
@@ -44,7 +31,7 @@ onUnmounted(() => {
     <!-- Back to Top Button -->
     <Transition name="fade">
       <button 
-        v-if="showBackToTop && !isLoading"
+        v-if="showBackToTop"
         @click="scrollToTop"
         class="back-to-top"
         :aria-label="$t('navigation.backToTop')"
@@ -72,70 +59,8 @@ body {
   flex-direction: column;
 }
 
-.app-loading {
-  overflow: hidden;
-}
-
 main {
   flex: 1;
-}
-
-/* Loader Styles */
-.loader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.loader-content {
-  text-align: center;
-}
-
-.loader-logo {
-  margin-bottom: 1rem;
-}
-
-.loader-logo-image {
-  height: 80px;
-  width: auto;
-}
-
-.loader-content h2 {
-  color: #333;
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-
-.loader-spinner {
-  width: 40px;
-  height: 40px;
-  margin: 0 auto;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #007bff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.fade-loader-enter-active,
-.fade-loader-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-loader-enter-from,
-.fade-loader-leave-to {
-  opacity: 0;
 }
 
 /* Smooth transitions for all elements */
