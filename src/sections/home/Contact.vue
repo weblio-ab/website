@@ -52,9 +52,9 @@
 </template>
 
 <script setup>
-import ContactForm from '../components/ContactForm.vue'
-import EmailObfuscate from '../components/EmailObfuscate.vue'
-import PhoneObfuscate from '../components/PhoneObfuscate.vue'
+import ContactForm from '../../components/ContactForm.vue'
+import EmailObfuscate from '../../components/EmailObfuscate.vue'
+import PhoneObfuscate from '../../components/PhoneObfuscate.vue'
 </script>
 
 <style scoped>

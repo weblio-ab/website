@@ -142,9 +142,9 @@
 </template>
 
 <script setup>
-import WindowMockup from "../components/WindowMockup.vue";
-import CodeBlock from "../components/CodeBlock.vue";
-import { useTouchSlider } from '../composables/useTouchSlider'
+import WindowMockup from "../../components/WindowMockup.vue";
+import CodeBlock from "../../components/CodeBlock.vue";
+import { useTouchSlider } from '../../composables/useTouchSlider'
 
 // Touch slider för statistik på mobil
 const { 

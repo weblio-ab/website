@@ -11,11 +11,11 @@
 </template>
 
 <script setup>
-import Hero from '../sections/Hero.vue'
-import Services from '../sections/Services.vue'
-// import Portfolio from '../sections/Portfolio.vue'
-// import Testimonials from '../sections/Testimonials.vue'
-import Pricing from '../sections/Pricing.vue'
-import About from '../sections/About.vue'
-import Contact from '../sections/Contact.vue'
+import Hero from '../sections/home/Hero.vue'
+import Services from '../sections/home/Services.vue'
+// import Portfolio from '../sections/home/Portfolio.vue'
+// import Testimonials from '../sections/home/Testimonials.vue'
+import Pricing from '../sections/home/Pricing.vue'
+import About from '../sections/home/About.vue'
+import Contact from '../sections/home/Contact.vue'
 </script>

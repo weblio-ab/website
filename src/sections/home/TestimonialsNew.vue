@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import Testimonial from '../components/Testimonial.vue'
+import Testimonial from '../../components/Testimonial.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
 

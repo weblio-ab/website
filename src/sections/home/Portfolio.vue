@@ -83,7 +83,7 @@
 </template>
 
 <script setup>
-import Project from '../components/Project.vue'
+import Project from '../../components/Project.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
 

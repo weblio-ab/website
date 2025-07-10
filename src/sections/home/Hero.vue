@@ -70,8 +70,8 @@
 </template>
 
 <script setup>
-import WindowMockup from '../components/WindowMockup.vue'
-import MobileMockup from '../components/MobileMockup.vue'
+import WindowMockup from '../../components/WindowMockup.vue'
+import MobileMockup from '../../components/MobileMockup.vue'
 </script>
 
 <style scoped>

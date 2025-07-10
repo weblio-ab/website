@@ -91,7 +91,7 @@
 </template>
 
 <script setup>
-import { useIntersectionObserver } from '../composables/useIntersectionObserver'
+import { useIntersectionObserver } from '../../composables/useIntersectionObserver'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
 
