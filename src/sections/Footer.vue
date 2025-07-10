@@ -6,12 +6,12 @@
           <div class="text-center text-xl-start">
             <h6 class="text-white mb-3">{{ $t('footer.quickLinks') }}</h6>
             <ul class="footer-links">
-              <li><a href="#home">{{ $t('navigation.home') }}</a></li>
-              <li><a href="#services">{{ $t('navigation.services') }}</a></li>
-              <li><a href="#portfolio">{{ $t('navigation.portfolio') }}</a></li>
-              <li><a href="#pricing">{{ $t('navigation.pricing') }}</a></li>
-              <li><a href="#about">{{ $t('navigation.about') }}</a></li>
-              <li><a href="#contact">{{ $t('navigation.contact') }}</a></li>
+              <li><router-link to="/#home">{{ $t('navigation.home') }}</router-link></li>
+              <li><router-link to="/#services">{{ $t('navigation.services') }}</router-link></li>
+              <li><router-link to="/#portfolio">{{ $t('navigation.portfolio') }}</router-link></li>
+              <li><router-link to="/#pricing">{{ $t('navigation.pricing') }}</router-link></li>
+              <li><router-link to="/#about">{{ $t('navigation.about') }}</router-link></li>
+              <li><router-link to="/#contact">{{ $t('navigation.contact') }}</router-link></li>
             </ul>
           </div>
         </div>

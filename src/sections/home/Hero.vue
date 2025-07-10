@@ -14,14 +14,14 @@
               {{ $t('hero.description') }}
             </p>
             <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-              <a href="#contact" class="btn btn-primary btn-lg">
+              <router-link class="btn btn-primary btn-lg" to="/#contact">
                 <i class="bi bi-chat-dots me-2"></i>
                 {{ $t('hero.cta') }}
-              </a>
-              <a href="#pricing" class="btn btn-outline-primary btn-lg">
+              </router-link>
+              <router-link class="btn btn-primary btn-lg" to="/#pricing">
                 <i class="bi bi-tag me-2"></i>
                 {{ $t('hero.ctaSecondary') }}
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -62,9 +62,9 @@
     </div>
     <!-- Scroll indicator -->
     <div class="scroll-indicator">
-      <a href="#services" class="text-primary">
+      <router-link class="text-primary" to="/#services">
         <i class="bi bi-chevron-down fs-3"></i>
-      </a>
+      </router-link>
     </div>
   </section>
 </template>

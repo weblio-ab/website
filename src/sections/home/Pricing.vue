@@ -50,7 +50,7 @@
               </ul>
             </div>
             <div class="pricing-footer">
-              <a href="#contact" class="btn btn-outline-primary w-100">{{ $t('common.getStarted') }}</a>
+              <router-link class="btn btn-outline-primary w-100" to="/#contact">{{ $t('common.getStarted') }}</router-link>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
               </ul>
             </div>
             <div class="pricing-footer">
-              <a href="#contact" class="btn btn-primary w-100">{{ $t('common.getStarted') }}</a>
+              <router-link class="btn btn-primary w-100" to="/#contact">{{ $t('common.getStarted') }}</router-link>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
               </ul>
             </div>
             <div class="pricing-footer">
-              <a href="#contact" class="btn btn-outline-primary w-100">{{ $t('common.getStarted') }}</a>
+              <router-link class="btn btn-outline-primary w-100" to="/#contact">{{ $t('common.getStarted') }}</router-link>
             </div>
           </div>
         </div>

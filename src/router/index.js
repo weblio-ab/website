@@ -28,11 +28,21 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
+    // If there's a saved position (back/forward button), use it
     if (savedPosition) {
       return savedPosition
-    } else {
-      return { top: 0 }
     }
+    
+    // If there's a hash, scroll to that element
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+    
+    // Default to top of page
+    return { top: 0 }
   }
 })
 
