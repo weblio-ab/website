@@ -252,7 +252,186 @@
     "viewAll": "View all",
     "email": "Email",
     "phone": "Phone",
-    "close": "Close"
+    "close": "Close",
+    "lastUpdated": "Last updated",
+    "effectiveDate": "Effective from"
+  },
+  "pages": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "Information about how we handle your personal data",
+      "lastUpdated": "2025-01-11",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "content": "Weblio values your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, store and protect information when you visit our website or use our services."
+        },
+        "dataController": {
+          "title": "Data Controller",
+          "content": "Weblio is the data controller for the processing of your personal data according to this policy."
+        },
+        "dataCollection": {
+          "title": "What data do we collect?",
+          "content": "We may collect the following types of information:",
+          "list": [
+            "Contact information (name, email address, phone number)",
+            "Company information (company name, industry, website requirements)",
+            "Technical information (IP address, browser type, visit statistics)",
+            "Communication data (messages via contact forms or email)"
+          ]
+        },
+        "dataUse": {
+          "title": "How do we use your data?",
+          "content": "We use your personal data to:",
+          "list": [
+            "Provide our services and respond to your inquiries",
+            "Communicate with you about projects and services",
+            "Improve our website and our services",
+            "Fulfill our contractual obligations",
+            "Comply with applicable legislation"
+          ]
+        },
+        "legalBasis": {
+          "title": "Legal Basis",
+          "content": "Our processing of personal data is based on:",
+          "list": [
+            "Consent - when you voluntarily provide information",
+            "Contract performance - to deliver services",
+            "Legitimate interest - to improve our services",
+            "Legal obligation - when required by law"
+          ]
+        },
+        "dataSharing": {
+          "title": "Data Sharing",
+          "content": "We do not share your personal data with third parties without your consent, except when required by law or to provide our services (e.g., web hosting providers)."
+        },
+        "dataRetention": {
+          "title": "Data Retention",
+          "content": "We store your personal data only as long as necessary for the purposes for which it was collected, or as required by law."
+        },
+        "yourRights": {
+          "title": "Your Rights",
+          "content": "You have the right to:",
+          "list": [
+            "Access your personal data",
+            "Request correction of incorrect data",
+            "Request deletion of your data",
+            "Request restriction of processing",
+            "Object to processing",
+            "Data portability",
+            "File a complaint with the supervisory authority"
+          ]
+        },
+        "security": {
+          "title": "Security",
+          "content": "We take appropriate technical and organizational security measures to protect your personal data against unauthorized access, loss or misuse."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "content": "Our website uses cookies to improve the user experience. See our cookie policy for more information."
+        },
+        "changes": {
+          "title": "Policy Changes",
+          "content": "We may update this privacy policy from time to time. Significant changes will be announced on our website."
+        },
+        "contact": {
+          "title": "Contact Us",
+          "content": "If you have questions about this privacy policy or want to exercise your rights, contact us:"
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "subtitle": "Terms for using our services",
+      "lastUpdated": "2025-01-11",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "content": "These terms of service govern your use of Weblio's services. By using our services, you accept these terms."
+        },
+        "services": {
+          "title": "Our Services",
+          "content": "Weblio offers web development services including design, development, hosting and maintenance of websites."
+        },
+        "obligations": {
+          "title": "Your Obligations",
+          "content": "As a customer, you commit to:",
+          "list": [
+            "Provide accurate and complete information",
+            "Pay for services according to agreed terms",
+            "Respect copyright and other intellectual property rights",
+            "Not use the services for illegal purposes"
+          ]
+        },
+        "payment": {
+          "title": "Payment Terms",
+          "content": "Payment is made according to the agreed payment plan. Late payments may incur interest according to applicable law."
+        },
+        "intellectualProperty": {
+          "title": "Intellectual Property",
+          "content": "Weblio retains the right to code and technical solutions. The customer owns content and trademarks provided."
+        },
+        "liability": {
+          "title": "Limitation of Liability",
+          "content": "Weblio's liability is limited to direct damage caused by negligence. We are not liable for indirect damage or loss."
+        },
+        "termination": {
+          "title": "Termination",
+          "content": "The agreement may be terminated by both parties with agreed notice period. Upon termination by the customer, data export is offered."
+        },
+        "changes": {
+          "title": "Changes to Terms",
+          "content": "We reserve the right to change these terms. Significant changes will be communicated in advance."
+        },
+        "governing": {
+          "title": "Governing Law",
+          "content": "These terms are governed by Swedish law. Disputes should primarily be resolved through negotiation."
+        }
+      }
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "subtitle": "Information about how we use cookies",
+      "lastUpdated": "2025-01-11",
+      "sections": {
+        "what": {
+          "title": "What are cookies?",
+          "content": "Cookies are small text files that are stored on your device when you visit a website. They help the website remember information about your visit."
+        },
+        "types": {
+          "title": "Types of cookies we use",
+          "content": "We use the following types of cookies:",
+          "list": [
+            "Necessary cookies - for the website's basic functions",
+            "Performance cookies - to improve website performance",
+            "Functional cookies - to remember your settings",
+            "Analytics cookies - to understand how the website is used"
+          ]
+        },
+        "purpose": {
+          "title": "Purpose of cookies",
+          "content": "We use cookies to:",
+          "list": [
+            "Ensure the website works correctly",
+            "Remember your language settings",
+            "Analyze traffic and user behavior",
+            "Improve user experience"
+          ]
+        },
+        "thirdParty": {
+          "title": "Third-party cookies",
+          "content": "We may use third-party cookies for analytics and other services. These are governed by the respective provider's privacy policy."
+        },
+        "control": {
+          "title": "Control cookies",
+          "content": "You can control and delete cookies through your browser settings. Note that disabling cookies may affect website functionality."
+        },
+        "changes": {
+          "title": "Changes to cookie policy",
+          "content": "We may update this cookie policy. Check this page regularly for updates."
+        }
+      }
+    }
   },
   "language": {
     "swedish": "Svenska",

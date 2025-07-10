@@ -4,13 +4,6 @@ import { useAppStore } from './stores/app'
 import { useViewportStore } from './stores/viewport'
 import { storeToRefs } from 'pinia'
 import Navbar from './sections/Navbar.vue'
-import Hero from './sections/Hero.vue'
-import Services from './sections/Services.vue'
-// import Portfolio from './sections/Portfolio.vue'
-// import Testimonials from './sections/Testimonials.vue'
-import Pricing from './sections/Pricing.vue'
-import About from './sections/About.vue'
-import Contact from './sections/Contact.vue'
 import Footer from './sections/Footer.vue'
 
 const appStore = useAppStore()
@@ -45,15 +38,7 @@ onUnmounted(() => {
 
   <div id="app" :class="{ 'app-loading': isLoading }">
     <Navbar />
-    <main>
-      <Hero />
-      <Services />
-      <!-- <Portfolio /> -->
-      <!-- <Testimonials /> -->
-      <Pricing />
-      <About />
-      <Contact />
-    </main>
+    <router-view />
     <Footer />
     
     <!-- Back to Top Button -->

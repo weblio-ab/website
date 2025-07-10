@@ -61,9 +61,9 @@
         </div>
         <div class="col-md-6 text-md-end">
           <div class="footer-links-inline">
-            <a href="#" class="text-light-emphasis">{{ $t('footer.privacy') }}</a>
-            <a href="#" class="text-light-emphasis">{{ $t('footer.terms') }}</a>
-            <a href="#" class="text-light-emphasis">{{ $t('footer.cookies') }}</a>
+            <router-link to="/privacy" class="text-light-emphasis" target="_blank">{{ $t('footer.privacy') }}</router-link>
+            <router-link to="/terms" class="text-light-emphasis" target="_blank">{{ $t('footer.terms') }}</router-link>
+            <router-link to="/cookies" class="text-light-emphasis" target="_blank">{{ $t('footer.cookies') }}</router-link>
           </div>
         </div>
       </div>

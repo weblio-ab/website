@@ -18,24 +18,24 @@
       <div class="collapse navbar-collapse" :class="{ show: isMenuOpen }">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" :class="{ active: activeSection === 'home' }" href="#home" @click="closeMenu">{{ $t('navigation.home') }}</a>
+            <router-link class="nav-link" :class="{ active: activeSection === 'home' }" to="/#home" @click="closeMenu">{{ $t('navigation.home') }}</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" :class="{ active: activeSection === 'services' }" href="#services" @click="closeMenu">{{ $t('navigation.services') }}</a>
+            <router-link class="nav-link" :class="{ active: activeSection === 'services' }" to="/#services" @click="closeMenu">{{ $t('navigation.services') }}</router-link>
           </li>
           <!-- Portfolio temporarily commented out
           <li class="nav-item">
-            <a class="nav-link" :class="{ active: activeSection === 'portfolio' }" href="#portfolio" @click="closeMenu">{{ $t('navigation.portfolio') }}</a>
+            <router-link class="nav-link" :class="{ active: activeSection === 'portfolio' }" to="/#portfolio" @click="closeMenu">{{ $t('navigation.portfolio') }}</router-link>
           </li>
           -->
           <li class="nav-item">
-            <a class="nav-link" :class="{ active: activeSection === 'pricing' }" href="#pricing" @click="closeMenu">{{ $t('navigation.pricing') }}</a>
+            <router-link class="nav-link" :class="{ active: activeSection === 'pricing' }" to="/#pricing" @click="closeMenu">{{ $t('navigation.pricing') }}</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" :class="{ active: activeSection === 'about' }" href="#about" @click="closeMenu">{{ $t('navigation.about') }}</a>
+            <router-link class="nav-link" :class="{ active: activeSection === 'about' }" to="/#about" @click="closeMenu">{{ $t('navigation.about') }}</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" :class="{ active: activeSection === 'contact' }" href="#contact" @click="closeMenu">{{ $t('navigation.contact') }}</a>
+            <router-link class="nav-link" :class="{ active: activeSection === 'contact' }" to="/#contact" @click="closeMenu">{{ $t('navigation.contact') }}</router-link>
           </li>
         </ul>
 
@@ -64,7 +64,7 @@
             </ul>
           </div>
 
-          <a href="#contact" class="btn btn-primary">{{ $t('hero.cta') }}</a>
+          <router-link to="/#contact" class="btn btn-primary">{{ $t('hero.cta') }}</router-link>
         </div>
       </div>
     </div>

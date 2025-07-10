@@ -252,7 +252,186 @@
     "viewAll": "Se alla",
     "email": "E-post",
     "phone": "Telefon",
-    "close": "Stäng"
+    "close": "Stäng",
+    "lastUpdated": "Senast uppdaterad",
+    "effectiveDate": "Gäller från"
+  },
+  "pages": {
+    "privacy": {
+      "title": "Integritetspolicy",
+      "subtitle": "Information om hur vi hanterar dina personuppgifter",
+      "lastUpdated": "2025-01-11",
+      "sections": {
+        "introduction": {
+          "title": "Inledning",
+          "content": "Weblio värnar om din integritet och är engagerat i att skydda dina personuppgifter. Denna integritetspolicy förklarar hur vi samlar in, använder, lagrar och skyddar information när du besöker vår webbplats eller använder våra tjänster."
+        },
+        "dataController": {
+          "title": "Personuppgiftsansvarig",
+          "content": "Weblio är personuppgiftsansvarig för behandlingen av dina personuppgifter enligt denna policy."
+        },
+        "dataCollection": {
+          "title": "Vilka uppgifter samlar vi in?",
+          "content": "Vi kan samla in följande typer av information:",
+          "list": [
+            "Kontaktuppgifter (namn, e-postadress, telefonnummer)",
+            "Företagsinformation (företagsnamn, bransch, webbplatsönskemål)",
+            "Teknisk information (IP-adress, webbläsartyp, besöksstatistik)",
+            "Kommunikationsdata (meddelanden via kontaktformulär eller e-post)"
+          ]
+        },
+        "dataUse": {
+          "title": "Hur använder vi dina uppgifter?",
+          "content": "Vi använder dina personuppgifter för att:",
+          "list": [
+            "Tillhandahålla våra tjänster och besvara dina förfrågningar",
+            "Kommunicera med dig om projekt och tjänster",
+            "Förbättra vår webbplats och våra tjänster",
+            "Fullgöra våra avtalsmässiga skyldigheter",
+            "Följa gällande lagstiftning"
+          ]
+        },
+        "legalBasis": {
+          "title": "Rättslig grund",
+          "content": "Vår behandling av personuppgifter baseras på:",
+          "list": [
+            "Samtycke - när du frivilligt lämnar uppgifter",
+            "Avtalsuppfyllelse - för att leverera tjänster",
+            "Berättigat intresse - för att förbättra våra tjänster",
+            "Rättslig förpliktelse - när lagen kräver det"
+          ]
+        },
+        "dataSharing": {
+          "title": "Delning av uppgifter",
+          "content": "Vi delar inte dina personuppgifter med tredje part utan ditt samtycke, förutom när det krävs enligt lag eller för att tillhandahålla våra tjänster (t.ex. webbhotell-leverantörer)."
+        },
+        "dataRetention": {
+          "title": "Lagringstid",
+          "content": "Vi lagrar dina personuppgifter endast så länge som nödvändigt för de ändamål de samlades in för, eller enligt vad som krävs enligt lag."
+        },
+        "yourRights": {
+          "title": "Dina rättigheter",
+          "content": "Du har rätt att:",
+          "list": [
+            "Få tillgång till dina personuppgifter",
+            "Begära rättelse av felaktiga uppgifter",
+            "Begära radering av dina uppgifter",
+            "Begära begränsning av behandlingen",
+            "Invända mot behandlingen",
+            "Dataportabilitet",
+            "Lämna in klagomål till tillsynsmyndighet"
+          ]
+        },
+        "security": {
+          "title": "Säkerhet",
+          "content": "Vi vidtar lämpliga tekniska och organisatoriska säkerhetsåtgärder för att skydda dina personuppgifter mot obehörig åtkomst, förlust eller missbruk."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "content": "Vår webbplats använder cookies för att förbättra användarupplevelsen. Se vår cookie-policy för mer information."
+        },
+        "changes": {
+          "title": "Ändringar av policyn",
+          "content": "Vi kan uppdatera denna integritetspolicy från tid till annan. Väsentliga ändringar kommer att meddelas på vår webbplats."
+        },
+        "contact": {
+          "title": "Kontakta oss",
+          "content": "Om du har frågor om denna integritetspolicy eller vill utöva dina rättigheter, kontakta oss:"
+        }
+      }
+    },
+    "terms": {
+      "title": "Allmänna villkor",
+      "subtitle": "Villkor för användning av våra tjänster",
+      "lastUpdated": "2025-01-11",
+      "sections": {
+        "introduction": {
+          "title": "Inledning",
+          "content": "Dessa allmänna villkor reglerar din användning av Weblios tjänster. Genom att använda våra tjänster accepterar du dessa villkor."
+        },
+        "services": {
+          "title": "Våra tjänster",
+          "content": "Weblio erbjuder webbutvecklingstjänster inklusive design, utveckling, hosting och underhåll av webbplatser."
+        },
+        "obligations": {
+          "title": "Dina skyldigheter",
+          "content": "Som kund förbinder du dig att:",
+          "list": [
+            "Tillhandahålla korrekt och fullständig information",
+            "Betala för tjänster enligt överenskomna villkor",
+            "Respektera upphovsrätt och andra immateriella rättigheter",
+            "Inte använda tjänsterna för olagliga ändamål"
+          ]
+        },
+        "payment": {
+          "title": "Betalningsvillkor",
+          "content": "Betalning sker enligt överenskommen betalningsplan. Försenade betalningar kan medföra ränta enligt gällande lag."
+        },
+        "intellectualProperty": {
+          "title": "Immaterialrätt",
+          "content": "Weblio behåller rätten till kod och tekniska lösningar. Kunden äger innehåll och varumärken som tillhandahålls."
+        },
+        "liability": {
+          "title": "Ansvarsbegränsning",
+          "content": "Weblios ansvar är begränsat till direkt skada som orsakats av vårdslöshet. Vi ansvarar inte för indirekt skada eller förlust."
+        },
+        "termination": {
+          "title": "Uppsägning",
+          "content": "Avtalet kan sägas upp av båda parter med överenskommen uppsägningstid. Vid uppsägning från kundens sida erbjuds export av data."
+        },
+        "changes": {
+          "title": "Ändringar av villkor",
+          "content": "Vi förbehåller oss rätten att ändra dessa villkor. Väsentliga ändringar meddelas i förväg."
+        },
+        "governing": {
+          "title": "Tillämplig lag",
+          "content": "Dessa villkor styrs av svensk lag. Tvister ska i första hand lösas genom förhandling."
+        }
+      }
+    },
+    "cookies": {
+      "title": "Cookie-policy",
+      "subtitle": "Information om hur vi använder cookies",
+      "lastUpdated": "2025-01-11",
+      "sections": {
+        "what": {
+          "title": "Vad är cookies?",
+          "content": "Cookies är små textfiler som lagras på din enhet när du besöker en webbplats. De hjälper webbplatsen att komma ihåg information om ditt besök."
+        },
+        "types": {
+          "title": "Typer av cookies vi använder",
+          "content": "Vi använder följande typer av cookies:",
+          "list": [
+            "Nödvändiga cookies - för webbplatsens grundläggande funktioner",
+            "Prestandacookies - för att förbättra webbplatsens prestanda",
+            "Funktionscookies - för att komma ihåg dina inställningar",
+            "Analyticscookies - för att förstå hur webbplatsen används"
+          ]
+        },
+        "purpose": {
+          "title": "Syfte med cookies",
+          "content": "Vi använder cookies för att:",
+          "list": [
+            "Säkerställa att webbplatsen fungerar korrekt",
+            "Komma ihåg dina språkinställningar",
+            "Analysera trafik och användarbeteende",
+            "Förbättra användarupplevelsen"
+          ]
+        },
+        "thirdParty": {
+          "title": "Tredjepartscookies",
+          "content": "Vi kan använda cookies från tredje part för analyser och andra tjänster. Dessa styrs av respektive leverantörs integritetspolicy."
+        },
+        "control": {
+          "title": "Kontrollera cookies",
+          "content": "Du kan kontrollera och ta bort cookies genom din webbläsares inställningar. Observera att avstängning av cookies kan påverka webbplatsens funktionalitet."
+        },
+        "changes": {
+          "title": "Ändringar av cookie-policyn",
+          "content": "Vi kan uppdatera denna cookie-policy. Kontrollera sidan regelbundet för uppdateringar."
+        }
+      }
+    }
   },
   "language": {
     "swedish": "Svenska",
