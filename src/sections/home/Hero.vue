@@ -18,7 +18,7 @@
                 <i class="bi bi-chat-dots me-2"></i>
                 {{ $t('hero.cta') }}
               </router-link>
-              <router-link class="btn btn-primary btn-lg" to="/#pricing">
+              <router-link class="btn btn-outline-primary btn-lg" to="/#pricing">
                 <i class="bi bi-tag me-2"></i>
                 {{ $t('hero.ctaSecondary') }}
               </router-link>
@@ -123,7 +123,7 @@ import MobileMockup from '../../components/MobileMockup.vue'
   height: 320px;
   top: 120px;
   right: 120px;
-  transform: perspective(1000px) rotateY(15deg) rotateX(-5deg);
+  transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
   z-index: 3;
 }
 
