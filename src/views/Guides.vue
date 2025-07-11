@@ -123,6 +123,7 @@ import { ref, computed, onMounted, onBeforeUnmount, watch, nextTick } from "vue"
 import { useI18n } from "vue-i18n";
 import { useRoute, useRouter } from "vue-router";
 import { useGuidesStore } from "../stores/guides";
+import { useSEO } from "../composables/useSEO";
 
 // Import all guide components
 import EmailSetupGuide from "../components/guides/EmailSetupGuide.vue";
@@ -134,6 +135,15 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 const guidesStore = useGuidesStore();
+
+// SEO setup - will be dynamically updated based on selected guide
+const seoMeta = ref({
+  title: t('seo.pages.guides.title'),
+  description: t('seo.pages.guides.description'),
+  keywords: t('seo.pages.guides.keywords')
+});
+
+useSEO(seoMeta.value);
 
 // Register components for dynamic rendering
 const guideComponents = {
@@ -213,9 +223,14 @@ watch(() => [route.params.guideId, route.params.device, route.params.client], ([
       selectedGuide.value = guide;
       document.body.style.overflow = "hidden";
       
-      // Update page title for SEO and browser tab
+      // Update SEO meta tags for specific guide
       const guideTitle = t(`guides.${guide.id}.title`);
-      document.title = `${guideTitle} - ${t('guides.title')} - Weblio`;
+      const guideDescription = t(`guides.${guide.id}.description`);
+      seoMeta.value = {
+        title: `${guideTitle} - Tekniska Guider - Weblio`,
+        description: guideDescription,
+        keywords: `${guide.id}, guide, tutorial, ${guideTitle.toLowerCase()}, teknisk support, weblio`
+      };
       
       // If we have device/client parameters, we need to pass them to the guide component
       if (newDevice || newClient) {
@@ -241,8 +256,12 @@ watch(() => [route.params.guideId, route.params.device, route.params.client], ([
     selectedGuide.value = null;
     document.body.style.overflow = "auto";
     
-    // Reset page title
-    document.title = `${t('guides.title')} - Weblio`;
+    // Reset SEO meta tags to default guides page
+    seoMeta.value = {
+      title: t('seo.pages.guides.title'),
+      description: t('seo.pages.guides.description'),
+      keywords: t('seo.pages.guides.keywords')
+    };
   }
 }, { immediate: true });
 

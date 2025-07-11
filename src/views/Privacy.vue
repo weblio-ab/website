@@ -132,10 +132,11 @@
 <script setup>
 import { onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useSEO } from '../composables/useSEO'
 import EmailObfuscate from '../components/EmailObfuscate.vue'
 import PhoneObfuscate from '../components/PhoneObfuscate.vue'
 
-const { tm } = useI18n()
+const { tm, t } = useI18n()
 
 // Get arrays from i18n using tm()
 const dataCollectionList = computed(() => tm('pages.privacy.sections.dataCollection.list'))
@@ -143,8 +144,16 @@ const dataUseList = computed(() => tm('pages.privacy.sections.dataUse.list'))
 const legalBasisList = computed(() => tm('pages.privacy.sections.legalBasis.list'))
 const yourRightsList = computed(() => tm('pages.privacy.sections.yourRights.list'))
 
+// SEO configuration för integritetssidan - nu lokaliserad
+useSEO({
+  title: t('seo.pages.privacy.title'),
+  description: t('seo.pages.privacy.description'),
+  keywords: t('seo.pages.privacy.keywords'),
+  type: 'article'
+})
+
 onMounted(() => {
-  document.title = `Integritetspolicy - Weblio`
+  document.title = t('seo.pages.privacy.title')
 })
 </script>
 

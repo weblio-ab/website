@@ -806,5 +806,59 @@
   "language": {
     "swedish": "Svenska",
     "english": "English"
+  },
+  "seo": {
+    "defaultTitle": "Weblio - Professionella hemsidor för företag och privatpersoner",
+    "defaultDescription": "Vi bygger professionella hemsidor för restauranger, salonger, företag och privatpersoner. Från idé till färdig hemsida på webben - vi sköter allt. Transparent prissättning och modern teknik.",
+    "defaultKeywords": "hemsida, webbdesign, Vue.js, företag, restaurang hemsida, salong hemsida, företag hemsida, Malmö, Sverige, webbutveckling, webbyrå",
+    "pages": {
+      "home": {
+        "title": "Weblio - Professionella hemsidor för företag och privatpersoner",
+        "description": "Vi bygger professionella hemsidor för restauranger, salonger, företag och privatpersoner. Från idé till färdig hemsida på webben - vi sköter allt. Transparent prissättning och modern teknik.",
+        "keywords": "hemsida, webbdesign, Vue.js, företag, restaurang hemsida, salong hemsida, företag hemsida, Malmö, Sverige, webbutveckling, webbyrå"
+      },
+      "guides": {
+        "title": "Tekniska Guider - E-post, Webbhotell & FTP - Weblio",
+        "description": "Steg-för-steg guider för e-postinställningar, webbhotell hantering, FTP-användning och teknisk support. Enkla instruktioner för alla enheter.",
+        "keywords": "e-post guide, webbhotell guide, FTP guide, teknisk support, e-postinställningar, iPhone e-post, Android e-post, Outlook, Gmail"
+      },
+      "privacy": {
+        "title": "Integritetspolicy - Weblio",
+        "description": "Läs om hur Weblio hanterar personuppgifter och skyddar din integritet. Vi följer GDPR och tar datasäkerhet på allvar.",
+        "keywords": "integritetspolicy, GDPR, personuppgifter, datasäkerhet, cookies, weblio"
+      },
+      "terms": {
+        "title": "Användarvillkor - Weblio",
+        "description": "Läs våra användarvillkor för webbutveckling och webbdesign tjänster. Rättsliga villkor för samarbete med Weblio.",
+        "keywords": "användarvillkor, villkor, juridik, webbdesign villkor, webbutveckling kontrakt, weblio"
+      },
+      "cookies": {
+        "title": "Cookie-policy - Weblio",
+        "description": "Information om hur Weblio använder cookies för att förbättra användarupplevelsen. Läs om olika typer av cookies och hur du kan hantera dem.",
+        "keywords": "cookies, cookie-policy, kakor, webbkakor, analytics, GDPR, weblio"
+      }
+    },
+    "business": {
+      "name": "Weblio - Webbutveckling",
+      "description": "Vi bygger professionella hemsidor för restauranger, salonger, företag och privatpersoner. Från idé till färdig hemsida på webben - vi sköter allt.",
+      "services": [
+        {
+          "name": "Webbutveckling",
+          "description": "Professionell webbutveckling för företag"
+        },
+        {
+          "name": "Webbdesign",
+          "description": "Modern och responsiv webbdesign"
+        },
+        {
+          "name": "E-handelsplatser",
+          "description": "Skräddarsydda e-handelslösningar"
+        },
+        {
+          "name": "Webbhotell",
+          "description": "Säker och snabb webbhosting"
+        }
+      ]
+    }
   }
 }

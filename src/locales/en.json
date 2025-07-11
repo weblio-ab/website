@@ -806,5 +806,59 @@
   "language": {
     "swedish": "Svenska",
     "english": "English"
+  },
+  "seo": {
+    "defaultTitle": "Weblio - Professional websites for businesses and individuals",
+    "defaultDescription": "We build professional websites for restaurants, salons, businesses and individuals. From idea to finished website on the web - we handle everything. Transparent pricing and modern technology.",
+    "defaultKeywords": "website, web design, Vue.js, business, restaurant website, salon website, business website, Malmö, Sweden, web development, web agency",
+    "pages": {
+      "home": {
+        "title": "Weblio - Professional websites for businesses and individuals",
+        "description": "We build professional websites for restaurants, salons, businesses and individuals. From idea to finished website on the web - we handle everything. Transparent pricing and modern technology.",
+        "keywords": "website, web design, Vue.js, business, restaurant website, salon website, business website, Malmö, Sweden, web development, web agency"
+      },
+      "guides": {
+        "title": "Technical Guides - Email, Web Hosting & FTP - Weblio",
+        "description": "Step-by-step guides for email settings, web hosting management, FTP usage and technical support. Simple instructions for all devices.",
+        "keywords": "email guide, web hosting guide, FTP guide, technical support, email settings, iPhone email, Android email, Outlook, Gmail"
+      },
+      "privacy": {
+        "title": "Privacy Policy - Weblio",
+        "description": "Read about how Weblio handles personal data and protects your privacy. We follow GDPR and take data security seriously.",
+        "keywords": "privacy policy, GDPR, personal data, data security, cookies, weblio"
+      },
+      "terms": {
+        "title": "Terms of Service - Weblio",
+        "description": "Read our terms of service for web development and web design services. Legal terms for collaboration with Weblio.",
+        "keywords": "terms of service, terms, legal, web design terms, web development contract, weblio"
+      },
+      "cookies": {
+        "title": "Cookie Policy - Weblio",
+        "description": "Information about how Weblio uses cookies to improve the user experience. Read about different types of cookies and how you can manage them.",
+        "keywords": "cookies, cookie policy, web cookies, analytics, GDPR, weblio"
+      }
+    },
+    "business": {
+      "name": "Weblio - Web Development",
+      "description": "We build professional websites for restaurants, salons, businesses and individuals. From idea to finished website on the web - we handle everything.",
+      "services": [
+        {
+          "name": "Web Development",
+          "description": "Professional web development for businesses"
+        },
+        {
+          "name": "Web Design",
+          "description": "Modern and responsive web design"
+        },
+        {
+          "name": "E-commerce Sites",
+          "description": "Custom e-commerce solutions"
+        },
+        {
+          "name": "Web Hosting",
+          "description": "Secure and fast web hosting"
+        }
+      ]
+    }
   }
 }

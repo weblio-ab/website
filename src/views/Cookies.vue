@@ -130,8 +130,17 @@ import { onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import EmailObfuscate from '../components/EmailObfuscate.vue'
 import PhoneObfuscate from '../components/PhoneObfuscate.vue'
+import { useSEO } from '../composables/useSEO'
 
-const { tm } = useI18n()
+const { tm, t } = useI18n()
+
+// SEO configuration för cookie-policy
+useSEO({
+  title: 'Cookie-policy - Weblio',
+  description: 'Information om hur Weblio använder cookies för att förbättra användarupplevelsen. Läs om olika typer av cookies och hur du kan hantera dem.',
+  keywords: 'cookies, cookie-policy, kakor, webbkakor, analytics, GDPR, weblio',
+  type: 'article'
+})
 
 // Get arrays from i18n using tm()
 const typesList = computed(() => tm('pages.cookies.sections.types.list'))

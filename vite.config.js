@@ -31,9 +31,19 @@ export default defineConfig({
         '/terms': 0.3,
         '/cookies': 0.3
       },
-      changefreq: 'monthly',
       generateRobotsTxt: true,
       exclude: []
     })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'vue-router', 'pinia', 'vue-i18n'],
+          bootstrap: ['bootstrap', '@popperjs/core'],
+          utils: ['@unhead/vue', '@vueuse/head']
+        }
+      }
+    }
+  }
 })

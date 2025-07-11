@@ -12,7 +12,6 @@ export function vueSitemapPlugin(options = {}) {
     generateRobotsTxt = true,
     exclude = [],
     priority = {},
-    changefreq = 'monthly',
     additionalRoutes = [],
     environment = 'production'
   } = options
@@ -56,10 +55,9 @@ export function vueSitemapPlugin(options = {}) {
             const routePriority = priority[route] || 0.5
             
             return `  <url>
-      <loc>${hostname}${url}</loc>
-      <changefreq>${changefreq}</changefreq>
-      <priority>${routePriority}</priority>
-    </url>`
+    <loc>${hostname}${url}</loc>
+    <priority>${routePriority}</priority>
+  </url>`
           }).join('\n')
           
           const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -93,7 +91,36 @@ Disallow: /
             robotsTxt = `User-agent: *
 Allow: /
 
-Sitemap: ${hostname}/${outputFile}`
+# Explicitly allow important assets for SEO and page rendering
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.svg$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.ico$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.json$ 
+
+# Disallow URL parameters (except guides with device/client params)
+Disallow: /*?*
+Allow: /guides/*?*
+
+# Sitemap location
+Sitemap: ${hostname}/${outputFile}
+
+# Crawl delay to be respectful
+Crawl-delay: 1`
           }
           
           this.emitFile({

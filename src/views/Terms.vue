@@ -101,6 +101,7 @@ import { onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import EmailObfuscate from '../components/EmailObfuscate.vue'
 import PhoneObfuscate from '../components/PhoneObfuscate.vue'
+import { useSEO } from '../composables/useSEO'
 
 const { tm } = useI18n()
 
@@ -109,6 +110,14 @@ const obligationsList = computed(() => tm('pages.terms.sections.obligations.list
 
 onMounted(() => {
   document.title = `Allmänna villkor - Weblio`
+})
+
+// SEO configuration för användarvillkor
+useSEO({
+  title: 'Användarvillkor - Weblio',
+  description: 'Läs våra användarvillkor för webbutveckling och webbdesign tjänster. Rättsliga villkor för samarbete med Weblio.',
+  keywords: 'användarvillkor, villkor, juridik, webbdesign villkor, webbutveckling kontrakt, weblio',
+  type: 'article'
 })
 </script>
 
