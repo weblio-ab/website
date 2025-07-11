@@ -49,19 +49,20 @@ export function vueSitemapPlugin(options = {}) {
         
         console.log('Found routes:', allRoutes)
         
-        // Generate sitemap XML
-        const urlEntries = allRoutes.map(route => {
-          const url = route === '/' ? route : route
-          const routePriority = priority[route] || 0.5
+        // Generate sitemap XML only for production
+        if (environment === 'production') {
+          const urlEntries = allRoutes.map(route => {
+            const url = route === '/' ? route : route
+            const routePriority = priority[route] || 0.5
+            
+            return `  <url>
+      <loc>${hostname}${url}</loc>
+      <changefreq>${changefreq}</changefreq>
+      <priority>${routePriority}</priority>
+    </url>`
+          }).join('\n')
           
-          return `  <url>
-    <loc>${hostname}${url}</loc>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${routePriority}</priority>
-  </url>`
-        }).join('\n')
-        
-        const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+          const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -69,22 +70,23 @@ export function vueSitemapPlugin(options = {}) {
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${urlEntries}
 </urlset>`
-        
-        this.emitFile({
-          type: 'asset',
-          fileName: outputFile,
-          source: sitemapXml
-        })
+          
+          this.emitFile({
+            type: 'asset',
+            fileName: outputFile,
+            source: sitemapXml
+          })
+        }
         
         if (generateRobotsTxt) {
           let robotsTxt
           
-          if (environment === 'staging') {
-            // Staging: Block all crawlers and hide from search engines
+          if (environment !== 'production') {
+            // non-production: Block all crawlers and hide from search engines
             robotsTxt = `User-agent: *
 Disallow: /
 
-# This is a staging environment - not for public indexing
+# This is a non-production environment - not for public indexing
 # No sitemap provided to prevent search engine discovery`
           } else {
             // Production: Allow crawlers and provide sitemap
@@ -101,10 +103,15 @@ Sitemap: ${hostname}/${outputFile}`
           })
         }
         
-        console.log(`✓ Generated ${outputFile} with ${allRoutes.length} routes`)
+        if (environment !== 'production') {
+          console.log('✓ Sitemap generation skipped for non-production environment')
+        } else {
+          console.log(`✓ Generated ${outputFile} with ${allRoutes.length} routes`)
+        }
+        
         if (generateRobotsTxt) {
-          if (environment === 'staging') {
-            console.log('✓ Generated robots.txt (staging - blocks crawlers)')
+          if (environment !== 'production') {
+            console.log('✓ Generated robots.txt (non-production - blocks crawlers)')
           } else {
             console.log('✓ Generated robots.txt (production - allows crawlers)')
           }
