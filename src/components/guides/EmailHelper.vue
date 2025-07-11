@@ -55,7 +55,7 @@ const props = defineProps({
 })
 
 // Emits
-const emit = defineEmits(['update:modelValue', 'emailInfo'])
+const emit = defineEmits(['update:modelValue', 'emailInfo', 'email-updated'])
 
 // Local state
 const localEmail = ref(props.modelValue)
@@ -69,7 +69,8 @@ const emailInfo = ref({
 // Watch for prop changes
 watch(() => props.modelValue, (newValue) => {
   localEmail.value = newValue
-})
+  extractEmailInfo()
+}, { immediate: true })
 
 // Methods
 function handleEmailInput() {
@@ -86,6 +87,10 @@ function extractEmailInfo() {
       outgoingServer: ''
     }
     emit('emailInfo', emailInfo.value)
+    emit('email-updated', {
+      email: localEmail.value,
+      emailInfo: emailInfo.value
+    })
     return
   }
 
@@ -110,15 +115,16 @@ function extractEmailInfo() {
   }
   
   emit('emailInfo', emailInfo.value)
+  emit('email-updated', {
+    email: localEmail.value,
+    emailInfo: emailInfo.value
+  })
 }
 
 function clearEmail() {
   localEmail.value = ''
   handleEmailInput()
 }
-
-// Initialize email info on mount
-extractEmailInfo()
 </script>
 
 <style scoped>

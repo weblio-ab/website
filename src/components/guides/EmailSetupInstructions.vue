@@ -288,20 +288,14 @@ const props = defineProps({
 const { t } = useI18n()
 
 const incomingSettings = computed(() => {
-  const server = props.emailInfo.incomingServer || 'mail.dindoman.se'
-  const username = props.userEmail || 'din@epostadress.se'
-  return `Server: ${server}
-Port: 993
-Säkerhet: SSL/TLS
-Användarnamn: ${username}`
+  const server = props.emailInfo.incomingServer || (props.emailInfo.domain ? `mail.${props.emailInfo.domain}` : t('guides.emailSetup.instructions.defaultServer'))
+  const username = props.userEmail || t('guides.emailSetup.instructions.defaultEmail')
+  return t('guides.emailSetup.instructions.incomingSettings', { server, username })
 })
 
 const outgoingSettings = computed(() => {
-  const server = props.emailInfo.outgoingServer || 'mail.dindoman.se'
-  return `Server: ${server}
-Port: 587
-Säkerhet: STARTTLS
-Autentisering: Ja`
+  const server = props.emailInfo.outgoingServer || (props.emailInfo.domain ? `mail.${props.emailInfo.domain}` : t('guides.emailSetup.instructions.defaultServer'))
+  return t('guides.emailSetup.instructions.outgoingSettings', { server })
 })
 </script>
 

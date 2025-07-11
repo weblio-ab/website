@@ -502,8 +502,10 @@
         "downloadPlayStore": "Ladda ner från Google Play",
         "incoming": "Inkommande server",
         "outgoing": "Utgående server",
-        "incomingSettings": "{'Server: mail.dindoman.se\nPort: 993\nSäkerhet: SSL/TLS\nAnvändarnamn: din@epostadress.se'}",
-        "outgoingSettings": "Server: mail.dindoman.se\nPort: 587\nSäkerhet: STARTTLS\nAutentisering: Ja",
+        "defaultEmail": "din@epostadress.se",
+        "defaultServer": "mail.dindoman.se",
+        "incomingSettings": "Server: {server}\nPort: 993\nSäkerhet: SSL/TLS\nAnvändarnamn: {username}",
+        "outgoingSettings": "Server: {server}\nPort: 587\nSäkerhet: STARTTLS\nAutentisering: Ja",
         "nativeIphone": {
           "title": "Använd iPhone Mail-appen",
           "note": "iPhones inbyggda Mail-app fungerar bra för grundläggande e-posthantering.",

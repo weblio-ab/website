@@ -502,8 +502,10 @@
         "downloadPlayStore": "Download from Google Play",
         "incoming": "Incoming server",
         "outgoing": "Outgoing server",
-        "incomingSettings": "{'Server: mail.dindoman.se\nPort: 993\nSecurity: SSL/TLS\nUsername: your@emailaddress.se'}",
-        "outgoingSettings": "Server: mail.dindoman.se\nPort: 587\nSecurity: STARTTLS\nAuthentication: Yes",
+        "defaultEmail": "your@emailaddress.se",
+        "defaultServer": "mail.yourdomain.com",
+        "incomingSettings": "Server: {server}\nPort: 993\nSecurity: SSL/TLS\nUsername: {username}",
+        "outgoingSettings": "Server: {server}\nPort: 587\nSecurity: STARTTLS\nAuthentication: Yes",
         "nativeIphone": {
           "title": "Use iPhone Mail app",
           "note": "iPhone's built-in Mail app works well for basic email management.",

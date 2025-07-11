@@ -3,8 +3,7 @@
     <div class="email-setup-guide">
       <!-- Optional Email Input -->
       <EmailHelper 
-        :user-email="userEmail"
-        :email-info="emailInfo"
+        v-model="userEmail"
         @email-updated="handleEmailUpdate"
       />
 
