@@ -235,6 +235,7 @@
     "privacy": "Privacy Policy",
     "terms": "Terms",
     "cookies": "Cookies",
+    "guides": "Guides & Support",
     "copyright": "© 2025 Weblio. All rights reserved.",
     "techBadges": {
       "vue": "Vue.js",
@@ -431,6 +432,373 @@
           "content": "We may update this cookie policy. Check this page regularly for updates."
         }
       }
+    }
+  },
+  "guides": {
+    "title": "Guides & Support",
+    "subtitle": "Help and guides for common questions",
+    "needMoreHelp": "Need more help?",
+    "categories": {
+      "email": "Email",
+      "website": "Website",
+      "technical": "Technical support"
+    },
+    "common": {
+      "tips": "Tips:",
+      "note": "Note:",
+      "warning": "Warning:",
+      "security": "Security:",
+      "success": "Success!",
+      "info": "Information:",
+      "danger": "Warning:",
+      "rightClick": "Right-click",
+      "doubleClick": "Double-click",
+      "next": "Next",
+      "back": "Back",
+      "recommended": "Recommended",
+      "download": "Download"
+    },
+    "emailSetup": {
+      "title": "Configure email on phone",
+      "description": "Get help setting up email on your phone with this easy guide",
+      "intro": "We'll help you configure email on your phone step by step. Start by choosing your device type.",
+      "helper": {
+        "title": "Make the guide personal (optional)",
+        "description": "Enter your email address and we'll customize the guide for you.",
+        "placeholder": "your@emailaddress.com",
+        "detected": "Domain detected: {domain}"
+      },
+      "device": {
+        "title": "What device are you using?",
+        "description": "Choose your phone to get the right instructions.",
+        "iphone": "iPhone",
+        "iphoneDesc": "Apple iPhone with iOS",
+        "android": "Android",
+        "androidDesc": "Android phone from various manufacturers"
+      },
+      "app": {
+        "title": "Which email app do you want to use?",
+        "description": "Choose the app you prefer for managing your email.",
+        "gmail": "Gmail",
+        "gmailDesc": "Google's popular email app",
+        "outlook": "Outlook",
+        "outlookDesc": "Microsoft's professional email app",
+        "native": "Built-in email app",
+        "nativeDesc": "Your phone's default email app"
+      },
+      "setup": {
+        "title": "Setup Guide",
+        "autoConfig": {
+          "title": "Automatic configuration",
+          "description": "Download a configuration file for easy installation"
+        }
+      },
+      "instructions": {
+        "downloadGmail": "Download the Gmail app",
+        "gmailNote": "Gmail is a free and secure email app from Google.",
+        "downloadOutlook": "Download the Outlook app",
+        "outlookNote": "Outlook is Microsoft's professional email app with advanced features.",
+        "downloadAppStore": "Download from App Store",
+        "downloadPlayStore": "Download from Google Play",
+        "incoming": "Incoming server",
+        "outgoing": "Outgoing server",
+        "incomingSettings": "Server: mail.dindoman.se\nPort: 993\nSecurity: SSL/TLS\nUsername: your@emailaddress.se",
+        "outgoingSettings": "Server: mail.dindoman.se\nPort: 587\nSecurity: STARTTLS\nAuthentication: Yes",
+        "nativeIphone": {
+          "title": "Use iPhone Mail app",
+          "note": "iPhone's built-in Mail app works well for basic email management.",
+          "step1": {
+            "title": "Open Settings",
+            "description": "Go to Settings > Mail > Accounts on your iPhone."
+          },
+          "step2": {
+            "title": "Add account",
+            "description": "Tap 'Add Account' and then select 'Other' from the list.",
+            "note": "Choose 'Other' to be able to enter manual server settings."
+          },
+          "step3": {
+            "title": "Enter server settings",
+            "description": "Fill in your email details and use the server settings below:",
+            "warning": "Make sure all settings are exactly correct to avoid connection issues."
+          },
+          "step4": {
+            "title": "Test the connection",
+            "description": "Save the settings and test by sending a test message.",
+            "success": "Now you can use your email in the iPhone Mail app!"
+          }
+        },
+        "nativeAndroid": {
+          "title": "Use Android Email app",
+          "note": "Most Android phones have a built-in email app that works well.",
+          "step1": {
+            "title": "Open Email app",
+            "description": "Find and open the email app on your Android phone (might be called 'Email' or 'Mail')."
+          },
+          "step2": {
+            "title": "Add account",
+            "description": "Tap 'Add Account' and select 'Manual Configuration'.",
+            "note": "If you don't see this option, choose 'Other' or 'IMAP/POP3'."
+          },
+          "step3": {
+            "title": "Configure server settings",
+            "description": "Enter your email details and use the server settings below:",
+            "warning": "Make sure all port numbers and security settings are correct."
+          },
+          "step4": {
+            "title": "Complete setup",
+            "description": "Save the settings and let your phone synchronize your email.",
+            "success": "Your email is now configured and ready to use!"
+          }
+        },
+        "gmail": {
+          "step1": {
+            "title": "Open Gmail app",
+            "description": "Open the Gmail app after installation and tap 'Add email account'."
+          },
+          "step2": {
+            "title": "Select account type",
+            "description": "Choose 'Other' to add your own email account.",
+            "note": "Gmail supports IMAP accounts from other providers."
+          },
+          "step3": {
+            "title": "Enter server settings",
+            "description": "Fill in your email details and use the server settings below:"
+          },
+          "step4": {
+            "title": "Complete configuration",
+            "description": "Save the settings and let Gmail synchronize your email.",
+            "success": "Now you can manage your email via the Gmail app!"
+          }
+        },
+        "outlook": {
+          "step1": {
+            "title": "Open Outlook app",
+            "description": "Start the Outlook app and tap 'Add Account'."
+          },
+          "step2": {
+            "title": "Enter email address",
+            "description": "Type in your email address and let Outlook try to find settings automatically.",
+            "note": "If automatic configuration fails, choose 'Advanced Settings'."
+          },
+          "step3": {
+            "title": "Configure manually",
+            "description": "If automatic configuration doesn't work, use these manual settings:"
+          },
+          "step4": {
+            "title": "Verify account",
+            "description": "Outlook will test the connection and synchronize your email.",
+            "success": "Your email account is now active in Outlook!"
+          }
+        }
+      }
+    },
+    "webmail": {
+      "title": "How to use webmail",
+      "description": "Step-by-step guide to access and use your email via web browser",
+      "intro": "Webmail allows you to access your email anywhere via a web browser. Follow this guide to get started.",
+      "step1": {
+        "title": "Log in to webmail",
+        "description": "Go to your webmail login page and enter your credentials",
+        "urlInfo": "The webmail address is:"
+      },
+      "step2": {
+        "title": "Navigate the interface",
+        "description": "Learn where to find inbox, sent messages and other folders"
+      },
+      "step3": {
+        "title": "Compose and send email",
+        "description": "How to compose and send new messages",
+        "tipsTitle": "Tips for writing emails:",
+        "tip1": "Use clear subject lines",
+        "tip2": "Keep messages short and concise",
+        "tip3": "Check spelling before sending"
+      },
+      "step4": {
+        "title": "Manage attachments",
+        "description": "Upload and download files in your email messages",
+        "sizeWarning": "Maximum file size for attachments is usually 25 MB.",
+        "formatsTitle": "Supported file formats:"
+      }
+    },
+    "iphone": {
+      "title": "Configure email on iPhone",
+      "description": "Add your email account to the iPhone Mail app",
+      "intro": "Follow this guide to add your email account to the iPhone Mail app.",
+      "step1": {
+        "title": "Open Settings",
+        "description": "Go to Settings > Mail > Accounts"
+      },
+      "step2": {
+        "title": "Add account",
+        "description": "Tap 'Add Account' and select 'Other'",
+        "providersTitle": "Common email providers:",
+        "gmail": "Gmail",
+        "outlook": "Outlook",
+        "other": "Other"
+      },
+      "step3": {
+        "title": "Enter account information",
+        "description": "Fill in your email address, password and server settings",
+        "settingsTitle": "Example server settings:",
+        "incoming": "Incoming (IMAP)",
+        "outgoing": "Outgoing (SMTP)",
+        "incomingCode": "Server: mail.example.com\nPort: 993 (SSL) or 143\nSecurity: SSL/TLS",
+        "outgoingCode": "Server: mail.example.com\nPort: 587 (TLS) or 465 (SSL)\nSecurity: STARTTLS or SSL",
+        "settingsWarning": "These settings may vary. Contact your email provider for exact details."
+      },
+      "step4": {
+        "title": "Test settings",
+        "description": "Verify that email syncs correctly",
+        "checklistTitle": "Test checklist:",
+        "check1": "Send a test email to yourself",
+        "check2": "Check that new emails arrive",
+        "check3": "Test replying to an email"
+      }
+    },
+    "android": {
+      "title": "Configure email on Android",
+      "description": "Add your email account to Android Gmail or Mail app",
+      "intro": "This guide shows how to add your email account on Android.",
+      "step1": {
+        "title": "Open Gmail or Mail app",
+        "description": "Start your preferred email app",
+        "appsTitle": "Recommended apps:",
+        "gmail": "Gmail",
+        "outlook": "Microsoft Outlook",
+        "default": "Default Mail app",
+        "appNote": "Gmail is pre-installed on most Android devices."
+      },
+      "step2": {
+        "title": "Add account",
+        "description": "Go to settings and select 'Add account'",
+        "location": "Usually under Settings > Accounts or in the app menu"
+      },
+      "step3": {
+        "title": "Select account type",
+        "description": "Choose 'Other' or 'IMAP/POP3'",
+        "types": "Account types:",
+        "gmail": "Gmail",
+        "exchange": "Exchange",
+        "imap": "IMAP",
+        "pop3": "POP3",
+        "other": "Other",
+        "recommend": "Choose IMAP for best synchronization between devices."
+      },
+      "step4": {
+        "title": "Configure settings",
+        "description": "Enter server settings and test connection",
+        "requiredTitle": "Required information:",
+        "email": "Email address",
+        "password": "Password",
+        "incomingServer": "Incoming server (IMAP/POP3)",
+        "outgoingServer": "Outgoing server (SMTP)",
+        "finalTest": "Test the connection before saving settings."
+      }
+    },
+    "backup": {
+      "title": "Website backups",
+      "description": "Information about backup setup and restoration",
+      "intro": "Contact us to activate backups for your website.",
+      "step1": {
+        "title": "Activate backups",
+        "description": "Contact us to set up and activate backups for your website",
+        "contactInfo": "Contact us to activate backups. We will discuss what should be backed up, how often backups should be created, and how long they should be stored."
+      },
+      "step2": {
+        "title": "Restoration",
+        "description": "Contact us if you need to restore a previous version",
+        "process": "Restoration process:",
+        "step1": "Contact us via email or phone",
+        "step2": "Specify which date you want to restore to",
+        "step3": "We verify and perform the restoration",
+        "step4": "You'll receive confirmation when it's complete",
+        "timeframe": "Restoration usually occurs within 2-4 hours during business hours."
+      }
+    },
+    "ftp": {
+      "title": "Using FTP for file transfer",
+      "description": "Detailed guide for connecting to your website via FTP and managing files",
+      "intro": "FTP (File Transfer Protocol) allows you to upload and download files from your web server. This guide shows how to connect and manage files securely.",
+      "step1": {
+        "title": "Get your FTP credentials",
+        "description": "You need FTP server, username and password. These can be requested from us."
+      },
+      "step2": {
+        "title": "Choose an FTP client",
+        "description": "We recommend FileZilla (free) for Windows/Mac or WinSCP for Windows. Download from official websites.",
+        "filezilla": "Free for Windows, Mac & Linux",
+        "winscp": "Free for Windows",
+        "recommended": "Recommended",
+        "windows": "Windows"
+      },
+      "step3": {
+        "title": "Configure the connection",
+        "description": "Open your FTP client and enter: Server/Host, Username, Password. Port is usually 21 or 22 for SFTP.",
+        "exampleTitle": "Example connection settings:",
+        "exampleCode": "Server/Host: ftp.yourdomain.com\nUsername: yourusername\nPassword: yourpassword\nPort: 21 (FTP) or 22 (SFTP)\nProtocol: FTP or SFTP (recommended)",
+        "securityWarning": "Always choose SFTP (port 22) instead of regular FTP (port 21) when possible for better security."
+      },
+      "step4": {
+        "title": "Connect to server",
+        "description": "Click 'Connect' or 'Quickconnect'. You'll see your local files on the left and server files on the right.",
+        "localComputer": "Local computer (left)",
+        "localDescription": "Your files on the computer",
+        "server": "Server (right)",
+        "serverDescription": "Files on the web server"
+      },
+      "step5": {
+        "title": "Navigate to correct folder",
+        "description": "Go to 'public_html' or 'www' folder on the server - this is where your website files should be.",
+        "foldersTitle": "Common folders to look for:",
+        "foldersCode": "📁 public_html/    (most common)\n📁 www/\n📁 htdocs/\n📁 web/",
+        "folderInfo": "Your website files should be placed in one of these folders to be visible on the web."
+      },
+      "step6": {
+        "title": "Upload files",
+        "description": "Drag and drop files from left (local computer) to right (server), or right-click and select 'Upload'.",
+        "methodsTitle": "Ways to upload files:",
+        "dragDrop": "Drag files from left to right panel",
+        "rightClick": "Right-click on file and select \"Upload\"",
+        "doubleClick": "Double-click on file to upload",
+        "successMessage": "When upload is complete, files appear in the right panel and are available on your website."
+      },
+      "step7": {
+        "title": "Security tips",
+        "description": "Always use SFTP instead of FTP when possible. Never edit files directly on server without having a backup.",
+        "tipsTitle": "Important security tips:",
+        "useSftp": "Use SFTP",
+        "sftpDescription": "Safer than regular FTP",
+        "backupFirst": "Backup first",
+        "backupDescription": "Download files before changes",
+        "protectPassword": "Protect password",
+        "passwordDescription": "Use strong authentication",
+        "warningMessage": "Never edit files directly on the server. Download, edit locally, and upload again."
+      }
+    },
+    "emailConfig": {
+      "title": "iPhone Configuration File",
+      "subtitle": "Download an automatic configuration file for easy email setup on iPhone",
+      "emailLabel": "Your email address",
+      "emailPlaceholder": "name@yourdomain.com",
+      "invalidEmail": "Please enter a valid email address",
+      "domainDetected": "Domain detected: {domain}",
+      "advancedSettings": "Advanced settings",
+      "incomingServer": "Incoming server",
+      "incomingPort": "Incoming port",
+      "outgoingServer": "Outgoing server",
+      "outgoingPort": "Outgoing port",
+      "showAdvanced": "Show advanced settings",
+      "hideAdvanced": "Hide advanced settings",
+      "downloadButton": "Download configuration file",
+      "instructions": {
+        "title": "How to install the configuration file",
+        "step1": "Download the file and open it on your iPhone",
+        "step2": "Tap 'Install' when prompted",
+        "step3": "Enter your email password when requested",
+        "step4": "Your email is now configured and ready to use!"
+      },
+      "passwordWarning": "You will still need to enter your email password manually when installing the profile on your iPhone.",
+      "tip": "Configuration files only work on iPhone/iPad. For Android devices, use our step-by-step guide."
     }
   },
   "language": {

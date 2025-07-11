@@ -235,6 +235,7 @@
     "privacy": "Integritetspolicy",
     "terms": "Villkor",
     "cookies": "Cookies",
+    "guides": "Guider & Support",
     "copyright": "© 2025 Weblio. Alla rättigheter förbehållna.",
     "techBadges": {
       "vue": "Vue.js",
@@ -431,6 +432,373 @@
           "content": "Vi kan uppdatera denna cookie-policy. Kontrollera sidan regelbundet för uppdateringar."
         }
       }
+    }
+  },
+  "guides": {
+    "title": "Guider & Support",
+    "subtitle": "Hjälp och guider för vanliga frågor",
+    "needMoreHelp": "Behöver du mer hjälp?",
+    "categories": {
+      "email": "E-post",
+      "website": "Hemsida",
+      "technical": "Teknisk support"
+    },
+    "common": {
+      "tips": "Tips:",
+      "note": "Observera:",
+      "warning": "Varning:",
+      "security": "Säkerhet:",
+      "success": "Framgång!",
+      "info": "Information:",
+      "danger": "Varning:",
+      "rightClick": "Högerklick",
+      "doubleClick": "Dubbelklick",
+      "next": "Nästa",
+      "back": "Tillbaka",
+      "recommended": "Rekommenderad",
+      "download": "Ladda ner"
+    },
+    "emailSetup": {
+      "title": "Konfigurera e-post på telefon",
+      "description": "Få hjälp att ställa in e-post på din telefon med denna enkla guide",
+      "intro": "Vi hjälper dig att konfigurera e-post på din telefon steg för steg. Börja genom att välja din enhetstyp.",
+      "helper": {
+        "title": "Gör guiden personlig (valfritt)",
+        "description": "Ange din e-postadress så anpassas guiden för dig.",
+        "placeholder": "din@epostadress.se",
+        "detected": "Domän upptäckt: {domain}"
+      },
+      "device": {
+        "title": "Vilken enhet använder du?",
+        "description": "Välj din telefon för att få rätt instruktioner.",
+        "iphone": "iPhone",
+        "iphoneDesc": "Apple iPhone med iOS",
+        "android": "Android",
+        "androidDesc": "Android-telefon från olika tillverkare"
+      },
+      "app": {
+        "title": "Vilken e-postapp vill du använda?",
+        "description": "Välj den app du föredrar för att hantera din e-post.",
+        "gmail": "Gmail",
+        "gmailDesc": "Googles populära e-postapp",
+        "outlook": "Outlook",
+        "outlookDesc": "Microsofts professionella e-postapp",
+        "native": "Inbyggd e-postapp",
+        "nativeDesc": "Telefonens standard e-postapp"
+      },
+      "setup": {
+        "title": "Installationsguide",
+        "autoConfig": {
+          "title": "Automatisk konfiguration",
+          "description": "Ladda ner en konfigurationsfil för enkel installation"
+        }
+      },
+      "instructions": {
+        "downloadGmail": "Ladda ner Gmail-appen",
+        "gmailNote": "Gmail är en gratis och säker e-postapp från Google.",
+        "downloadOutlook": "Ladda ner Outlook-appen",
+        "outlookNote": "Outlook är Microsofts professionella e-postapp med avancerade funktioner.",
+        "downloadAppStore": "Ladda ner från App Store",
+        "downloadPlayStore": "Ladda ner från Google Play",
+        "incoming": "Inkommande server",
+        "outgoing": "Utgående server",
+        "incomingSettings": "Server: mail.dindoman.se\nPort: 993\nSäkerhet: SSL/TLS\nAnvändarnamn: din@epostadress.se",
+        "outgoingSettings": "Server: mail.dindoman.se\nPort: 587\nSäkerhet: STARTTLS\nAutentisering: Ja",
+        "nativeIphone": {
+          "title": "Använd iPhone Mail-appen",
+          "note": "iPhones inbyggda Mail-app fungerar bra för grundläggande e-posthantering.",
+          "step1": {
+            "title": "Öppna Inställningar",
+            "description": "Gå till Inställningar > Mail > Konton på din iPhone."
+          },
+          "step2": {
+            "title": "Lägg till konto",
+            "description": "Tryck på 'Lägg till konto' och välj sedan 'Annat' i listan.",
+            "note": "Välj 'Annat' för att kunna ange manuella serverinställningar."
+          },
+          "step3": {
+            "title": "Ange serverinställningar",
+            "description": "Fyll i dina e-postuppgifter och använd serverinställningarna nedan:",
+            "warning": "Kontrollera att alla inställningar stämmer exakt för att undvika anslutningsproblem."
+          },
+          "step4": {
+            "title": "Testa anslutningen",
+            "description": "Spara inställningarna och testa att skicka ett testmeddelande.",
+            "success": "Nu kan du använda din e-post i iPhone Mail-appen!"
+          }
+        },
+        "nativeAndroid": {
+          "title": "Använd Android E-post-appen",
+          "note": "De flesta Android-telefoner har en inbyggd e-postapp som fungerar bra.",
+          "step1": {
+            "title": "Öppna E-post-appen",
+            "description": "Hitta och öppna e-postappen på din Android-telefon (kan heta 'E-post' eller 'Email')."
+          },
+          "step2": {
+            "title": "Lägg till konto",
+            "description": "Tryck på 'Lägg till konto' och välj 'Manuell konfiguration'.",
+            "note": "Om du inte ser denna option, välj 'Annat' eller 'IMAP/POP3'."
+          },
+          "step3": {
+            "title": "Konfigurera serverinställningar",
+            "description": "Ange dina e-postuppgifter och använd serverinställningarna nedan:",
+            "warning": "Se till att alla portnummer och säkerhetsinställningar är korrekta."
+          },
+          "step4": {
+            "title": "Slutför installationen",
+            "description": "Spara inställningarna och låt telefonen synkronisera din e-post.",
+            "success": "Din e-post är nu konfigurerad och redo att användas!"
+          }
+        },
+        "gmail": {
+          "step1": {
+            "title": "Öppna Gmail-appen",
+            "description": "Öppna Gmail-appen efter installation och tryck på 'Lägg till e-postkonto'."
+          },
+          "step2": {
+            "title": "Välj kontotyp",
+            "description": "Välj 'Annat' för att lägga till ditt egna e-postkonto.",
+            "note": "Gmail stöder IMAP-konton från andra leverantörer."
+          },
+          "step3": {
+            "title": "Ange serverinställningar",
+            "description": "Fyll i dina e-postuppgifter och använd serverinställningarna nedan:"
+          },
+          "step4": {
+            "title": "Slutför konfigurationen",
+            "description": "Spara inställningarna och låt Gmail synkronisera din e-post.",
+            "success": "Nu kan du hantera din e-post via Gmail-appen!"
+          }
+        },
+        "outlook": {
+          "step1": {
+            "title": "Öppna Outlook-appen",
+            "description": "Starta Outlook-appen och tryck på 'Lägg till konto'."
+          },
+          "step2": {
+            "title": "Ange e-postadress",
+            "description": "Skriv in din e-postadress och låt Outlook försöka hitta inställningarna automatiskt.",
+            "note": "Om automatisk konfiguration misslyckas, välj 'Avancerade inställningar'."
+          },
+          "step3": {
+            "title": "Konfigurera manuellt",
+            "description": "Om automatisk konfiguration inte fungerar, använd dessa manuella inställningar:"
+          },
+          "step4": {
+            "title": "Verifiera kontot",
+            "description": "Outlook kommer att testa anslutningen och synkronisera din e-post.",
+            "success": "Ditt e-postkonto är nu aktivt i Outlook!"
+          }
+        }
+      }
+    },
+    "webmail": {
+      "title": "Hur du använder webmail",
+      "description": "Steg-för-steg guide för att komma åt och använda din e-post via webbläsare",
+      "intro": "Webmail låter dig komma åt din e-post var som helst via en webbläsare. Följ denna guide för att komma igång.",
+      "step1": {
+        "title": "Logga in på webmail",
+        "description": "Gå till din webmail-inloggningssida och ange dina inloggningsuppgifter",
+        "urlInfo": "Webmail-adressen är:"
+      },
+      "step2": {
+        "title": "Navigera i gränssnittet",
+        "description": "Lär dig var du hittar inkorg, skickade meddelanden och andra mappar"
+      },
+      "step3": {
+        "title": "Skriv och skicka e-post",
+        "description": "Hur du skriver och skickar nya meddelanden",
+        "tipsTitle": "Tips för att skriva e-post:",
+        "tip1": "Använd tydliga ämnesrader",
+        "tip2": "Håll meddelanden korta och koncisa",
+        "tip3": "Kontrollera stavning innan du skickar"
+      },
+      "step4": {
+        "title": "Hantera bilagor",
+        "description": "Ladda upp och ladda ner filer i dina e-postmeddelanden",
+        "sizeWarning": "Maximal filstorlek för bilagor är vanligtvis 25 MB.",
+        "formatsTitle": "Filformat som stöds:"
+      }
+    },
+    "iphone": {
+      "title": "Konfigurera e-post på iPhone",
+      "description": "Lägg till ditt e-postkonto i iPhone Mail-appen",
+      "intro": "Följ denna guide för att lägga till ditt e-postkonto i iPhone Mail-appen.",
+      "step1": {
+        "title": "Öppna Inställningar",
+        "description": "Gå till Inställningar > Mail > Konton"
+      },
+      "step2": {
+        "title": "Lägg till konto",
+        "description": "Tryck på 'Lägg till konto' och välj 'Annat'",
+        "providersTitle": "Vanliga e-postleverantörer:",
+        "gmail": "Gmail",
+        "outlook": "Outlook",
+        "other": "Annat"
+      },
+      "step3": {
+        "title": "Ange kontoinformation",
+        "description": "Fyll i din e-postadress, lösenord och serverinställningar",
+        "settingsTitle": "Exempel på serverinställningar:",
+        "incoming": "Inkommande (IMAP)",
+        "outgoing": "Utgående (SMTP)",
+        "incomingCode": "Server: mail.example.com\nPort: 993 (SSL) eller 143\nSäkerhet: SSL/TLS",
+        "outgoingCode": "Server: mail.example.com\nPort: 587 (TLS) eller 465 (SSL)\nSäkerhet: STARTTLS eller SSL",
+        "settingsWarning": "Dessa inställningar kan variera. Kontakta din e-postleverantör för exakta detaljer."
+      },
+      "step4": {
+        "title": "Testa inställningar",
+        "description": "Verifiera att e-post synkroniseras korrekt",
+        "checklistTitle": "Test checklista:",
+        "check1": "Skicka ett testmeddelande till dig själv",
+        "check2": "Kontrollera att nya e-postmeddelanden kommer fram",
+        "check3": "Testa att svara på ett e-postmeddelande"
+      }
+    },
+    "android": {
+      "title": "Konfigurera e-post på Android",
+      "description": "Lägg till ditt e-postkonto i Android Gmail eller Mail-appen",
+      "intro": "Denna guide visar hur du lägger till ditt e-postkonto på Android.",
+      "step1": {
+        "title": "Öppna Gmail eller Mail-appen",
+        "description": "Starta din föredragna e-postapp",
+        "appsTitle": "Rekommenderade appar:",
+        "gmail": "Gmail",
+        "outlook": "Microsoft Outlook",
+        "default": "Standard Mail-app",
+        "appNote": "Gmail är förinstallerat på de flesta Android-enheter."
+      },
+      "step2": {
+        "title": "Lägg till konto",
+        "description": "Gå till inställningar och välj 'Lägg till konto'",
+        "location": "Vanligtvis under Inställningar > Konton eller i app-menyn"
+      },
+      "step3": {
+        "title": "Välj kontotyp",
+        "description": "Välj 'Annat' eller 'IMAP/POP3'",
+        "types": "Kontotyper:",
+        "gmail": "Gmail",
+        "exchange": "Exchange",
+        "imap": "IMAP",
+        "pop3": "POP3",
+        "other": "Annat",
+        "recommend": "Välj IMAP för bästa synkronisering mellan enheter."
+      },
+      "step4": {
+        "title": "Konfigurera inställningar",
+        "description": "Ange serverinställningar och testa anslutningen",
+        "requiredTitle": "Nödvändig information:",
+        "email": "E-postadress",
+        "password": "Lösenord",
+        "incomingServer": "Inkommande server (IMAP/POP3)",
+        "outgoingServer": "Utgående server (SMTP)",
+        "finalTest": "Testa anslutningen innan du sparar inställningarna."
+      }
+    },
+    "backup": {
+      "title": "Webbplatsbackuper",
+      "description": "Information om backup-uppsättning och återställning",
+      "intro": "Kontakta oss för att aktivera backuper för din webbplats.",
+      "step1": {
+        "title": "Aktivera backuper",
+        "description": "Kontakta oss för att sätta upp och aktivera backuper för din webbplats",
+        "contactInfo": "Kontakta oss för att aktivera backuper. Vi kommer överens om vad som ska säkerhetskopieras, hur ofta backuper ska skapas och hur länge de ska sparas."
+      },
+      "step2": {
+        "title": "Återställning",
+        "description": "Kontakta oss om du behöver återställa en tidigare version",
+        "process": "Återställningsprocess:",
+        "step1": "Kontakta oss via e-post eller telefon",
+        "step2": "Specificera vilket datum du vill återställa till",
+        "step3": "Vi verifierar och utför återställningen",
+        "step4": "Du får bekräftelse när det är klart",
+        "timeframe": "Återställning sker vanligtvis inom 2-4 timmar under kontorstid."
+      }
+    },
+    "ftp": {
+      "title": "Använda FTP för filöverföring",
+      "description": "Detaljerad guide för att ansluta till din webbplats via FTP och hantera filer",
+      "intro": "FTP (File Transfer Protocol) låter dig ladda upp och ladda ner filer från din webbserver. Denna guide visar hur du ansluter och hanterar filer säkert.",
+      "step1": {
+        "title": "Få dina FTP-inloggningsuppgifter",
+        "description": "Du behöver FTP-server, användarnamn och lösenord. Dessa kan begäras från oss."
+      },
+      "step2": {
+        "title": "Välj en FTP-klient",
+        "description": "Vi rekommenderar FileZilla (gratis) för Windows/Mac eller WinSCP för Windows. Ladda ner från officiella webbplatser.",
+        "filezilla": "Gratis för Windows, Mac & Linux",
+        "winscp": "Gratis för Windows",
+        "recommended": "Rekommenderad",
+        "windows": "Windows"
+      },
+      "step3": {
+        "title": "Konfigurera anslutningen",
+        "description": "Öppna din FTP-klient och ange: Server/Värd, Användarnamn, Lösenord. Port är vanligtvis 21 eller 22 för SFTP.",
+        "exampleTitle": "Exempel på anslutningsinställningar:",
+        "exampleCode": "Server/Värd: ftp.dindomän.se\nAnvändarnamn: dittanvändarnamn\nLösenord: dittlösenord\nPort: 21 (FTP) eller 22 (SFTP)\nProtokoll: FTP eller SFTP (rekommenderas)",
+        "securityWarning": "Välj alltid SFTP (port 22) istället för vanlig FTP (port 21) när det är möjligt för bättre säkerhet."
+      },
+      "step4": {
+        "title": "Anslut till servern",
+        "description": "Klicka på 'Anslut' eller 'Snabbanslutning'. Du ser dina lokala filer till vänster och serverfiler till höger.",
+        "localComputer": "Lokal dator (vänster)",
+        "localDescription": "Dina filer på datorn",
+        "server": "Server (höger)",
+        "serverDescription": "Filer på webbservern"
+      },
+      "step5": {
+        "title": "Navigera till rätt mapp",
+        "description": "Gå till 'public_html' eller 'www'-mappen på servern - det är här dina webbplatsfiler ska vara.",
+        "foldersTitle": "Vanliga mappar att leta efter:",
+        "foldersCode": "📁 public_html/    (vanligast)\n📁 www/\n📁 htdocs/\n📁 web/",
+        "folderInfo": "Dina webbplatsfiler ska placeras i en av dessa mappar för att vara synliga på webben."
+      },
+      "step6": {
+        "title": "Ladda upp filer",
+        "description": "Dra och släpp filer från vänster (lokal dator) till höger (server), eller högerklicka och välj 'Ladda upp'.",
+        "methodsTitle": "Sätt att ladda upp filer:",
+        "dragDrop": "Dra filer från vänster till höger panel",
+        "rightClick": "Högerklicka på fil och välj \"Ladda upp\"",
+        "doubleClick": "Dubbelklicka på fil för att ladda upp",
+        "successMessage": "När uppladdningen är klar visas filerna i höger panel och är tillgängliga på din webbplats."
+      },
+      "step7": {
+        "title": "Säkerhetstips",
+        "description": "Använd alltid SFTP istället för FTP när det är möjligt. Redigera aldrig filer direkt på servern utan att ha en backup.",
+        "tipsTitle": "Viktiga säkerhetstips:",
+        "useSftp": "Använd SFTP",
+        "sftpDescription": "Säkrare än vanlig FTP",
+        "backupFirst": "Gör backup först",
+        "backupDescription": "Ladda ner filer innan du ändrar dem",
+        "testChanges": "Testa ändringar",
+        "testDescription": "Kontrollera att webbplatsen fungerar efter ändringar",
+        "warningMessage": "Redigera aldrig filer direkt på servern. Ladda ner, redigera lokalt och ladda upp igen."
+      }
+    },
+    "emailConfig": {
+      "title": "iPhone Konfigurationsfil",
+      "subtitle": "Ladda ner en automatisk konfigurationsfil för enkel e-postinställning på iPhone",
+      "emailLabel": "Din e-postadress",
+      "emailPlaceholder": "namn@dindoman.se",
+      "invalidEmail": "Ange en giltig e-postadress",
+      "domainDetected": "Domän hittad: {domain}",
+      "advancedSettings": "Avancerade inställningar",
+      "incomingServer": "Inkommande server",
+      "incomingPort": "Inkommande port",
+      "outgoingServer": "Utgående server",
+      "outgoingPort": "Utgående port",
+      "showAdvanced": "Visa avancerade inställningar",
+      "hideAdvanced": "Dölj avancerade inställningar",
+      "downloadButton": "Ladda ner konfigurationsfil",
+      "instructions": {
+        "title": "Så här installerar du konfigurationsfilen",
+        "step1": "Ladda ner filen och öppna den på din iPhone",
+        "step2": "Tryck på 'Installera' när du blir ombedd",
+        "step3": "Ange ditt e-postlösenord när det begärs",
+        "step4": "Din e-post är nu konfigurerad och redo att användas!"
+      },
+      "passwordWarning": "Du behöver fortfarande ange ditt e-postlösenord manuellt när du installerar profilen på din iPhone.",
+      "tip": "Konfigurationsfiler fungerar endast på iPhone/iPad. För Android-enheter använd vår steg-för-steg guide."
     }
   },
   "language": {
