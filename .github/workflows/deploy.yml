@@ -55,8 +55,10 @@ jobs:
       run: ${{ vars.INSTALL_COMMAND || 'pnpm install' }}
       
     - name: Build frontend
+      env:
+        VITE_ENVIRONMENT: ${{ env.ENVIRONMENT_NAME }}
       run: ${{ vars.BUILD_COMMAND || 'pnpm run build' }}
-    
+
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
