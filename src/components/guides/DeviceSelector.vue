@@ -38,23 +38,18 @@ const { t } = useI18n()
 
 // Props
 const props = defineProps({
-  modelValue: {
+  selectedDevice: {
     type: String,
     default: ''
   }
 })
 
 // Emits
-const emit = defineEmits(['update:modelValue', 'deviceSelected'])
-
-// Local state
-const selectedDevice = ref(props.modelValue)
+const emit = defineEmits(['device-selected'])
 
 // Methods
 function selectDevice(device) {
-  selectedDevice.value = device
-  emit('update:modelValue', device)
-  emit('deviceSelected', device)
+  emit('device-selected', device)
 }
 </script>
 

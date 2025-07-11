@@ -465,7 +465,7 @@
       "helper": {
         "title": "Gör guiden personlig (valfritt)",
         "description": "Ange din e-postadress så anpassas guiden för dig.",
-        "placeholder": "din@epostadress.se",
+        "placeholder": "{'din@email.se'}",
         "detected": "Domän upptäckt: {domain}"
       },
       "device": {
@@ -502,7 +502,7 @@
         "downloadPlayStore": "Ladda ner från Google Play",
         "incoming": "Inkommande server",
         "outgoing": "Utgående server",
-        "incomingSettings": "Server: mail.dindoman.se\nPort: 993\nSäkerhet: SSL/TLS\nAnvändarnamn: din@epostadress.se",
+        "incomingSettings": "{'Server: mail.dindoman.se\nPort: 993\nSäkerhet: SSL/TLS\nAnvändarnamn: din@epostadress.se'}",
         "outgoingSettings": "Server: mail.dindoman.se\nPort: 587\nSäkerhet: STARTTLS\nAutentisering: Ja",
         "nativeIphone": {
           "title": "Använd iPhone Mail-appen",
@@ -779,7 +779,7 @@
       "title": "iPhone Konfigurationsfil",
       "subtitle": "Ladda ner en automatisk konfigurationsfil för enkel e-postinställning på iPhone",
       "emailLabel": "Din e-postadress",
-      "emailPlaceholder": "namn@dindoman.se",
+      "emailPlaceholder": "{'din@email.se'}",
       "invalidEmail": "Ange en giltig e-postadress",
       "domainDetected": "Domän hittad: {domain}",
       "advancedSettings": "Avancerade inställningar",

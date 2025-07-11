@@ -13,6 +13,24 @@ const routes = [
     component: () => import('../views/Guides.vue')
   },
   {
+    path: '/guides/:guideId',
+    name: 'Guide',
+    component: () => import('../views/Guides.vue'),
+    props: true
+  },
+  {
+    path: '/guides/:guideId/:device',
+    name: 'GuideWithDevice',
+    component: () => import('../views/Guides.vue'),
+    props: true
+  },
+  {
+    path: '/guides/:guideId/:device/:client',
+    name: 'GuideWithDeviceAndClient',
+    component: () => import('../views/Guides.vue'),
+    props: true
+  },
+  {
     path: '/privacy',
     name: 'Privacy',
     component: () => import('../views/Privacy.vue')

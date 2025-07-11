@@ -31,8 +31,7 @@
       </div>
       
       <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="option-card">
+        <div class="option-card">
             <div class="option-header">
               <i class="bi bi-download text-primary me-2"></i>
               <h5 class="mb-0">{{ $t('guides.emailSetup.setup.autoConfig.title') }}</h5>
@@ -40,7 +39,6 @@
             <p class="text-muted mb-3">{{ $t('guides.emailSetup.setup.autoConfig.description') }}</p>
             <EmailConfigGenerator :user-email="userEmail" :email-info="emailInfo" />
           </div>
-        </div>
       </div>
     </div>
 

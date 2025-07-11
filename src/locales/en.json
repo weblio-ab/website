@@ -465,7 +465,7 @@
       "helper": {
         "title": "Make the guide personal (optional)",
         "description": "Enter your email address and we'll customize the guide for you.",
-        "placeholder": "your@emailaddress.com",
+        "placeholder": "{'your@email.com'}",
         "detected": "Domain detected: {domain}"
       },
       "device": {
@@ -502,7 +502,7 @@
         "downloadPlayStore": "Download from Google Play",
         "incoming": "Incoming server",
         "outgoing": "Outgoing server",
-        "incomingSettings": "Server: mail.dindoman.se\nPort: 993\nSecurity: SSL/TLS\nUsername: your@emailaddress.se",
+        "incomingSettings": "{'Server: mail.dindoman.se\nPort: 993\nSecurity: SSL/TLS\nUsername: your@emailaddress.se'}",
         "outgoingSettings": "Server: mail.dindoman.se\nPort: 587\nSecurity: STARTTLS\nAuthentication: Yes",
         "nativeIphone": {
           "title": "Use iPhone Mail app",
@@ -779,7 +779,7 @@
       "title": "iPhone Configuration File",
       "subtitle": "Download an automatic configuration file for easy email setup on iPhone",
       "emailLabel": "Your email address",
-      "emailPlaceholder": "name@yourdomain.com",
+      "emailPlaceholder": "{'your@email.com'}",
       "invalidEmail": "Please enter a valid email address",
       "domainDetected": "Domain detected: {domain}",
       "advancedSettings": "Advanced settings",

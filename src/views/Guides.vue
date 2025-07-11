@@ -93,7 +93,11 @@
           </div>
           <div class="modal-body">
             <!-- Dynamic component based on guide -->
-            <component :is="guideComponents[selectedGuide.component]" />
+            <component 
+              :is="guideComponents[selectedGuide.component]" 
+              :url-params="selectedGuide.urlParams"
+              ref="currentGuideComponent"
+            />
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" @click="closeGuide">
@@ -115,8 +119,9 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount, watch, nextTick } from "vue";
 import { useI18n } from "vue-i18n";
+import { useRoute, useRouter } from "vue-router";
 import { useGuidesStore } from "../stores/guides";
 
 // Import all guide components
@@ -126,6 +131,8 @@ import BackupGuide from "../components/guides/BackupGuide.vue";
 import FtpGuide from "../components/guides/FtpGuide.vue";
 
 const { t } = useI18n();
+const route = useRoute();
+const router = useRouter();
 const guidesStore = useGuidesStore();
 
 // Register components for dynamic rendering
@@ -139,6 +146,7 @@ const guideComponents = {
 // State
 const selectedCategory = ref("all");
 const selectedGuide = ref(null);
+const currentGuideComponent = ref(null); // Reference to current guide component
 
 // Computed
 const filteredGuides = computed(() => {
@@ -146,15 +154,112 @@ const filteredGuides = computed(() => {
 });
 
 // Methods
-function openGuide(guideId) {
-  selectedGuide.value = guidesStore.getGuideById(guideId);
-  document.body.style.overflow = "hidden";
+function openGuide(guideId, device = null, client = null) {
+  const guide = guidesStore.getGuideById(guideId);
+  if (guide) {
+    selectedGuide.value = guide;
+    document.body.style.overflow = "hidden";
+    
+    // Reset guide state when opening (unless from URL with specific parameters)
+    if (!device && !client) {
+      // Give Vue a tick to render the component before calling reset
+      nextTick(() => {
+        if (currentGuideComponent.value && typeof currentGuideComponent.value.resetGuide === 'function') {
+          currentGuideComponent.value.resetGuide();
+        }
+      });
+    }
+    
+    // Build the URL based on available parameters
+    let url = `/guides/${guideId}`;
+    if (device) {
+      url += `/${device}`;
+      if (client) {
+        url += `/${client}`;
+      }
+    }
+    
+    // Update URL if we're not already on the correct route
+    if (route.fullPath !== url) {
+      router.push(url);
+    }
+  }
 }
 
 function closeGuide() {
   selectedGuide.value = null;
   document.body.style.overflow = "auto";
+  
+  // Navigate back to guides list only if we're currently on a specific guide
+  if (route.params.guideId) {
+    router.push('/guides');
+  }
 }
+
+// Handle keyboard events
+function handleKeydown(event) {
+  if (event.key === 'Escape' && selectedGuide.value) {
+    closeGuide();
+  }
+}
+
+// Watch for route parameter changes
+watch(() => [route.params.guideId, route.params.device, route.params.client], ([newGuideId, newDevice, newClient]) => {
+  if (newGuideId) {
+    const guide = guidesStore.getGuideById(newGuideId);
+    if (guide) {
+      const isNewGuide = !selectedGuide.value || selectedGuide.value.id !== newGuideId;
+      
+      selectedGuide.value = guide;
+      document.body.style.overflow = "hidden";
+      
+      // Update page title for SEO and browser tab
+      const guideTitle = t(`guides.${guide.id}.title`);
+      document.title = `${guideTitle} - ${t('guides.title')} - Weblio`;
+      
+      // If we have device/client parameters, we need to pass them to the guide component
+      if (newDevice || newClient) {
+        // Store the URL parameters for the guide component to use
+        selectedGuide.value.urlParams = {
+          device: newDevice,
+          client: newClient
+        };
+      } else if (isNewGuide) {
+        // Reset guide if it's a new guide and no URL parameters
+        nextTick(() => {
+          if (currentGuideComponent.value && typeof currentGuideComponent.value.resetGuide === 'function') {
+            currentGuideComponent.value.resetGuide();
+          }
+        });
+      }
+    } else {
+      // Invalid guide ID, redirect to guides list
+      router.push('/guides');
+    }
+  } else {
+    // No guide ID in route, close any open guide
+    selectedGuide.value = null;
+    document.body.style.overflow = "auto";
+    
+    // Reset page title
+    document.title = `${t('guides.title')} - Weblio`;
+  }
+}, { immediate: true });
+
+// Handle initial mount
+onMounted(() => {
+  // The watch handler with immediate: true will handle the initial route
+  // Add keyboard listener
+  document.addEventListener('keydown', handleKeydown);
+});
+
+// Cleanup on unmount
+onBeforeUnmount(() => {
+  // Restore scroll behavior when leaving the page
+  document.body.style.overflow = "auto";
+  // Remove keyboard listener
+  document.removeEventListener('keydown', handleKeydown);
+});
 </script>
 
 <style scoped>

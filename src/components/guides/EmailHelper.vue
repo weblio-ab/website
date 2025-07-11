@@ -41,8 +41,10 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useEmailConfig } from '../../composables/useEmailConfig'
 
 const { t } = useI18n()
+const { validateEmailAndDomain } = useEmailConfig()
 
 // Props
 const props = defineProps({
@@ -76,8 +78,22 @@ function handleEmailInput() {
 }
 
 function extractEmailInfo() {
-  if (localEmail.value && localEmail.value.includes('@')) {
-    const [username, domain] = localEmail.value.split('@')
+  if (!localEmail.value) {
+    emailInfo.value = {
+      domain: '',
+      username: '',
+      incomingServer: '',
+      outgoingServer: ''
+    }
+    emit('emailInfo', emailInfo.value)
+    return
+  }
+
+  // Use the same validation logic as EmailConfigGenerator
+  const { isValid, domain } = validateEmailAndDomain(localEmail.value)
+  
+  if (isValid && domain) {
+    const [username] = localEmail.value.split('@')
     emailInfo.value = {
       domain,
       username,
@@ -92,6 +108,7 @@ function extractEmailInfo() {
       outgoingServer: ''
     }
   }
+  
   emit('emailInfo', emailInfo.value)
 }
 
