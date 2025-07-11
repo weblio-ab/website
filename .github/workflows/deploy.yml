@@ -133,7 +133,7 @@ jobs:
         fi
         
     - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER || 'ftpcluster.loopia.se' }}
         username: ${{ secrets.FTP_USERNAME }}
