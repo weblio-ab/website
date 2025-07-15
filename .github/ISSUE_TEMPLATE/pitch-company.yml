@@ -1,7 +1,7 @@
 name: 🎯 Pitch - Företag
 description: Spåra företag som vi ska pitcha vår tjänst till
 title: 'Pitch: [FÖRETAGSNAMN]'
-labels: ['pitch', 'lead']
+labels: ['pitch']
 body:
   - type: markdown
     attributes:
@@ -78,12 +78,9 @@ body:
       description: Vilka av våra tjänster passar bäst för detta företag?
       options:
         - label: Webbdesign/utveckling
+        - label: Drift och hosting
         - label: E-handel
-        - label: SEO/Digital marknadsföring
-        - label: Systemintegration
-        - label: Underhåll/support
-        - label: Mobilappar
-        - label: Databas/Backend-system
+        - label: Kontaktformulär
 
   - type: markdown
     attributes:
