@@ -776,31 +776,6 @@
         "passwordDescription": "Use strong authentication",
         "warningMessage": "Never edit files directly on the server. Download, edit locally, and upload again."
       }
-    },
-    "emailConfig": {
-      "title": "iPhone Configuration File",
-      "subtitle": "Download an automatic configuration file for easy email setup on iPhone",
-      "emailLabel": "Your email address",
-      "emailPlaceholder": "{'your@email.com'}",
-      "invalidEmail": "Please enter a valid email address",
-      "domainDetected": "Domain detected: {domain}",
-      "advancedSettings": "Advanced settings",
-      "incomingServer": "Incoming server",
-      "incomingPort": "Incoming port",
-      "outgoingServer": "Outgoing server",
-      "outgoingPort": "Outgoing port",
-      "showAdvanced": "Show advanced settings",
-      "hideAdvanced": "Hide advanced settings",
-      "downloadButton": "Download configuration file",
-      "instructions": {
-        "title": "How to install the configuration file",
-        "step1": "Download the file and open it on your iPhone",
-        "step2": "Tap 'Install' when prompted",
-        "step3": "Enter your email password when requested",
-        "step4": "Your email is now configured and ready to use!"
-      },
-      "passwordWarning": "You will still need to enter your email password manually when installing the profile on your iPhone.",
-      "tip": "Configuration files only work on iPhone/iPad. For Android devices, use our step-by-step guide."
     }
   },
   "language": {

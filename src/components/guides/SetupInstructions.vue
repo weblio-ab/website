@@ -22,28 +22,8 @@
       </div>
     </div>
 
-    <!-- Dynamic content based on selection -->
-    <!-- Special case: iPhone + Native Mail = Show config file only -->
-    <div v-if="selectedDevice === 'iphone' && selectedApp === 'native'" class="setup-options">
-      <div class="alert alert-info">
-        <i class="bi bi-info-circle me-2"></i>
-        {{ $t('guides.emailConfig.tip') }}
-      </div>
-      
-      <div class="row justify-content-center">
-        <div class="option-card">
-            <div class="option-header">
-              <i class="bi bi-download text-primary me-2"></i>
-              <h5 class="mb-0">{{ $t('guides.emailSetup.setup.autoConfig.title') }}</h5>
-            </div>
-            <p class="text-muted mb-3">{{ $t('guides.emailSetup.setup.autoConfig.description') }}</p>
-            <EmailConfigGenerator :user-email="userEmail" :email-info="emailInfo" />
-          </div>
-      </div>
-    </div>
-
-    <!-- Manual setup instructions (for all other combinations) -->
-    <div v-else class="manual-instructions">
+    <!-- Manual setup instructions -->
+    <div class="manual-instructions">
       <EmailSetupInstructions 
         :device="selectedDevice" 
         :app="selectedApp"

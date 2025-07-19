@@ -776,31 +776,6 @@
         "testDescription": "Kontrollera att webbplatsen fungerar efter ändringar",
         "warningMessage": "Redigera aldrig filer direkt på servern. Ladda ner, redigera lokalt och ladda upp igen."
       }
-    },
-    "emailConfig": {
-      "title": "iPhone Konfigurationsfil",
-      "subtitle": "Ladda ner en automatisk konfigurationsfil för enkel e-postinställning på iPhone",
-      "emailLabel": "Din e-postadress",
-      "emailPlaceholder": "{'din@email.se'}",
-      "invalidEmail": "Ange en giltig e-postadress",
-      "domainDetected": "Domän hittad: {domain}",
-      "advancedSettings": "Avancerade inställningar",
-      "incomingServer": "Inkommande server",
-      "incomingPort": "Inkommande port",
-      "outgoingServer": "Utgående server",
-      "outgoingPort": "Utgående port",
-      "showAdvanced": "Visa avancerade inställningar",
-      "hideAdvanced": "Dölj avancerade inställningar",
-      "downloadButton": "Ladda ner konfigurationsfil",
-      "instructions": {
-        "title": "Så här installerar du konfigurationsfilen",
-        "step1": "Ladda ner filen och öppna den på din iPhone",
-        "step2": "Tryck på 'Installera' när du blir ombedd",
-        "step3": "Ange ditt e-postlösenord när det begärs",
-        "step4": "Din e-post är nu konfigurerad och redo att användas!"
-      },
-      "passwordWarning": "Du behöver fortfarande ange ditt e-postlösenord manuellt när du installerar profilen på din iPhone.",
-      "tip": "Konfigurationsfiler fungerar endast på iPhone/iPad. För Android-enheter använd vår steg-för-steg guide."
     }
   },
   "language": {
