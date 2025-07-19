@@ -502,7 +502,7 @@
         "downloadPlayStore": "Ladda ner från Google Play",
         "incoming": "Inkommande server",
         "outgoing": "Utgående server",
-        "defaultEmail": "din@epostadress.se",
+        "defaultEmail": "{'din@email.se'}",
         "defaultServer": "mail.dindoman.se",
         "incomingSettings": "Server: {server}\nPort: 993\nSäkerhet: SSL/TLS\nAnvändarnamn: {username}",
         "outgoingSettings": "Server: {server}\nPort: 587\nSäkerhet: STARTTLS\nAutentisering: Ja",

@@ -502,7 +502,7 @@
         "downloadPlayStore": "Download from Google Play",
         "incoming": "Incoming server",
         "outgoing": "Outgoing server",
-        "defaultEmail": "your@emailaddress.se",
+        "defaultEmail": "{'your@email.com'}",
         "defaultServer": "mail.yourdomain.com",
         "incomingSettings": "Server: {server}\nPort: 993\nSecurity: SSL/TLS\nUsername: {username}",
         "outgoingSettings": "Server: {server}\nPort: 587\nSecurity: STARTTLS\nAuthentication: Yes",
