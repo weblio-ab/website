@@ -27,6 +27,16 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    id: background
+    attributes:
+      label: Bakgrund
+      description: Allmän information
+      placeholder: |
+        Allmän information som är bra när man kontaktar företaget
+    validations:
+      required: false
+
   - type: input
     id: website
     attributes:
