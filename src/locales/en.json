@@ -601,7 +601,8 @@
       "step1": {
         "title": "Log in to webmail",
         "description": "Go to your webmail login page and enter your credentials",
-        "urlInfo": "The webmail address is:"
+        "urlInfo": "The webmail address is:",
+        "url": "https://yourdomain.com/webmail"
       },
       "step2": {
         "title": "Navigate the interface",

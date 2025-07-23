@@ -15,7 +15,7 @@
           <div v-if="index === 0" class="step-extra">
             <div class="guide-alert info">
               <i class="bi bi-info-circle guide-alert-icon"></i>
-              {{ $t('guides.webmail.step1.urlInfo') }} <strong>mail.dindomän.se/webmail</strong>
+              {{ $t('guides.webmail.step1.urlInfo') }} <strong>{{ $t('guides.webmail.step1.url') }}</strong>
             </div>
           </div>
           

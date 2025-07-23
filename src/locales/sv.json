@@ -601,7 +601,8 @@
       "step1": {
         "title": "Logga in på webmail",
         "description": "Gå till din webmail-inloggningssida och ange dina inloggningsuppgifter",
-        "urlInfo": "Webmail-adressen är:"
+        "urlInfo": "Webmail-adressen är:",
+        "url": "https://dindomän.se/webmail"
       },
       "step2": {
         "title": "Navigera i gränssnittet",
