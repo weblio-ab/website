@@ -11,7 +11,7 @@
             />
           </WindowMockup>
         </div>
-        <div class="portfolio-overlay">
+        <div v-if="!disableLink" class="portfolio-overlay">
           <a 
             :href="url" 
             target="_blank" 
@@ -32,10 +32,7 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
 import WindowMockup from './WindowMockup.vue'
-
-const { t } = useI18n()
 
 const props = defineProps({
   category: {
@@ -57,6 +54,10 @@ const props = defineProps({
   imageUrl: {
     type: String,
     required: true
+  },
+  disableLink: {
+    type: Boolean,
+    default: false
   }
 })
 </script>

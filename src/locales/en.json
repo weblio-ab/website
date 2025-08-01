@@ -67,20 +67,20 @@
     "subtitle": "See examples of websites we've created for other businesses",
     "viewProject": "View project",
     "projects": {
-      "restaurant": {
-        "title": "Bistro Göta",
-        "description": "Elegant website for restaurant with online booking",
-        "category": "Restaurant"
+      "mulo": {
+        "title": "Mulo Design",
+        "description": "Elegant website for interior design company with product gallery and contact form",
+        "category": "Interior Design"
       },
-      "salon": {
-        "title": "Beauty Studio",
-        "description": "Modern site for beauty salon with booking system",
+      "amea-salong": {
+        "title": "AMEA Salong",
+        "description": "Modern website for beauty salon with integrated webshop and online courses",
         "category": "Beauty Salon"
       },
-      "company": {
-        "title": "Construction Nord",
-        "description": "Professional website for construction company",
-        "category": "Construction"
+      "alpakas": {
+        "title": "Alpaka’s Coffee",
+        "description": "Professional website for coffee shop",
+        "category": "Coffee Shop"
       }
     }
   },

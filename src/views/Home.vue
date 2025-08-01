@@ -2,7 +2,7 @@
   <main>
     <Hero />
     <Services />
-    <!-- <Portfolio /> -->
+    <Portfolio />
     <!-- <Testimonials /> -->
     <Pricing />
     <About />
@@ -15,7 +15,7 @@ import { useSEO } from '../composables/useSEO'
 import { useI18n } from 'vue-i18n'
 import Hero from '../sections/home/Hero.vue'
 import Services from '../sections/home/Services.vue'
-// import Portfolio from '../sections/home/Portfolio.vue'
+import Portfolio from '../sections/home/Portfolio.vue'
 // import Testimonials from '../sections/home/Testimonials.vue'
 import Pricing from '../sections/home/Pricing.vue'
 import About from '../sections/home/About.vue'

@@ -10,31 +10,27 @@
 
       <!-- Desktop Grid -->
       <div class="row g-4 d-none d-md-flex">
-        <!-- Restaurant Project -->
         <Project
-          :category="$t('portfolio.projects.restaurant.category')"
-          :title="$t('portfolio.projects.restaurant.title')"
-          :description="$t('portfolio.projects.restaurant.description')"
-          url="https://bistrogota.se"
-          image-url="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          :category="$t('portfolio.projects.mulo.category')"
+          :title="$t('portfolio.projects.mulo.title')"
+          :description="$t('portfolio.projects.mulo.description')"
+          url="https://mulo.se"
+          image-url="/assets/projects/mulo.webp"
         />
-
-        <!-- Salon Project -->
         <Project
-          :category="$t('portfolio.projects.salon.category')"
-          :title="$t('portfolio.projects.salon.title')"
-          :description="$t('portfolio.projects.salon.description')"
+          :category="$t('portfolio.projects.amea-salong.category')"
+          :title="$t('portfolio.projects.amea-salong.title')"
+          :description="$t('portfolio.projects.amea-salong.description')"
           url="https://ameasalong.se"
-          image-url="/assets/projects/ameasalong.png"
+          image-url="/assets/projects/ameasalong.webp"
         />
-
-        <!-- Construction Company Project -->
         <Project
-          :category="$t('portfolio.projects.company.category')"
-          :title="$t('portfolio.projects.company.title')"
-          :description="$t('portfolio.projects.company.description')"
-          url="https://byggfirmanord.se"
-          image-url="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          :category="$t('portfolio.projects.alpakas.category')"
+          :title="$t('portfolio.projects.alpakas.title')"
+          :description="$t('portfolio.projects.alpakas.description')"
+          url="https://alpakascoffee.se"
+          :disable-link="true"
+          image-url="/assets/projects/alpakas.webp"
         />
       </div>
 
@@ -49,31 +45,32 @@
         >
           <SwiperSlide>
             <Project
-              :category="$t('portfolio.projects.restaurant.category')"
-              :title="$t('portfolio.projects.restaurant.title')"
-              :description="$t('portfolio.projects.restaurant.description')"
-              url="https://bistrogota.se"
-              image-url="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              :category="$t('portfolio.projects.mulo.category')"
+              :title="$t('portfolio.projects.mulo.title')"
+              :description="$t('portfolio.projects.mulo.description')"
+              url="https://mulo.se"
+              image-url="/assets/projects/mulo.webp"
             />
           </SwiperSlide>
           
           <SwiperSlide>
             <Project
-              :category="$t('portfolio.projects.salon.category')"
-              :title="$t('portfolio.projects.salon.title')"
-              :description="$t('portfolio.projects.salon.description')"
+              :category="$t('portfolio.projects.amea-salong.category')"
+              :title="$t('portfolio.projects.amea-salong.title')"
+              :description="$t('portfolio.projects.amea-salong.description')"
               url="https://ameasalong.se"
-              image-url="/assets/projects/ameasalong.png"
+              image-url="/assets/projects/ameasalong.webp"
             />
           </SwiperSlide>
           
           <SwiperSlide>
             <Project
-              :category="$t('portfolio.projects.company.category')"
-              :title="$t('portfolio.projects.company.title')"
-              :description="$t('portfolio.projects.company.description')"
-              url="https://byggfirmanord.se"
-              image-url="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              :category="$t('portfolio.projects.alpakas.category')"
+              :title="$t('portfolio.projects.alpakas.title')"
+              :description="$t('portfolio.projects.alpakas.description')"
+              url="https://alpakascoffee.se"
+              :disable-link="true"
+              image-url="/assets/projects/alpakas.webp"
             />
           </SwiperSlide>
         </Swiper>

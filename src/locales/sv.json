@@ -67,20 +67,20 @@
     "subtitle": "Se exempel på hemsidor vi skapat för andra företag",
     "viewProject": "Se projekt",
     "projects": {
-      "restaurant": {
-        "title": "Bistro Göta",
-        "description": "Elegant hemsida för restaurang med onlinebokning",
-        "category": "Restaurang"
+      "mulo": {
+        "title": "Mulo Design",
+        "description": "Elegant hemsida för inredningsföretag med produktgalleri och kontaktformulär",
+        "category": "Inredning"
       },
-      "salon": {
-        "title": "Beauty Studio",
-        "description": "Modern sajt för skönhetssalong med bokningssystem",
+      "amea-salong": {
+        "title": "AMEA Salong",
+        "description": "Modern hemsida för frisörsalong med webbshop och online-kurser",
         "category": "Skönhetssalong"
       },
-      "company": {
-        "title": "Byggfirma Nord",
-        "description": "Professionell hemsida för byggföretag",
-        "category": "Byggföretag"
+      "alpakas": {
+        "title": "Alpaka’s Coffee",
+        "description": "Professionell hemsida för kafé",
+        "category": "Kafé"
       }
     }
   },
