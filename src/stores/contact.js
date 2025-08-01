@@ -62,7 +62,7 @@ export const useContactStore = defineStore('contact', () => {
       formData.append('recaptcha_token', recaptchaToken)
       
       // Get API base URL from environment variable
-      const apiEndpoint = `${import.meta.env.VITE_FORM_SERVICE_URL}/contact.php`
+      const apiEndpoint = `${import.meta.env.VITE_FORM_SERVICE_URL}/submit/${import.meta.env.VITE_FORM_SERVICE_CUSTOMER_ID}/${import.meta.env.VITE_FORM_SERVICE_FORM_IDENTIFIER}`
       
       const response = await fetch(apiEndpoint, {
         method: 'POST',

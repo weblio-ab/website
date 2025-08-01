@@ -57,7 +57,9 @@ jobs:
     - name: Build frontend
       env:
         VITE_ENVIRONMENT: ${{ env.ENVIRONMENT_NAME }}
-        VITE_FORM_SERVICE_URL: ${{ env.FORM_SERVICE_URL }}
+        VITE_FORM_SERVICE_URL: ${{ env.ENVIRONMENT_NAME == 'production' && 'https://api.form.weblio.se' || 'https://api.form.staging.weblio.se' }}
+        VITE_FORM_SERVICE_CUSTOMER_ID: ${{ env.FORM_SERVICE_CUSTOMER_ID }}
+        VITE_FORM_SERVICE_FORM_IDENTIFIER: ${{ env.FORM_SERVICE_FORM_IDENTIFIER }}
       run: ${{ vars.BUILD_COMMAND || 'pnpm run build' }}
 
     - name: Setup PHP
