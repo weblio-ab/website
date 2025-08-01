@@ -88,6 +88,17 @@
     "title": "Transparenta priser",
     "subtitle": "Välj det paket som passar ditt företag bäst",
     "popular": "Populärast",
+    "customerType": {
+      "title": "Vem är du?",
+      "private": {
+        "title": "Privatperson",
+        "description": "Jag vill skapa en personlig hemsida eller för mitt mindre projekt"
+      },
+      "business": {
+        "title": "Företag",
+        "description": "Jag representerar ett företag eller organisation som behöver professionell webbnärvaro"
+      }
+    },
     "toggle": {
       "monthly": "Månadsvis",
       "annually": "Årsvis",
@@ -96,10 +107,6 @@
     "packages": {
       "basic": {
         "title": "Start Basic",
-        "price": "199",
-        "priceAnnual": "1 999",
-        "currency": "kr/mån",
-        "currencyAnnual": "kr/år",
         "description": "Professionell weblösning till rörligt pris och e-post",
         "features": [
           "Utveckling av hemsida till rörligt pris",
@@ -107,14 +114,30 @@
           "Webbmail",
           "Spamfilter och autosvar",
           "Webbhotell och domän"
-        ]
+        ],
+        "business": {
+          "monthly": {
+            "price": "199",
+            "currency": "kr/mån"
+          },
+          "annual": {
+            "price": "1 999",
+            "currency": "kr/år"
+          }
+        },
+        "private": {
+          "monthly": {
+            "price": "249",
+            "currency": "kr/mån"
+          },
+          "annual": {
+            "price": "2 499",
+            "currency": "kr/år"
+          }
+        }
       },
       "professional": {
         "title": "Start Professional",
-        "price": "299",
-        "priceAnnual": "2 999",
-        "currency": "kr/mån",
-        "currencyAnnual": "kr/år",
         "description": "Komplett lösning med hemsida och e-post inkluderat i priset",
         "features": [
           "Utveckling av hemsida",
@@ -125,14 +148,30 @@
           "Teknisk underhållning",
           "Fem justeringar av hemsidan per år"
         ],
-        "popular": true
+        "popular": true,
+        "business": {
+          "monthly": {
+            "price": "299",
+            "currency": "kr/mån"
+          },
+          "annual": {
+            "price": "2 999",
+            "currency": "kr/år"
+          }
+        },
+        "private": {
+          "monthly": {
+            "price": "379",
+            "currency": "kr/mån"
+          },
+          "annual": {
+            "price": "3 799",
+            "currency": "kr/år"
+          }
+        }
       },
       "premium": {
         "title": "Start Premium",
-        "price": "649",
-        "priceAnnual": "6 490",
-        "currency": "kr/mån",
-        "currencyAnnual": "kr/år",
         "description": "Premium-paket med utvecklingsavgift samt inkluderad support",
         "features": [
           "Utveckling av hemsida",
@@ -145,7 +184,27 @@
           "Kostnadsfri support",
           "10 justeringar av hemsidan per år",
           "Sökmotoroptimering (SEO)"
-        ]
+        ],
+        "business": {
+          "monthly": {
+            "price": "649",
+            "currency": "kr/mån"
+          },
+          "annual": {
+            "price": "6 490",
+            "currency": "kr/år"
+          }
+        },
+        "private": {
+          "monthly": {
+            "price": "819",
+            "currency": "kr/mån"
+          },
+          "annual": {
+            "price": "8 199",
+            "currency": "kr/år"
+          }
+        }
       }
     },
     "recurring": {
@@ -176,7 +235,7 @@
       },
       "member2": {
         "name": "Albin Médoc",
-        "role": "Delägare & Lead Developer",
+        "role": "Medgrundare & Lead Developer",
         "description": "8+ års erfarenhet av systemutveckling, specialiserad på användarvänlig design och funktionalitet."
       }
     }
