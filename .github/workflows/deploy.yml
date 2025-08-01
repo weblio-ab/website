@@ -57,6 +57,7 @@ jobs:
     - name: Build frontend
       env:
         VITE_ENVIRONMENT: ${{ env.ENVIRONMENT_NAME }}
+        VITE_FORM_SERVICE_URL: ${{ env.FORM_SERVICE_URL }}
       run: ${{ vars.BUILD_COMMAND || 'pnpm run build' }}
 
     - name: Setup PHP
