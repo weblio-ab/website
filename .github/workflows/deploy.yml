@@ -61,84 +61,11 @@ jobs:
         VITE_FORM_SERVICE_CUSTOMER_ID: ${{ secrets.FORM_SERVICE_CUSTOMER_ID }}
         VITE_FORM_SERVICE_FORM_IDENTIFIER: ${{ secrets.FORM_SERVICE_FORM_IDENTIFIER }}
       run: ${{ vars.BUILD_COMMAND || 'pnpm run build' }}
-
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.1'
-        extensions: mbstring, xml, curl, zip, openssl
-        tools: composer:v2
-        
-    - name: Install PHP dependencies
-      run: |
-        echo "📦 Installing PHPMailer via Composer"
-        cd api
-        composer install --no-dev --optimize-autoloader --no-interaction
-        
-        # Verify installation
-        if [ -f "phpmailer/phpmailer/src/PHPMailer.php" ]; then
-          echo "✅ PHPMailer installed successfully at phpmailer/phpmailer/src/"
-        elif [ -f "vendor/phpmailer/phpmailer/src/PHPMailer.php" ]; then
-          echo "✅ PHPMailer installed successfully at vendor/phpmailer/phpmailer/src/"
-        else
-          echo "❌ PHPMailer installation failed"
-          echo "📁 Checking directory structure:"
-          find . -name "PHPMailer.php" -type f
-          exit 1
-        fi
-    
-    - name: Configure backend settings
-      env:
-        RECAPTCHA_SECRET: ${{ secrets.RECAPTCHA_SECRET_KEY }}
-        SMTP_HOST: ${{ secrets.SMTP_HOST }}
-        SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-        SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-        SMTP_PORT: ${{ secrets.SMTP_PORT }}
-        SMTP_ENCRYPTION: ${{ secrets.SMTP_ENCRYPTION }}
-        SMTP_FROM_EMAIL: ${{ secrets.SMTP_FROM_EMAIL }}
-        CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
-        ALLOWED_ORIGINS: ${{ secrets.ALLOWED_ORIGINS }}
-        BUSINESS_NAME: ${{ secrets.BUSINESS_NAME }}
-      run: |
-        echo "🔧 Configuring backend for ${{ env.ENVIRONMENT_NAME }} environment"
-        
-        # Create environment configuration file
-        cat > api/.env << EOF
-        SMTP_HOST=${SMTP_HOST:-mailcluster.loopia.se}
-        SMTP_USERNAME=${SMTP_USERNAME}
-        SMTP_PASSWORD=${SMTP_PASSWORD}
-        SMTP_PORT=${SMTP_PORT:-587}
-        SMTP_ENCRYPTION=${SMTP_ENCRYPTION:-tls}
-        SMTP_FROM_EMAIL=${SMTP_FROM_EMAIL:-${SMTP_USERNAME}}
-        CONTACT_EMAIL=${CONTACT_EMAIL:-${SMTP_USERNAME}}
-        RECAPTCHA_SECRET=${RECAPTCHA_SECRET}
-        RECAPTCHA_MIN_SCORE=${RECAPTCHA_MIN_SCORE:-0.5}
-        ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
-        BUSINESS_NAME=${BUSINESS_NAME}
-        EOF
-        
-        echo "✅ Backend configuration completed successfully"
-    
-    - name: Prepare deployment structure
-      run: |
-        echo "📁 Preparing deployment structure"
-        
-        # Create deployment directory structure
-        BUILD_DIR="${{ vars.BUILD_DIR || './dist' }}"
-        
-        # Copy API files into the build directory
-        if [ -d "$BUILD_DIR" ]; then
-          cp -r api "$BUILD_DIR/"
-          echo "✅ API files copied to $BUILD_DIR/api/"
-        else
-          echo "❌ Build directory $BUILD_DIR not found"
-          exit 1
-        fi
         
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.FTP_SERVER || 'ftpcluster.loopia.se' }}
+        server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ${{ vars.BUILD_DIR || './dist/' }}
@@ -149,7 +76,6 @@ jobs:
         echo "✅ Application successfully deployed to ${{ env.ENVIRONMENT_NAME }} environment"
         echo "📁 Deployed to: ${{ secrets.DEPLOY_PATH }}"
         echo "🎯 Frontend: Static files deployed to root"
-        echo "🎯 Backend: API deployed to /api/ subdirectory"
         if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
           echo "🚀 Manual deployment triggered"
           echo "📋 Branch: ${{ github.event.inputs.branch }}"

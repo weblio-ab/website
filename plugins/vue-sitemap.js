@@ -104,14 +104,6 @@ Allow: /*.ico$
 Allow: /*.woff$
 Allow: /*.woff2$
 
-# Disallow admin and private areas
-Disallow: /admin/
-Disallow: /api/
-Disallow: /.env
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /*.json$ 
-
 # Disallow URL parameters (except guides with device/client params)
 Disallow: /*?*
 Allow: /guides/*?*

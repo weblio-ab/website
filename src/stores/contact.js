@@ -69,7 +69,6 @@ export const useContactStore = defineStore('contact', () => {
         body: formData
       })
       
-      // Backend only returns HTTP status codes, no JSON content
       if (response.ok) {
         // Success (200)
         formSubmissionStatus.value = 'success'
