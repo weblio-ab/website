@@ -171,12 +171,12 @@
       "title": "Our team",
       "member1": {
         "name": "Francisco Mouat",
-        "role": "Founder & UX/UI Designer",
+        "role": "Co-founder & UX/UI Designer",
         "description": "4+ years of experience in system development and customer delivery."
       },
       "member2": {
         "name": "Albin Médoc",
-        "role": "Co-owner & Lead Developer",
+        "role": "Co-founder & Lead Developer",
         "description": "8+ years of experience in system development, specialized in user-friendly design and functionality."
       }
     }

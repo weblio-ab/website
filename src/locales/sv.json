@@ -171,12 +171,12 @@
       "title": "Vårt team",
       "member1": {
         "name": "Francisco Mouat",
-        "role": "Grundare & UX/UI Designer",
+        "role": "Medgrundare & UX/UI Designer",
         "description": "4+ års erfarenhet av systemutveckling och leverans till kunder."
       },
       "member2": {
         "name": "Albin Médoc",
-        "role": "Delägare & Lead Developer",
+        "role": "Medgrundare & Lead Developer",
         "description": "8+ års erfarenhet av systemutveckling, specialiserad på användarvänlig design och funktionalitet."
       }
     }
