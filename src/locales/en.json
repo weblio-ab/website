@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Home",
     "services": "Services",
-    "portfolio": "Portfolio",
+    "portfolio": "Portfolio", 
     "pricing": "Pricing",
     "about": "About",
     "contact": "Contact",
@@ -88,6 +88,17 @@
     "title": "Transparent pricing",
     "subtitle": "Choose the package that best fits your business",
     "popular": "Most Popular",
+    "customerType": {
+      "title": "Who are you?",
+      "private": {
+        "title": "Individual",
+        "description": "I want to create a personal website or for my small project"
+      },
+      "business": {
+        "title": "Business",
+        "description": "I represent a company or organization that needs professional web presence"
+      }
+    },
     "toggle": {
       "monthly": "Monthly",
       "annually": "Annually",
@@ -96,10 +107,6 @@
     "packages": {
       "basic": {
         "title": "Start Basic",
-        "price": "199",
-        "priceAnnual": "1 999",
-        "currency": "SEK/month",
-        "currencyAnnual": "SEK/year",
         "description": "Professional web solution with flexible pricing and email",
         "features": [
           "Website development at flexible price",
@@ -107,14 +114,30 @@
           "Webmail",
           "Spam filter and auto-reply",
           "Web hosting and domain"
-        ]
+        ],
+        "business": {
+          "monthly": {
+            "price": "199",
+            "currency": "SEK/month"
+          },
+          "annual": {
+            "price": "1 999",
+            "currency": "SEK/year"
+          }
+        },
+        "private": {
+          "monthly": {
+            "price": "249",
+            "currency": "SEK/month"
+          },
+          "annual": {
+            "price": "2 499",
+            "currency": "SEK/year"
+          }
+        }
       },
       "professional": {
         "title": "Start Professional",
-        "price": "299",
-        "priceAnnual": "2 999",
-        "currency": "SEK/month",
-        "currencyAnnual": "SEK/year",
         "description": "Complete solution with website and email included in price",
         "features": [
           "Website development",
@@ -125,14 +148,30 @@
           "Technical maintenance",
           "Five website adjustments per year"
         ],
-        "popular": true
+        "popular": true,
+        "business": {
+          "monthly": {
+            "price": "299",
+            "currency": "SEK/month"
+          },
+          "annual": {
+            "price": "2 999",
+            "currency": "SEK/year"
+          }
+        },
+        "private": {
+          "monthly": {
+            "price": "379",
+            "currency": "SEK/month"
+          },
+          "annual": {
+            "price": "3 799",
+            "currency": "SEK/year"
+          }
+        }
       },
       "premium": {
         "title": "Start Premium",
-        "price": "649",
-        "priceAnnual": "6 490",
-        "currency": "SEK/month",
-        "currencyAnnual": "SEK/year",
         "description": "Premium package with development fee and included support",
         "features": [
           "Website development",
@@ -145,7 +184,27 @@
           "Free support",
           "10 website adjustments per year",
           "Search engine optimization (SEO)"
-        ]
+        ],
+        "business": {
+          "monthly": {
+            "price": "649",
+            "currency": "SEK/month"
+          },
+          "annual": {
+            "price": "6 490",
+            "currency": "SEK/year"
+          }
+        },
+        "private": {
+          "monthly": {
+            "price": "819",
+            "currency": "SEK/month"
+          },
+          "annual": {
+            "price": "8 199",
+            "currency": "SEK/year"
+          }
+        }
       }
     },
     "recurring": {
@@ -171,7 +230,7 @@
       "title": "Our team",
       "member1": {
         "name": "Francisco Mouat",
-        "role": "Co-founder & UX/UI Designer",
+        "role": "Founder & UX/UI Designer",
         "description": "4+ years of experience in system development and customer delivery."
       },
       "member2": {
