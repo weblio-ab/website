@@ -41,10 +41,10 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.2.4
-        version: 5.2.4(vite@6.3.5)(vue@3.5.18)
+        version: 5.2.4(vite@7.1.1)(vue@3.5.18)
       vite:
-        specifier: ^6.3.5
-        version: 6.3.5
+        specifier: ^7.0.0
+        version: 7.1.1
 
 packages:
 
@@ -538,19 +538,19 @@ packages:
   unhead@2.0.13:
     resolution: {integrity: sha512-Q3lMTJnoGj8zNsqP/GWIIAd8W/hKKeOgErbsMSXDWdkIICUeIg9p7J5/0uDFREa684cReRz1NFxbrDaS+5rGMw==}
 
-  vite@6.3.5:
-    resolution: {integrity: sha512-cZn6NDFE7wdTpINgs++ZJ4N49W2vRp8LCKrn3Ob1kYNtOo21vfDoaV5GzBfLU4MovSAB8uNRm4jgzVQZ+mBzPQ==}
-    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
+  vite@7.1.1:
+    resolution: {integrity: sha512-yJ+Mp7OyV+4S+afWo+QyoL9jFWD11QFH0i5i7JypnfTcA1rmgxCbiA8WwAICDEtZ1Z1hzrVhN8R8rGTqkTY8ZQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
-      '@types/node': ^18.0.0 || ^20.0.0 || >=22.0.0
+      '@types/node': ^20.19.0 || >=22.12.0
       jiti: '>=1.21.0'
-      less: '*'
+      less: ^4.0.0
       lightningcss: ^1.21.0
-      sass: '*'
-      sass-embedded: '*'
-      stylus: '*'
-      sugarss: '*'
+      sass: ^1.70.0
+      sass-embedded: ^1.70.0
+      stylus: '>=0.54.8'
+      sugarss: ^5.0.0
       terser: ^5.16.0
       tsx: ^4.8.1
       yaml: ^2.4.2
@@ -805,9 +805,9 @@ snapshots:
       unhead: 2.0.13
       vue: 3.5.18
 
-  '@vitejs/plugin-vue@5.2.4(vite@6.3.5)(vue@3.5.18)':
+  '@vitejs/plugin-vue@5.2.4(vite@7.1.1)(vue@3.5.18)':
     dependencies:
-      vite: 6.3.5
+      vite: 7.1.1
       vue: 3.5.18
 
   '@vue/compiler-core@3.5.18':
@@ -1031,7 +1031,7 @@ snapshots:
     dependencies:
       hookable: 5.5.3
 
-  vite@6.3.5:
+  vite@7.1.1:
     dependencies:
       esbuild: 0.25.8
       fdir: 6.4.6(picomatch@4.0.3)
