@@ -12,11 +12,13 @@ const { showBackToTop } = storeToRefs(appStore)
 const { scrollToTop, initScrollListener, removeScrollListener } = appStore
 
 onMounted(() => {
+  // Only init app store scroll listener for back-to-top and active section
   initScrollListener()
   viewportStore.initViewport()
 })
 
 onUnmounted(() => {
+  // Only remove app store scroll listener
   removeScrollListener()
   viewportStore.destroyViewport()
 })
