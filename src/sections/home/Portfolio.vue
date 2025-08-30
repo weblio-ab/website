@@ -28,8 +28,7 @@
           :category="$t('portfolio.projects.alpakas.category')"
           :title="$t('portfolio.projects.alpakas.title')"
           :description="$t('portfolio.projects.alpakas.description')"
-          url="https://alpakascoffee.se"
-          :disable-link="true"
+          url="https://alpakascoffee.com/"
           image-url="/assets/projects/alpakas.webp"
         />
       </div>
@@ -68,8 +67,7 @@
               :category="$t('portfolio.projects.alpakas.category')"
               :title="$t('portfolio.projects.alpakas.title')"
               :description="$t('portfolio.projects.alpakas.description')"
-              url="https://alpakascoffee.se"
-              :disable-link="true"
+              url="https://alpakascoffee.com/"
               image-url="/assets/projects/alpakas.webp"
             />
           </SwiperSlide>
