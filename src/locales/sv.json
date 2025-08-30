@@ -81,6 +81,11 @@
         "title": "Alpaka’s Coffee",
         "description": "Elegant kafé-hemsida med autentiskt hantverksblandat kaffe",
         "category": "Kafé"
+      },
+      "skanespolarna": {
+        "title": "Skånespolarna",
+        "description": "Modern hemsida för lokala entreprenörer och företagare i Skåne",
+        "category": "Nätverk"
       }
     }
   },

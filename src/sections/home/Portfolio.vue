@@ -31,6 +31,13 @@
           url="https://alpakascoffee.com/"
           image-url="/assets/projects/alpakas.webp"
         />
+        <Project
+          :category="$t('portfolio.projects.skanespolarna.category')"
+          :title="$t('portfolio.projects.skanespolarna.title')"
+          :description="$t('portfolio.projects.skanespolarna.description')"
+          url="https://skanespolarna.se/"
+          image-url="/assets/projects/skånespolarna.png"
+        />
       </div>
 
       <!-- Mobile Slider -->
@@ -69,6 +76,16 @@
               :description="$t('portfolio.projects.alpakas.description')"
               url="https://alpakascoffee.com/"
               image-url="/assets/projects/alpakas.webp"
+            />
+          </SwiperSlide>
+          
+          <SwiperSlide>
+            <Project
+              :category="$t('portfolio.projects.skanespolarna.category')"
+              :title="$t('portfolio.projects.skanespolarna.title')"
+              :description="$t('portfolio.projects.skanespolarna.description')"
+              url="https://skanespolarna.se/"
+              image-url="/assets/projects/skånespolarna.png"
             />
           </SwiperSlide>
         </Swiper>
