@@ -7,44 +7,10 @@
           <p class="lead text-muted">{{ $t('portfolio.subtitle') }}</p>
         </div>
       </div>
-
-      <!-- Desktop Grid -->
-      <div class="row g-4 d-none d-md-flex">
-        <Project
-          :category="$t('portfolio.projects.mulo.category')"
-          :title="$t('portfolio.projects.mulo.title')"
-          :description="$t('portfolio.projects.mulo.description')"
-          url="https://mulo.se"
-          image-url="/assets/projects/mulo.webp"
-        />
-        <Project
-          :category="$t('portfolio.projects.amea-salong.category')"
-          :title="$t('portfolio.projects.amea-salong.title')"
-          :description="$t('portfolio.projects.amea-salong.description')"
-          url="https://ameasalong.se"
-          image-url="/assets/projects/ameasalong.webp"
-        />
-        <Project
-          :category="$t('portfolio.projects.alpakas.category')"
-          :title="$t('portfolio.projects.alpakas.title')"
-          :description="$t('portfolio.projects.alpakas.description')"
-          url="https://alpakascoffee.com/"
-          image-url="/assets/projects/alpakas.webp"
-        />
-        <Project
-          :category="$t('portfolio.projects.skanespolarna.category')"
-          :title="$t('portfolio.projects.skanespolarna.title')"
-          :description="$t('portfolio.projects.skanespolarna.description')"
-          url="https://skanespolarna.se/"
-          image-url="/assets/projects/skånespolarna.png"
-        />
-      </div>
-
-      <!-- Mobile Slider -->
-      <div class="d-md-none">
+      <div>
         <Swiper
           :modules="[Pagination]"
-          :slides-per-view="1"
+          :slides-per-view="isMobile ? 1 : 3"
           :space-between="20"
           :pagination="{ clickable: true }"
           class="portfolio-swiper"
@@ -95,15 +61,21 @@
 </template>
 
 <script setup>
-import Project from '../../components/Project.vue'
+import { storeToRefs } from 'pinia'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
+import Project from '../../components/Project.vue'
+import { useViewportStore } from '../../stores/viewport'
+
+const viewportStore = useViewportStore()
+const { isMobile } = storeToRefs(viewportStore)
 </script>
 
 <style scoped>
 /* Swiper customization for portfolio */
 .portfolio-swiper {
   padding-bottom: 50px;
+  width: 100%;
 }
 
 .portfolio-swiper :deep(.swiper-pagination) {
@@ -120,13 +92,5 @@ import { Pagination } from 'swiper/modules'
 .portfolio-swiper :deep(.swiper-pagination-bullet-active) {
   background: #007bff;
   transform: scale(1.2);
-}
-
-.portfolio-swiper :deep(.swiper-slide) {
-  height: auto;
-  display: flex;
-  align-items: stretch;
-  padding: 0 15px;
-  box-sizing: border-box;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-4 col-md-6">
+  <div>
     <div class="portfolio-card">
       <div class="portfolio-image">
         <div class="portfolio-browser-wrapper">
