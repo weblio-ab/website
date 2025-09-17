@@ -75,10 +75,6 @@
 import Testimonial from '../../components/Testimonial.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/pagination'
 </script>
 
 <style scoped>

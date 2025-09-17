@@ -95,10 +95,6 @@ import { useIntersectionObserver } from '../../composables/useIntersectionObserv
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
 
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/pagination'
-
 const { isVisible, target: sectionRef } = useIntersectionObserver(0.1)
 </script>
 

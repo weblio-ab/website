@@ -180,10 +180,6 @@ import { storeToRefs } from 'pinia'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
 
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/pagination'
-
 const { tm } = useI18n()
 
 const appStore = useAppStore()
