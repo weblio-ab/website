@@ -43,7 +43,7 @@
             :placeholder="$t('contact.form.phonePlaceholder')"
           >
         </div>
-        <div class="col-md-6">
+        <div v-if="isBusiness" class="col-md-6">
           <label for="company" class="form-label">{{ $t('contact.form.company') }}</label>
           <input 
             type="text" 
@@ -85,8 +85,12 @@
 </template>
 
 <script setup>
+import { useAppStore } from '../stores/app'
 import { useContactStore } from '../stores/contact'
 import { storeToRefs } from 'pinia'
+
+const appStore = useAppStore()
+const { isBusiness } = storeToRefs(appStore)
 
 const contactStore = useContactStore()
 const { contactForm, isSubmittingForm, formSubmissionStatus, formSubmissionMessage } = storeToRefs(contactStore)
