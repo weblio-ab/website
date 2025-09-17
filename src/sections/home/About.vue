@@ -59,7 +59,7 @@
             <p class="mb-4 d-none d-md-block">{{ $t("about.mission") }}</p>
 
             <!-- Desktop Stats Grid -->
-            <div class="stats-grid d-none d-md-block">
+            <div class="stats-grid d-none d-md-grid">
               <div class="stat-item">
                 <div class="stat-number">4.5<span class="rating-divider">/</span><span class="rating-max">5</span></div>
                 <div class="stat-label">{{ $t("about.stats.rating") }}</div>
@@ -79,53 +79,38 @@
             </div>
 
             <!-- Mobile Stats Slider -->
-            <div class="d-md-none mt-4">
-              <div class="stats-slider-container">
-                <div 
-                  ref="sliderRef" 
-                  class="stats-slider"
-                  :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
-                >
-                  <div class="stat-slide">
-                    <div class="stat-item">
-                      <div class="stat-number">4.5<span class="rating-divider">/</span><span class="rating-max">5</span></div>
-                      <div class="stat-label">{{ $t("about.stats.rating") }}</div>
-                    </div>
-                  </div>
-                  
-                  <div class="stat-slide">
-                    <div class="stat-item">
-                      <div class="stat-number">3+</div>
-                      <div class="stat-label">{{ $t("about.stats.experience") }}</div>
-                    </div>
-                  </div>
-                  
-                  <div class="stat-slide">
-                    <div class="stat-item">
-                      <div class="stat-number">100%</div>
-                      <div class="stat-label">{{ $t("about.stats.mobile") }}</div>
-                    </div>
-                  </div>
-                  
-                  <div class="stat-slide">
-                    <div class="stat-item">
-                      <div class="stat-number">24/7</div>
-                      <div class="stat-label">{{ $t("about.stats.support") }}</div>
-                    </div>
-                  </div>
+             <Swiper
+              :modules="[Pagination]"
+              :slides-per-view="1"
+              :space-between="20"
+              :pagination="{ clickable: true }"
+              class="portfolio-swiper d-md-none"
+            >
+              <SwiperSlide>
+                <div class="stat-item">
+                  <div class="stat-number">4.5<span class="rating-divider">/</span><span class="rating-max">5</span></div>
+                  <div class="stat-label">{{ $t("about.stats.rating") }}</div>
                 </div>
-              </div>
-              <!-- Slide indicators -->
-              <div class="stats-indicators mt-3">
-                <button 
-                  v-for="(_, index) in 4" 
-                  :key="index"
-                  @click="goToSlide(index)"
-                  :class="['indicator', { active: currentSlide === index }]"
-                  :aria-label="`Gå till statistik ${index + 1}`"
-                ></button>
-              </div>
-            </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div class="stat-item">
+                  <div class="stat-number">3+</div>
+                  <div class="stat-label">{{ $t("about.stats.experience") }}</div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div class="stat-item">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">{{ $t("about.stats.mobile") }}</div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div class="stat-item">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">{{ $t("about.stats.support") }}</div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
 
@@ -144,16 +129,9 @@
 <script setup>
 import WindowMockup from "../../components/WindowMockup.vue";
 import CodeBlock from "../../components/CodeBlock.vue";
-import { useTouchSlider } from '../../composables/useTouchSlider'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination } from 'swiper/modules'
 
-// Touch slider för statistik på mobil
-const { 
-  sliderRef, 
-  currentSlide, 
-  goToSlide 
-} = useTouchSlider(4, {
-  itemsPerView: { mobile: 1, tablet: 2, desktop: 4 }
-})
 </script>
 
 <style scoped>
@@ -162,19 +140,9 @@ const {
 }
 
 .stats-grid {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
-}
-
-/* Ensure 2x2 layout on desktop */
-@media (min-width: 768px) {
-  .stats-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.5rem;
-  }
 }
 
 .stat-item {
@@ -251,107 +219,17 @@ const {
   color: #333;
 }
 
-/* Mobile stats slider styles */
-.stats-slider-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  touch-action: pan-y;
-}
-
-.stats-slider {
-  display: flex;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
-}
-
-.stat-slide {
-  flex: 0 0 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-/* Slide indicators för stats */
-.stats-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-
-.indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background: #dee2e6;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.indicator.active {
-  background: #007bff;
-  transform: scale(1.2);
-}
-
-.indicator:hover {
-  background: #6c757d;
-}
-
-/* Förbättra touch-interaktion för stats */
-.stats-slider-container {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.stats-slider:not(.dragging) {
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-/* Mobile responsive för stat items */
-@media (max-width: 767.98px) {
-  .stat-slide .stat-item {
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
-  }
-  
-  .stats-slider-container {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .stat-slide {
-    padding: 0 10px;
-  }
+.portfolio-swiper {
+  padding-bottom: 50px;
 }
 
 @media (max-width: 991.98px) and (min-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem;
-  }
-
   .about-visual {
     margin-top: 2rem;
   }
 }
 
 @media (max-width: 767.98px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-item {
-    padding: 1rem;
-  }
-
   .stat-number {
     font-size: 1.5rem;
   }

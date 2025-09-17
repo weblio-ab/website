@@ -72,25 +72,7 @@ const { isMobile } = storeToRefs(viewportStore)
 </script>
 
 <style scoped>
-/* Swiper customization for portfolio */
 .portfolio-swiper {
   padding-bottom: 50px;
-  width: 100%;
-}
-
-.portfolio-swiper :deep(.swiper-pagination) {
-  bottom: 10px;
-}
-
-.portfolio-swiper :deep(.swiper-pagination-bullet) {
-  background: #dee2e6;
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-}
-
-.portfolio-swiper :deep(.swiper-pagination-bullet-active) {
-  background: #007bff;
-  transform: scale(1.2);
 }
 </style>
