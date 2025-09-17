@@ -24,11 +24,9 @@
             <li class="nav-item">
               <router-link class="nav-link" :class="{ active: activeSection === 'services' }" to="/#services" @click="closeMenu">{{ $t('navigation.services') }}</router-link>
             </li>
-            <!-- Portfolio temporarily commented out
             <li class="nav-item">
               <router-link class="nav-link" :class="{ active: activeSection === 'portfolio' }" to="/#portfolio" @click="closeMenu">{{ $t('navigation.portfolio') }}</router-link>
             </li>
-            -->
             <li class="nav-item">
               <router-link class="nav-link" :class="{ active: activeSection === 'pricing' }" to="/#pricing" @click="closeMenu">{{ $t('navigation.pricing') }}</router-link>
             </li>
@@ -66,6 +64,18 @@
             </div>
 
             <router-link to="/#contact" class="btn btn-primary">{{ $t('hero.cta') }}</router-link>
+            <div class="d-flex flex-column mx-3">
+              <span
+                role="button"
+                :class="[isBusiness ? 'text-secondary' : 'text-decoration-underline']"
+                @click="setIsBusiness(false)"
+              >{{ $t('navigation.customerType.private') }}</span>
+              <span
+                role="button"
+                :class="[isBusiness ? 'text-decoration-underline' : 'text-secondary']"
+                @click="setIsBusiness(true)"
+              >{{ $t('navigation.customerType.business') }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -73,15 +83,17 @@
     <!-- Spacer for fixed navbar -->
     <div class="navbar-spacer"></div>
   </div>
-</template><script setup>
+</template>
+
+<script setup>
 import { useAppStore } from '../stores/app'
 import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUnmounted, ref } from 'vue'
 
 const appStore = useAppStore()
-const { locale, isMenuOpen, activeSection } = storeToRefs(appStore)
-const { toggleMenu, closeMenu, setLocale, initScrollListener, removeScrollListener } = appStore
+const { locale, isBusiness, isMenuOpen, activeSection } = storeToRefs(appStore)
+const { setLocale, setIsBusiness, toggleMenu, closeMenu } = appStore
 const { locale: i18nLocale } = useI18n()
 
 // Auto-hiding navbar logic

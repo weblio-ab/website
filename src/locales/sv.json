@@ -6,7 +6,11 @@
     "pricing": "Priser",
     "about": "Om oss",
     "contact": "Kontakt",
-    "backToTop": "Tillbaka till toppen"
+    "backToTop": "Tillbaka till toppen",
+    "customerType": {
+      "business": "Företag",
+      "private": "Privatkund"
+    }
   },
   "company": {
     "name": "Weblio",
@@ -93,17 +97,6 @@
     "title": "Transparenta priser",
     "subtitle": "Välj det paket som passar ditt företag bäst",
     "popular": "Populärast",
-    "customerType": {
-      "title": "Vem är du?",
-      "private": {
-        "title": "Privatperson",
-        "description": "Jag vill skapa en hemsida för mitt privata projekt & behöver professionell webbnärvaro"
-      },
-      "business": {
-        "title": "Företag",
-        "description": "Jag representerar ett företag eller organisation som behöver professionell webbnärvaro"
-      }
-    },
     "toggle": {
       "monthly": "Månadsvis",
       "annually": "Årsvis",

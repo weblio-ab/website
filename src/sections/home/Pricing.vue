@@ -1,64 +1,16 @@
 <template>
   <section id="pricing" class="py-5 bg-light">
     <div class="container">
-      <!-- Customer Type Selection -->
-      <div class="row mb-5">
-        <div class="col-lg-8 mx-auto">
-          <div class="customer-selector">
-            <h3 class="text-center mb-4">{{ $t('pricing.customerType.title') }}</h3>
-            <div class="row g-3">
-              <!-- Private Customer Card -->
-              <div class="col-md-6">
-                <div 
-                  @click="isPrivate = true" 
-                  :class="['customer-card', 'h-100', 'cursor-pointer', { 'active': isPrivate }]"
-                >
-                  <div class="customer-icon">
-                    <i class="bi bi-person-fill"></i>
-                  </div>
-                  <h5>{{ $t('pricing.customerType.private.title') }}</h5>
-                  <p class="text-muted mb-0">{{ $t('pricing.customerType.private.description') }}</p>
-                </div>
-              </div>
-              
-              <!-- Business Customer Card -->
-              <div class="col-md-6">
-                <div 
-                  @click="isPrivate = false" 
-                  :class="['customer-card', 'h-100', 'cursor-pointer', { 'active': !isPrivate }]"
-                >
-                  <div class="customer-icon">
-                    <i class="bi bi-building"></i>
-                  </div>
-                  <h5>{{ $t('pricing.customerType.business.title') }}</h5>
-                  <p class="text-muted mb-0">{{ $t('pricing.customerType.business.description') }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="row">
         <div class="col-lg-8 mx-auto text-center mb-5">
           <h2 class="display-5 fw-bold text-dark mb-3">{{ $t('pricing.title') }}</h2>
           <p class="lead text-muted">{{ $t('pricing.subtitle') }}</p>
           
           <!-- Price Toggle -->
-          <div class="pricing-toggle d-inline-flex bg-white rounded-pill p-1 mb-4">
-            <button 
-              @click="isAnnual = false" 
-              :class="['btn', 'btn-sm', 'px-4', 'rounded-pill', !isAnnual ? 'btn-primary' : 'btn-light']"
-            >
-              {{ $t('pricing.toggle.monthly') }}
-            </button>
-            <button 
-              @click="isAnnual = true" 
-              :class="['btn', 'btn-sm', 'px-4', 'rounded-pill', isAnnual ? 'btn-primary' : 'btn-light']"
-            >
-              {{ $t('pricing.toggle.annually') }} <span class="badge bg-success ms-1">{{ $t('pricing.toggle.save') }}</span>
-            </button>
-          </div>
+          <ToggleSwitch v-model="isAnnual" >
+            <template #falseText>{{ $t('pricing.toggle.monthly') }}</template>
+            <template #trueText>{{ $t('pricing.toggle.annually') }} <span class="badge bg-success ms-1">{{ $t('pricing.toggle.save') }}</span></template>
+          </ToggleSwitch>
         </div>
       </div>
 
@@ -220,8 +172,11 @@
 </template>
 
 <script setup>
+import ToggleSwitch from '../../components/ToggleSwitch.vue'
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useAppStore } from '../../stores/app'
+import { storeToRefs } from 'pinia'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
 
@@ -231,9 +186,11 @@ import 'swiper/css/pagination'
 
 const { tm } = useI18n()
 
+const appStore = useAppStore()
+const { isBusiness } = storeToRefs(appStore)
+
 // Pricing toggle states
 const isAnnual = ref(false)
-const isPrivate = ref(false) // false = business, true = private
 
 // Use tm() to get arrays directly from i18n
 const basicFeatures = computed(() => tm('pricing.packages.basic.features'))
@@ -242,7 +199,7 @@ const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
 
 // Get current pricing based on customer type and billing cycle
 const getCurrentPrice = (packageType) => {
-  const customerType = isPrivate.value ? 'private' : 'business'
+  const customerType = isBusiness.value ? 'business' : 'private'
   const billingType = isAnnual.value ? 'annual' : 'monthly'
   return tm(`pricing.packages.${packageType}.${customerType}.${billingType}`)
 }
@@ -313,20 +270,6 @@ const getCurrentPrice = (packageType) => {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.pricing-toggle {
-  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.1);
-  border: 1px solid #e9ecef;
-}
-
-.pricing-toggle .btn {
-  border: none;
-  transition: all 0.3s ease;
-}
-
-.pricing-toggle .btn:focus {
-  box-shadow: none;
 }
 
 .pricing-card {
@@ -537,19 +480,6 @@ const getCurrentPrice = (packageType) => {
   
   .recurring-costs {
     padding: 1.5rem;
-  }
-  
-  .pricing-toggle {
-    flex-direction: row;
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .pricing-toggle .btn {
-    margin: 0;
-    padding: 0.375rem 1rem;
-    font-size: 0.8rem;
-    flex: 1;
   }
   
   /* Mer marginal mellan Populärast och priset */

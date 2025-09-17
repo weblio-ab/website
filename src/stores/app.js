@@ -4,6 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 export const useAppStore = defineStore('app', () => {
   // State
   const locale = ref('sv')
+  const isBusiness = ref(true)
   const isMenuOpen = ref(false)
   const activeSection = ref('home')
   const showBackToTop = ref(false)
@@ -12,6 +13,10 @@ export const useAppStore = defineStore('app', () => {
   // Actions
   function setLocale(newLocale) {
     locale.value = newLocale
+  }
+
+  function setIsBusiness(value) {
+    isBusiness.value = value
   }
 
   function toggleMenu() {
@@ -76,6 +81,7 @@ export const useAppStore = defineStore('app', () => {
   return {
     // State
     locale,
+    isBusiness,
     isMenuOpen,
     activeSection,
     showBackToTop,
@@ -83,6 +89,7 @@ export const useAppStore = defineStore('app', () => {
     
     // Actions
     setLocale,
+    setIsBusiness,
     toggleMenu,
     closeMenu,
     scrollToTop,
