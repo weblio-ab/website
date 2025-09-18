@@ -16,93 +16,28 @@
 
       <!-- Pricing Cards -->
       <div class="row g-4 mb-5">
-        <!-- Email Package -->
-        <div class="col-lg-4">
-          <div class="pricing-card h-100">
-            <div class="pricing-header">
-              <h3>{{ $t('pricing.packages.basic.title') }}</h3>
-              <div class="price">
-                <span class="amount">
-                  {{ getCurrentPrice('basic').price }}
-                </span>
-                <span class="currency">
-                  {{ getCurrentPrice('basic').currency }}
-                </span>
-              </div>
-              <p class="text-muted">{{ $t('pricing.packages.basic.description') }}</p>
-            </div>
-            <div class="pricing-features">
-              <ul class="list-unstyled">
-                <li v-for="feature in basicFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-primary"></i>
-                  <span>{{ feature }}</span>
-                </li>
-              </ul>
-            </div>
-            <div class="pricing-footer">
-              <router-link class="btn btn-outline-primary w-100" to="/#contact">{{ $t('common.getStarted') }}</router-link>
-            </div>
-          </div>
-        </div>
-
-        <!-- Start Package -->
-        <div class="col-lg-4">
-          <div class="pricing-card h-100 popular">
-            <div class="popular-badge">{{ $t('pricing.popular') }}</div>
-            <div class="pricing-header">
-              <h3>{{ $t('pricing.packages.professional.title') }}</h3>
-              <div class="price">
-                <span class="amount">
-                  {{ getCurrentPrice('professional').price }}
-                </span>
-                <span class="currency">
-                  {{ getCurrentPrice('professional').currency }}
-                </span>
-              </div>
-              <p class="text-muted">{{ $t('pricing.packages.professional.description') }}</p>
-            </div>
-            <div class="pricing-features">
-              <ul class="list-unstyled">
-                <li v-for="feature in professionalFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-primary"></i>
-                  <span>{{ feature }}</span>
-                </li>
-              </ul>
-            </div>
-            <div class="pricing-footer">
-              <router-link class="btn btn-primary w-100" to="/#contact">{{ $t('common.getStarted') }}</router-link>
-            </div>
-          </div>
-        </div>
-
-        <!-- Start Premium Package -->
-        <div class="col-lg-4">
-          <div class="pricing-card h-100">
-            <div class="pricing-header">
-              <h3>{{ $t('pricing.packages.premium.title') }}</h3>
-              <div class="price">
-                <span class="amount">
-                  {{ getCurrentPrice('premium').price }}
-                </span>
-                <span class="currency">
-                  {{ getCurrentPrice('premium').currency }}
-                </span>
-              </div>
-              <p class="text-muted">{{ $t('pricing.packages.premium.description') }}</p>
-            </div>
-            <div class="pricing-features">
-              <ul class="list-unstyled">
-                <li v-for="feature in premiumFeatures" :key="feature">
-                  <i class="bi bi-check-circle-fill text-primary"></i>
-                  <span>{{ feature }}</span>
-                </li>
-              </ul>
-            </div>
-            <div class="pricing-footer">
-              <router-link class="btn btn-outline-primary w-100" to="/#contact">{{ $t('common.getStarted') }}</router-link>
-            </div>
-          </div>
-        </div>
+         <PricingPackage
+          :title="$t('pricing.packages.basic.title')"
+          :price="getCurrentPrice('basic')['price']"
+          :currency="getCurrentPrice('basic')['currency']"
+          :description="$t('pricing.packages.basic.description')"
+          :features="basicFeatures"
+        />
+        <PricingPackage
+          :title="$t('pricing.packages.professional.title')"
+          :price="getCurrentPrice('professional')['price']"
+          :currency="getCurrentPrice('professional')['currency']"
+          :description="$t('pricing.packages.professional.description')"
+          :features="professionalFeatures"
+          :mostPopular="true"
+        />
+        <PricingPackage
+          :title="$t('pricing.packages.premium.title')"
+          :price="getCurrentPrice('premium')['price']"
+          :currency="getCurrentPrice('premium')['currency']"
+          :description="$t('pricing.packages.premium.description')"
+          :features="premiumFeatures"
+        />
       </div>
 
       <!-- Pricing Information -->
@@ -173,6 +108,7 @@
 
 <script setup>
 import ToggleSwitch from '../../components/ToggleSwitch.vue'
+import PricingPackage from '../../components/PricingPackage.vue'
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useAppStore } from '../../stores/app'
@@ -266,102 +202,6 @@ const getCurrentPrice = (packageType) => {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.pricing-card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
-  padding: 2rem;
-  position: relative;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  display: flex;
-  flex-direction: column;
-}
-
-.pricing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 123, 255, 0.15);
-}
-
-.pricing-card.popular {
-  border-color: #007bff;
-  transform: scale(1.05);
-}
-
-.pricing-card.popular:hover {
-  transform: scale(1.05) translateY(-5px);
-}
-
-.popular-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.pricing-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.pricing-header h3 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.price {
-  margin-bottom: 1rem;
-}
-
-.amount {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #007bff;
-  line-height: 1;
-}
-
-.currency {
-  font-size: 1.25rem;
-  color: #666;
-  margin-left: 0.5rem;
-}
-
-.pricing-features {
-  margin-bottom: 2rem;
-  flex: 1;
-}
-
-.pricing-footer {
-  margin-top: auto;
-}
-
-.pricing-features ul {
-  margin: 0;
-}
-
-.pricing-features li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #f8f9fa;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.pricing-features li i {
-  flex-shrink: 0;
-  margin-top: 0.125rem;
-}
-
-.pricing-features li:last-child {
-  border-bottom: none;
 }
 
 .recurring-costs {
