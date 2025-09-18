@@ -3,20 +3,27 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center mb-5">
-          <h2 class="display-5 fw-bold text-dark mb-3">{{ $t('pricing.title') }}</h2>
-          <p class="lead text-muted">{{ $t('pricing.subtitle') }}</p>
-          
+          <h2 class="display-5 fw-bold text-dark mb-3">
+            {{ $t("pricing.title") }}
+          </h2>
+          <p class="lead text-muted">{{ $t("pricing.subtitle") }}</p>
+
           <!-- Price Toggle -->
-          <ToggleSwitch v-model="isAnnual" >
-            <template #falseText>{{ $t('pricing.toggle.monthly') }}</template>
-            <template #trueText>{{ $t('pricing.toggle.annually') }} <span class="badge bg-success ms-1">{{ $t('pricing.toggle.save') }}</span></template>
+          <ToggleSwitch v-model="isAnnual">
+            <template #falseText>{{ $t("pricing.toggle.monthly") }}</template>
+            <template #trueText
+              >{{ $t("pricing.toggle.annually") }}
+              <span class="badge bg-success ms-1">{{
+                $t("pricing.toggle.save")
+              }}</span></template
+            >
           </ToggleSwitch>
         </div>
       </div>
 
       <!-- Pricing Cards -->
       <div class="row g-4 mb-5">
-         <PricingPackage
+        <PricingPackage
           :title="$t('pricing.packages.basic.title')"
           :price="getCurrentPrice('basic')['price']"
           :currency="getCurrentPrice('basic')['currency']"
@@ -44,26 +51,28 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="recurring-costs">
-            <h4 class="text-center mb-4">{{ $t('pricing.recurring.title') }}</h4>
-            
+            <h4 class="text-center mb-4">
+              {{ $t("pricing.recurring.title") }}
+            </h4>
+
             <!-- Desktop Grid -->
             <div class="row g-3 d-none d-md-flex">
               <div class="col-md-4 text-center">
                 <div class="recurring-item">
                   <i class="bi bi-info-circle fs-3 text-primary mb-2"></i>
-                  <p class="mb-0">{{ $t('pricing.recurring.hosting') }}</p>
+                  <p class="mb-0">{{ $t("pricing.recurring.hosting") }}</p>
                 </div>
               </div>
               <div class="col-md-4 text-center">
                 <div class="recurring-item">
                   <i class="bi bi-calendar-check fs-3 text-primary mb-2"></i>
-                  <p class="mb-0">{{ $t('pricing.recurring.domain') }}</p>
+                  <p class="mb-0">{{ $t("pricing.recurring.domain") }}</p>
                 </div>
               </div>
               <div class="col-md-4 text-center">
                 <div class="recurring-item">
                   <i class="bi bi-credit-card fs-3 text-primary mb-2"></i>
-                  <p class="mb-0">{{ $t('pricing.recurring.support') }}</p>
+                  <p class="mb-0">{{ $t("pricing.recurring.support") }}</p>
                 </div>
               </div>
             </div>
@@ -80,21 +89,21 @@
                 <SwiperSlide>
                   <div class="recurring-item text-center">
                     <i class="bi bi-info-circle fs-3 text-primary mb-2"></i>
-                    <p class="mb-0">{{ $t('pricing.recurring.hosting') }}</p>
+                    <p class="mb-0">{{ $t("pricing.recurring.hosting") }}</p>
                   </div>
                 </SwiperSlide>
-                
+
                 <SwiperSlide>
                   <div class="recurring-item text-center">
                     <i class="bi bi-calendar-check fs-3 text-primary mb-2"></i>
-                    <p class="mb-0">{{ $t('pricing.recurring.domain') }}</p>
+                    <p class="mb-0">{{ $t("pricing.recurring.domain") }}</p>
                   </div>
                 </SwiperSlide>
-                
+
                 <SwiperSlide>
                   <div class="recurring-item text-center">
                     <i class="bi bi-credit-card fs-3 text-primary mb-2"></i>
-                    <p class="mb-0">{{ $t('pricing.recurring.support') }}</p>
+                    <p class="mb-0">{{ $t("pricing.recurring.support") }}</p>
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -107,34 +116,36 @@
 </template>
 
 <script setup>
-import ToggleSwitch from '../../components/ToggleSwitch.vue'
-import PricingPackage from '../../components/PricingPackage.vue'
-import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useAppStore } from '../../stores/app'
-import { storeToRefs } from 'pinia'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination } from 'swiper/modules'
+import ToggleSwitch from "../../components/ToggleSwitch.vue";
+import PricingPackage from "../../components/PricingPackage.vue";
+import { ref, computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { useAppStore } from "../../stores/app";
+import { storeToRefs } from "pinia";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination } from "swiper/modules";
 
-const { tm } = useI18n()
+const { tm } = useI18n();
 
-const appStore = useAppStore()
-const { isBusiness } = storeToRefs(appStore)
+const appStore = useAppStore();
+const { isBusiness } = storeToRefs(appStore);
 
 // Pricing toggle states
-const isAnnual = ref(false)
+const isAnnual = ref(false);
 
 // Use tm() to get arrays directly from i18n
-const basicFeatures = computed(() => tm('pricing.packages.basic.features'))
-const professionalFeatures = computed(() => tm('pricing.packages.professional.features'))
-const premiumFeatures = computed(() => tm('pricing.packages.premium.features'))
+const basicFeatures = computed(() => tm("pricing.packages.basic.features"));
+const professionalFeatures = computed(() =>
+  tm("pricing.packages.professional.features")
+);
+const premiumFeatures = computed(() => tm("pricing.packages.premium.features"));
 
 // Get current pricing based on customer type and billing cycle
 const getCurrentPrice = (packageType) => {
-  const customerType = isBusiness.value ? 'business' : 'private'
-  const billingType = isAnnual.value ? 'annual' : 'monthly'
-  return tm(`pricing.packages.${packageType}.${customerType}.${billingType}`)
-}
+  const customerType = isBusiness.value ? "business" : "private";
+  const billingType = isAnnual.value ? "annual" : "monthly";
+  return tm(`pricing.packages.${packageType}.${customerType}.${billingType}`);
+};
 </script>
 
 <style scoped>
@@ -239,111 +250,69 @@ const getCurrentPrice = (packageType) => {
   justify-content: center;
   word-wrap: break-word;
   hyphens: auto;
-}  .recurring-item:hover {
-    background: #e3f2fd;
-    transform: translateY(-2px);
-  }
+}
+.recurring-item:hover {
+  background: #e3f2fd;
+  transform: translateY(-2px);
+}
 
-  /* Recurring Swiper customization */
-  .recurring-swiper {
-    padding-bottom: 50px;
-  }
+/* Recurring Swiper customization */
+.recurring-swiper {
+  padding-bottom: 50px;
+}
 
-  .recurring-swiper :deep(.swiper-pagination) {
-    bottom: 10px;
-  }
+.recurring-swiper :deep(.swiper-pagination) {
+  bottom: 10px;
+}
 
-  .recurring-swiper :deep(.swiper-pagination-bullet) {
-    background: #dee2e6;
-    width: 12px;
-    height: 12px;
-    opacity: 1;
-  }
+.recurring-swiper :deep(.swiper-pagination-bullet) {
+  background: #dee2e6;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
 
-  .recurring-swiper :deep(.swiper-pagination-bullet-active) {
-    background: #007bff;
-    transform: scale(1.2);
-  }
+.recurring-swiper :deep(.swiper-pagination-bullet-active) {
+  background: #007bff;
+  transform: scale(1.2);
+}
 
-  .recurring-swiper :deep(.swiper-slide) {
-    height: auto;
-    padding: 0 15px;
-  }
-
-@media (max-width: 991.98px) {
-  .pricing-card.popular {
-    transform: none;
-    margin-bottom: 2rem;
-  }
-  
-  .pricing-card.popular:hover {
-    transform: translateY(-5px);
-  }
+.recurring-swiper :deep(.swiper-slide) {
+  height: auto;
+  padding: 0 15px;
 }
 
 @media (max-width: 767.98px) {
   .customer-selector {
     padding: 1.5rem;
   }
-  
+
   .customer-card {
     padding: 1.5rem;
     margin-bottom: 1rem;
   }
-  
+
   .customer-icon {
     width: 60px;
     height: 60px;
     font-size: 1.5rem;
     border-radius: 15px;
   }
-  
+
   .customer-card h5 {
     font-size: 1.1rem;
   }
-  
+
   .customer-card p {
     font-size: 0.9rem;
   }
-  
-  .pricing-card {
-    padding: 1.5rem;
-  }
-  
+
   .amount {
     font-size: 2.5rem;
   }
-  
+
   .recurring-costs {
     padding: 1.5rem;
-  }
-  
-  /* Mer marginal mellan Populärast och priset */
-  .popular-badge {
-    margin-bottom: 1rem;
-  }
-  
-  .pricing-card.popular .pricing-header {
-    margin-top: 1rem;
-  }
-  
-  /* Textjustering för features - bätter linjering */
-  .pricing-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #f8f9fa;
-  }
-
-  .pricing-features li i {
-    flex-shrink: 0;
-    margin-top: 0.125rem;
-  }
-  
-  .pricing-features li i {
-    margin-top: 0.25rem;
-    flex-shrink: 0;
   }
 }
 </style>
