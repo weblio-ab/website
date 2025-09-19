@@ -74,22 +74,30 @@
       "mulo": {
         "title": "Mulo Design",
         "description": "Elegant website for interior design company with product gallery and contact form",
-        "category": "Interior Design"
+        "category": "Interior Design",
+        "url": "https://mulo.se",
+        "imageUrl": "/assets/projects/mulo.webp"
       },
       "amea-salong": {
         "title": "AMEA Salong",
         "description": "Modern website for beauty salon with integrated webshop and online courses",
-        "category": "Beauty Salon"
+        "category": "Beauty Salon",
+        "url": "https://ameasalong.se",
+        "imageUrl": "/assets/projects/ameasalong.webp"
       },
       "alpakas": {
         "title": "Alpaka’s Coffee",
         "description": "Elegant cafe website with authentic artisanal coffee blends",
-        "category": "Coffee Shop"
+        "category": "Coffee Shop",
+        "url": "https://alpakascoffee.com/",
+        "imageUrl": "/assets/projects/alpakas.webp"
       },
       "skanespolarna": {
         "title": "Skånespolarna",
         "description": "Modern website for local entrepreneurs and business owners in Skåne",
-        "category": "Plumbing"
+        "category": "Plumbing",
+        "url": "https://skanespolarna.se/",
+        "imageUrl": "/assets/projects/skånespolarna.png"
       }
     }
   },

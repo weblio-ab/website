@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center mb-5">
-          <h2 class="display-5 fw-bold text-dark mb-3">{{ $t('portfolio.title') }}</h2>
+          <h2 class="display-5 fw-bold mb-3">{{ $t('portfolio.title') }}</h2>
           <p class="lead text-muted">{{ $t('portfolio.subtitle') }}</p>
         </div>
       </div>
@@ -15,43 +15,13 @@
           :pagination="{ clickable: true }"
           class="portfolio-swiper"
         >
-          <SwiperSlide>
+          <SwiperSlide v-for="(project) in projects" :key="project.title">
             <Project
-              :category="$t('portfolio.projects.mulo.category')"
-              :title="$t('portfolio.projects.mulo.title')"
-              :description="$t('portfolio.projects.mulo.description')"
-              url="https://mulo.se"
-              image-url="/assets/projects/mulo.webp"
-            />
-          </SwiperSlide>
-          
-          <SwiperSlide>
-            <Project
-              :category="$t('portfolio.projects.amea-salong.category')"
-              :title="$t('portfolio.projects.amea-salong.title')"
-              :description="$t('portfolio.projects.amea-salong.description')"
-              url="https://ameasalong.se"
-              image-url="/assets/projects/ameasalong.webp"
-            />
-          </SwiperSlide>
-          
-          <SwiperSlide>
-            <Project
-              :category="$t('portfolio.projects.alpakas.category')"
-              :title="$t('portfolio.projects.alpakas.title')"
-              :description="$t('portfolio.projects.alpakas.description')"
-              url="https://alpakascoffee.com/"
-              image-url="/assets/projects/alpakas.webp"
-            />
-          </SwiperSlide>
-          
-          <SwiperSlide>
-            <Project
-              :category="$t('portfolio.projects.skanespolarna.category')"
-              :title="$t('portfolio.projects.skanespolarna.title')"
-              :description="$t('portfolio.projects.skanespolarna.description')"
-              url="https://skanespolarna.se/"
-              image-url="/assets/projects/skånespolarna.png"
+              :category="project.category"
+              :title="project.title"
+              :description="project.description"
+              :url="project.url"
+              :image-url="project.imageUrl"
             />
           </SwiperSlide>
         </Swiper>
@@ -61,14 +31,21 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
 import { storeToRefs } from 'pinia'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper/modules'
+import { useI18n } from "vue-i18n";
 import Project from '../../components/Project.vue'
 import { useViewportStore } from '../../stores/viewport'
 
+const { tm } = useI18n();
+
 const viewportStore = useViewportStore()
 const { isMobile } = storeToRefs(viewportStore)
+
+const projects = computed(() => tm("portfolio.projects"));
+
 </script>
 
 <style scoped>
