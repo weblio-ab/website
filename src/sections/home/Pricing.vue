@@ -22,7 +22,7 @@
       </div>
 
       <!-- Pricing Cards -->
-      <div class="row g-4 mb-5">
+      <div class="row g-4 mb-5 m-1">
         <PricingPackage
           :title="$t('pricing.packages.basic.title')"
           :price="getCurrentPrice('basic')['price']"
@@ -54,34 +54,10 @@
             <h4 class="text-center mb-4">
               {{ $t("pricing.recurring.title") }}
             </h4>
-
-            <!-- Desktop Grid -->
-            <div class="row g-3 d-none d-md-flex">
-              <div class="col-md-4 text-center">
-                <div class="recurring-item">
-                  <i class="bi bi-info-circle fs-3 text-primary mb-2"></i>
-                  <p class="mb-0">{{ $t("pricing.recurring.hosting") }}</p>
-                </div>
-              </div>
-              <div class="col-md-4 text-center">
-                <div class="recurring-item">
-                  <i class="bi bi-calendar-check fs-3 text-primary mb-2"></i>
-                  <p class="mb-0">{{ $t("pricing.recurring.domain") }}</p>
-                </div>
-              </div>
-              <div class="col-md-4 text-center">
-                <div class="recurring-item">
-                  <i class="bi bi-credit-card fs-3 text-primary mb-2"></i>
-                  <p class="mb-0">{{ $t("pricing.recurring.support") }}</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mobile Swiper -->
-            <div class="d-md-none">
+            <div>
               <Swiper
                 :modules="[Pagination]"
-                :slides-per-view="1"
+                :slides-per-view="isMobile ? 1 : 3"
                 :space-between="20"
                 :pagination="{ clickable: true }"
                 class="recurring-swiper"
@@ -121,6 +97,7 @@ import PricingPackage from "../../components/PricingPackage.vue";
 import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useAppStore } from "../../stores/app";
+import { useViewportStore } from "../../stores/viewport";
 import { storeToRefs } from "pinia";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from "swiper/modules";
@@ -129,6 +106,9 @@ const { tm } = useI18n();
 
 const appStore = useAppStore();
 const { isBusiness } = storeToRefs(appStore);
+
+const viewportStore = useViewportStore();
+const { isMobile } = storeToRefs(viewportStore);
 
 // Pricing toggle states
 const isAnnual = ref(false);
@@ -149,72 +129,6 @@ const getCurrentPrice = (packageType) => {
 </script>
 
 <style scoped>
-/* Customer Type Selector */
-.customer-selector {
-  background: white;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
-}
-
-.customer-card {
-  background: white;
-  border: 2px solid #e9ecef;
-  border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.customer-card:hover {
-  border-color: #007bff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
-}
-
-.customer-card.active {
-  border-color: #007bff;
-  background: linear-gradient(135deg, #f8f9ff, #e3f2fd);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
-}
-
-.customer-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-  transition: all 0.3s ease;
-}
-
-.customer-card.active .customer-icon {
-  transform: scale(1.1);
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-}
-
-.customer-card h5 {
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: 600;
-}
-
-.customer-card p {
-  margin-bottom: 0;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .recurring-costs {
   background: white;
   padding: 2rem;
@@ -251,68 +165,9 @@ const getCurrentPrice = (packageType) => {
   word-wrap: break-word;
   hyphens: auto;
 }
+
 .recurring-item:hover {
   background: #e3f2fd;
   transform: translateY(-2px);
-}
-
-/* Recurring Swiper customization */
-.recurring-swiper {
-  padding-bottom: 50px;
-}
-
-.recurring-swiper :deep(.swiper-pagination) {
-  bottom: 10px;
-}
-
-.recurring-swiper :deep(.swiper-pagination-bullet) {
-  background: #dee2e6;
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-}
-
-.recurring-swiper :deep(.swiper-pagination-bullet-active) {
-  background: #007bff;
-  transform: scale(1.2);
-}
-
-.recurring-swiper :deep(.swiper-slide) {
-  height: auto;
-  padding: 0 15px;
-}
-
-@media (max-width: 767.98px) {
-  .customer-selector {
-    padding: 1.5rem;
-  }
-
-  .customer-card {
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .customer-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-    border-radius: 15px;
-  }
-
-  .customer-card h5 {
-    font-size: 1.1rem;
-  }
-
-  .customer-card p {
-    font-size: 0.9rem;
-  }
-
-  .amount {
-    font-size: 2.5rem;
-  }
-
-  .recurring-costs {
-    padding: 1.5rem;
-  }
 }
 </style>
