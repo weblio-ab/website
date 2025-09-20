@@ -6,7 +6,11 @@
           <h2 class="display-5 fw-bold text-dark mb-3">
             {{ $t("pricing.title") }}
           </h2>
-          <p class="lead text-muted">{{ $t("pricing.subtitle") }}</p>
+          <p class="lead text-muted">{{ 
+            isBusiness 
+              ? $t("pricing.subtitle.business") 
+              : $t("pricing.subtitle.personal") 
+          }}</p>
 
           <!-- Price Toggle -->
           <ToggleSwitch v-model="isAnnual">

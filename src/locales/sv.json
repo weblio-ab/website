@@ -103,7 +103,10 @@
   },
   "pricing": {
     "title": "Transparenta priser",
-    "subtitle": "Välj det paket som passar ditt företag bäst",
+    "subtitle": {
+      "business": "Välj det paket som passar ditt företag bäst",
+      "personal": "Välj det paket som passar dig bäst"
+    },
     "popular": "Populärast",
     "toggle": {
       "monthly": "Månadsvis",

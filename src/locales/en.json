@@ -103,7 +103,10 @@
   },
   "pricing": {
     "title": "Transparent pricing",
-    "subtitle": "Choose the package that best fits your business",
+    "subtitle": {
+      "business": "Choose the package that best fits your business",
+      "personal": "Choose the package that best fits you"
+    },
     "popular": "Most Popular",
     "toggle": {
       "monthly": "Monthly",
