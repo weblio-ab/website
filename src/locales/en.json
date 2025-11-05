@@ -98,6 +98,13 @@
         "category": "Plumbing",
         "url": "https://skanespolarna.se/",
         "imageUrl": "/assets/projects/skånespolarna.png"
+      },
+      "zar-restaurang": {
+        "title": "Zar Restaurant",
+        "description": "Elegant restaurant website",
+        "category": "Restaurant",
+        "url": "https://zar-restaurang.se",
+        "imageUrl": "/assets/projects/zar-restaurang.png"
       }
     }
   },
