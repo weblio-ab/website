@@ -98,6 +98,13 @@
         "category": "VVS",
         "url": "https://skanespolarna.se/",
         "imageUrl": "/assets/projects/skånespolarna.png"
+      },
+      "zar-restaurang": {
+        "title": "Zar Restaurang",
+        "description": "Elegant restauranghemsida",
+        "category": "Restaurang",
+        "url": "https://zar-restaurang.se",
+        "imageUrl": "/assets/projects/zar-restaurang.png"
       }
     }
   },
