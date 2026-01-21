@@ -1,5 +1,5 @@
 <template>
-  <div class="code-content">
+  <div class="code-content" :class="[`theme-${theme}`]">
     <div 
       v-for="(line, index) in codeLines" 
       :key="index" 
@@ -28,7 +28,12 @@ app.mount('#app')`
   language: {
     type: String,
     default: 'javascript'
-  }
+  },
+  theme: {
+    type: String,
+    default: 'light',
+    validator: (value) => ['light', 'dark'].includes(value)
+  },
 })
 
 // Split code into lines
@@ -143,5 +148,22 @@ const highlightedLines = computed(() => {
 
 .code-text :deep(.color) {
   color: #4ec9b0;
+}
+
+/* Light theme */
+.theme-light {
+  background: #f5f5f5;
+}
+
+.theme-light .code-line:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.theme-light .line-number {
+  color: #999999;
+}
+
+.theme-light .code-text {
+  color: #383a42;
 }
 </style>
