@@ -59,90 +59,88 @@ const displayUrl = computed(() => {
   height: 100%;
 }
 
-/* Light theme (browser default) */
-.theme-light {
-  background: white;
+.code-window {
+  border-radius: 12px;
+  max-width: 400px;
 }
 
-.theme-light .window-header {
+.window-header {
   height: 25px;
-  background: #f1f3f5;
-  border-bottom: 1px solid #e9ecef;
   display: flex;
   align-items: center;
   padding: 0 8px;
   gap: 8px;
 }
 
-.theme-light .window-dots span {
+.window-dots span {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #dee2e6;
 }
 
-.theme-light .browser-url {
+.browser-url {
   flex: 1;
   height: 15px;
-  background: white;
   border-radius: 3px;
   font-size: 8px;
   display: flex;
   align-items: center;
   padding: 0 6px;
+  background: white;
   color: #666;
 }
 
-/* Dark theme (code editor) */
-.theme-dark {
-  background: #1e1e1e;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-}
-
-.theme-dark.code-window {
-  border-radius: 12px;
-  max-width: 400px;
-}
-
-.theme-dark .window-header {
-  background: #2d2d2d;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.theme-dark .window-dots {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.theme-dark .window-dots span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.theme-dark .window-title {
+.window-title {
   color: #cccccc;
   font-size: 0.875rem;
 }
 
-/* Common dot colors */
+/* Window Dots */
+.window-dots {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.window-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
 .window-dots span:nth-child(1) { background: #ff5f56; }
 .window-dots span:nth-child(2) { background: #ffbd2e; }
 .window-dots span:nth-child(3) { background: #27ca3f; }
+
+/* Window content */
 
 .window-content {
   height: calc(100% - 25px);
   overflow: hidden;
 }
 
-.theme-dark .window-content {
+.window-content {
   height: calc(100% - 60px);
 }
 
 .window-title-area {
   flex: 1;
+}
+
+/* Light theme (browser default) */
+.theme-light.mockup-window {
+  background: white;
+}
+
+.theme-light .window-header {
+  background: #f1f3f5;
+}
+
+/* Dark theme (code editor) */
+.theme-dark.mockup-window {
+  background: #1e1e1e;
+}
+
+.theme-dark .window-header {
+  background: #2d2d2d;
 }
 </style>
