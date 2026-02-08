@@ -117,7 +117,7 @@
         <div class="col-lg-6 d-none d-md-block">
           <div class="about-visual">
             <WindowMockup theme="dark" type="code" title="main.js">
-              <CodeBlock />
+              <CodeBlock theme="dark" />
             </WindowMockup>
           </div>
         </div>

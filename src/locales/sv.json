@@ -75,7 +75,7 @@
         "title": "Mulo Design",
         "description": "Elegant hemsida för inredningsföretag med produktgalleri och kontaktformulär",
         "category": "Inredning",
-        "url": "https://mulo.se",
+        "url": "https://mulodesign.se",
         "imageUrl": "/assets/projects/mulo.webp"
       },
       "amea-salong": {
@@ -89,14 +89,14 @@
         "title": "Alpaka’s Coffee",
         "description": "Elegant kafé-hemsida med autentiskt hantverksblandat kaffe",
         "category": "Kafé",
-        "url": "https://alpakascoffee.com/",
+        "url": "https://alpakascoffee.com",
         "imageUrl": "/assets/projects/alpakas.webp"
       },
       "skanespolarna": {
         "title": "Skånespolarna",
         "description": "Modern hemsida för lokala entreprenörer och företagare i Skåne",
         "category": "VVS",
-        "url": "https://skanespolarna.se/",
+        "url": "https://skanespolarna.se",
         "imageUrl": "/assets/projects/skånespolarna.png"
       },
       "zar-restaurang": {
