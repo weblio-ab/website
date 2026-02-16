@@ -27,8 +27,8 @@ importers:
         specifier: ^3.0.4
         version: 3.0.4(vue@3.5.27)
       swiper:
-        specifier: ^12.0.3
-        version: 12.0.3
+        specifier: ^12.1.1
+        version: 12.1.1
       vue:
         specifier: ^3.5.27
         version: 3.5.27
@@ -556,8 +556,8 @@ packages:
     resolution: {integrity: sha512-H+ue8Zo4vJmV2nRjpx86P35lzwDT3nItnIsocgumgr0hHMQ+ZGq5vrERg9kJBo5AWGmxZDhzDo+WVIJqkB0cGA==}
     engines: {node: '>=16'}
 
-  swiper@12.0.3:
-    resolution: {integrity: sha512-BHd6U1VPEIksrXlyXjMmRWO0onmdNPaTAFduzqR3pgjvi7KfmUCAm/0cj49u2D7B0zNjMw02TSeXfinC1hDCXg==}
+  swiper@12.1.1:
+    resolution: {integrity: sha512-NB8Uvpu6m725Xf68l2hZBHD184v/ZAi6WIvAorDuR3gRuwCWbGSam233/8seeeIrMJ9isHGk/CTKFdpgeT5u2Q==}
     engines: {node: '>= 4.7.0'}
 
   tinyglobby@0.2.15:
@@ -1070,7 +1070,7 @@ snapshots:
     dependencies:
       copy-anything: 4.0.5
 
-  swiper@12.0.3: {}
+  swiper@12.1.1: {}
 
   tinyglobby@0.2.15:
     dependencies:
