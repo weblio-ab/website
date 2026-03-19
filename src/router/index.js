@@ -44,6 +44,11 @@ export const routes = [
     path: '/cookies',
     name: 'Cookies',
     component: () => import('../views/Cookies.vue')
+  },
+  // Catch-all route - redirect unknown routes to home
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
   }
 ]
 
