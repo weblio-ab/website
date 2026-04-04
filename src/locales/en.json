@@ -536,13 +536,7 @@
     "emailSetup": {
       "title": "Configure email on phone",
       "description": "Get help setting up email on your phone with this easy guide",
-      "intro": "We'll help you configure email on your phone step by step. Start by choosing your device type.",
-      "helper": {
-        "title": "Make the guide personal (optional)",
-        "description": "Enter your email address and we'll customize the guide for you.",
-        "placeholder": "{'your@email.com'}",
-        "detected": "Domain detected: {domain}"
-      },
+      "intro": "We'll help you configure email on your phone step by step. Start by choosing your device type. All settings use mail.inleed.com as the server.",
       "device": {
         "title": "What device are you using?",
         "description": "Choose your phone to get the right instructions.",
@@ -578,7 +572,7 @@
         "incoming": "Incoming server",
         "outgoing": "Outgoing server",
         "defaultEmail": "{'your@email.com'}",
-        "defaultServer": "mail.yourdomain.com",
+        "defaultServer": "mail.inleed.com",
         "incomingSettings": "Server: {server}\nPort: 993\nSecurity: SSL/TLS\nUsername: {username}",
         "outgoingSettings": "Server: {server}\nPort: 587\nSecurity: STARTTLS\nAuthentication: Yes",
         "nativeIphone": {
@@ -677,7 +671,7 @@
         "title": "Log in to webmail",
         "description": "Go to your webmail login page and enter your credentials",
         "urlInfo": "The webmail address is:",
-        "url": "https://yourdomain.com/webmail"
+        "url": "https://webmail.inleed.com"
       },
       "step2": {
         "title": "Navigate the interface",
@@ -720,8 +714,8 @@
         "settingsTitle": "Example server settings:",
         "incoming": "Incoming (IMAP)",
         "outgoing": "Outgoing (SMTP)",
-        "incomingCode": "Server: mail.example.com\nPort: 993 (SSL) or 143\nSecurity: SSL/TLS",
-        "outgoingCode": "Server: mail.example.com\nPort: 587 (TLS) or 465 (SSL)\nSecurity: STARTTLS or SSL",
+        "incomingCode": "Server: mail.inleed.com\nPort: 993 (SSL) or 143\nSecurity: SSL/TLS",
+        "outgoingCode": "Server: mail.inleed.com\nPort: 587 (TLS) or 465 (SSL)\nSecurity: STARTTLS or SSL",
         "settingsWarning": "These settings may vary. Contact your email provider for exact details."
       },
       "step4": {

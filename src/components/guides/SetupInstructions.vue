@@ -27,8 +27,6 @@
       <EmailSetupInstructions 
         :device="selectedDevice" 
         :app="selectedApp"
-        :user-email="userEmail"
-        :email-info="emailInfo"
       />
     </div>
     
@@ -46,7 +44,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import EmailSetupInstructions from './EmailSetupInstructions.vue'
-import EmailConfigGenerator from './EmailConfigGenerator.vue'
 
 const { t } = useI18n()
 
@@ -59,19 +56,6 @@ defineProps({
   selectedApp: {
     type: String,
     required: true
-  },
-  userEmail: {
-    type: String,
-    default: ''
-  },
-  emailInfo: {
-    type: Object,
-    default: () => ({
-      domain: '',
-      username: '',
-      incomingServer: '',
-      outgoingServer: ''
-    })
   }
 })
 

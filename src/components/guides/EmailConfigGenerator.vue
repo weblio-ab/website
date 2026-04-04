@@ -99,10 +99,10 @@ const email = ref(props.userEmail || '')
 const emailError = ref('')
 const domain = ref(props.emailInfo.domain || '')
 
-// Server settings med standardvärden
+// Server settings med standardvärden - always use mail.inleed.com
 const serverSettings = ref({
-  incomingMailServer: '',
-  outgoingMailServer: '',
+  incomingMailServer: 'mail.inleed.com',
+  outgoingMailServer: 'mail.inleed.com',
   incomingPort: 993,
   outgoingPort: 587,
   incomingUseSSL: true,
@@ -111,15 +111,7 @@ const serverSettings = ref({
 
 // Computed
 const canGenerate = computed(() => {
-  return email.value && domain.value && !emailError.value
-})
-
-// Watchers
-watch(domain, (newDomain) => {
-  if (newDomain) {
-    serverSettings.value.incomingMailServer = `mail.${newDomain}`
-    serverSettings.value.outgoingMailServer = `mail.${newDomain}`
-  }
+  return email.value && !emailError.value
 })
 
 // Watchers for props
@@ -129,14 +121,6 @@ watch(() => props.userEmail, (newEmail) => {
     validateEmail()
   }
 }, { immediate: true })
-
-watch(() => props.emailInfo, (newEmailInfo) => {
-  if (newEmailInfo.domain) {
-    domain.value = newEmailInfo.domain
-    serverSettings.value.incomingMailServer = newEmailInfo.incomingServer || `mail.${newEmailInfo.domain}`
-    serverSettings.value.outgoingMailServer = newEmailInfo.outgoingServer || `mail.${newEmailInfo.domain}`
-  }
-}, { deep: true, immediate: true })
 
 // Methods
 function validateEmail() {
@@ -149,20 +133,21 @@ function validateEmail() {
 
   const { isValid, domain: extractedDomain } = validateEmailAndDomain(email.value)
   
+  if (!isValid) {inleed.com'
+
+  if (!email.value) {
+    return
+  }
+
+  const { isValid } = validateEmailAndDomain(email.value)
+  
   if (!isValid) {
     emailError.value = t('guides.emailConfig.invalidEmail')
     return
   }
 
-  domain.value = extractedDomain
-}
-
-async function generateAndDownload() {
-  if (!canGenerate.value) return
-
-  try {
-    await downloadConfig(email.value, domain.value, serverSettings.value)
-    
+  // Always use inleed.com domain
+  domain.value = 'inleed.com'
     // Visa success meddelande eller notification
     console.log('Konfigurationsfil nedladdad framgångsrikt')
   } catch (error) {
