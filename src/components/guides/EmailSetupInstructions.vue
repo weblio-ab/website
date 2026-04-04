@@ -269,32 +269,19 @@ const props = defineProps({
   app: {
     type: String,
     required: true
-  },
-  userEmail: {
-    type: String,
-    default: ''
-  },
-  emailInfo: {
-    type: Object,
-    default: () => ({
-      domain: '',
-      username: '',
-      incomingServer: '',
-      outgoingServer: ''
-    })
   }
 })
 
 const { t } = useI18n()
 
 const incomingSettings = computed(() => {
-  const server = props.emailInfo.incomingServer || (props.emailInfo.domain ? `mail.${props.emailInfo.domain}` : t('guides.emailSetup.instructions.defaultServer'))
-  const username = props.userEmail || t('guides.emailSetup.instructions.defaultEmail')
+  const server = 'mail.inleed.com'
+  const username = t('guides.emailSetup.instructions.defaultEmail')
   return t('guides.emailSetup.instructions.incomingSettings', { server, username })
 })
 
 const outgoingSettings = computed(() => {
-  const server = props.emailInfo.outgoingServer || (props.emailInfo.domain ? `mail.${props.emailInfo.domain}` : t('guides.emailSetup.instructions.defaultServer'))
+  const server = 'mail.inleed.com'
   return t('guides.emailSetup.instructions.outgoingSettings', { server })
 })
 </script>

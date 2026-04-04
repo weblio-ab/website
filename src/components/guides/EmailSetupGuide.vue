@@ -1,12 +1,6 @@
 <template>
   <BaseGuide guide-id="emailSetup">
     <div class="email-setup-guide">
-      <!-- Optional Email Input -->
-      <EmailHelper 
-        v-model="userEmail"
-        @email-updated="handleEmailUpdate"
-      />
-
       <!-- Step 1: Device Selection -->
       <DeviceSelector 
         v-if="currentStep === 'device'"
@@ -27,8 +21,6 @@
         v-if="currentStep === 'setup'"
         :selected-device="selectedDevice"
         :selected-app="selectedApp"
-        :user-email="userEmail"
-        :email-info="emailInfo"
         @previous="handlePreviousStep"
       />
     </div>
@@ -39,7 +31,6 @@
 import { ref, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import BaseGuide from './BaseGuide.vue'
-import EmailHelper from './EmailHelper.vue'
 import DeviceSelector from './DeviceSelector.vue'
 import AppSelector from './AppSelector.vue'
 import SetupInstructions from './SetupInstructions.vue'
@@ -59,27 +50,11 @@ const currentStep = ref('device')
 const selectedDevice = ref('')
 const selectedApp = ref('')
 
-// Email helper state
-const userEmail = ref('')
-const emailInfo = ref({
-  domain: '',
-  username: '',
-  incomingServer: '',
-  outgoingServer: ''
-})
-
 // Reset function to start fresh
 function resetGuide() {
   currentStep.value = 'device'
   selectedDevice.value = ''
   selectedApp.value = ''
-  userEmail.value = ''
-  emailInfo.value = {
-    domain: '',
-    username: '',
-    incomingServer: '',
-    outgoingServer: ''
-  }
 }
 
 // Expose reset function to parent
@@ -88,11 +63,6 @@ defineExpose({
 })
 
 // Event handlers
-function handleEmailUpdate(data) {
-  userEmail.value = data.email
-  emailInfo.value = data.emailInfo
-}
-
 function handleDeviceSelected(device) {
   selectedDevice.value = device
   currentStep.value = 'app'
