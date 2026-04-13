@@ -27,10 +27,10 @@
             <i class="bi bi-x"></i>
           </button>
         </div>
-        <div v-if="emailInfo.domain" class="email-info">
+        <div v-if="localEmail && !emailInfo.username === false" class="email-info">
           <small class="text-success">
             <i class="bi bi-check-circle me-1"></i>
-            {{ $t('guides.emailSetup.helper.detected', { domain: emailInfo.domain }) }}
+            {{ $t('guides.emailSetup.helper.detected') }}
           </small>
         </div>
       </div>
@@ -81,10 +81,10 @@ function handleEmailInput() {
 function extractEmailInfo() {
   if (!localEmail.value) {
     emailInfo.value = {
-      domain: '',
+      domain: 'inleed.com',
       username: '',
-      incomingServer: '',
-      outgoingServer: ''
+      incomingServer: 'mail.inleed.com',
+      outgoingServer: 'mail.inleed.com'
     }
     emit('emailInfo', emailInfo.value)
     emit('email-updated', {
@@ -94,23 +94,23 @@ function extractEmailInfo() {
     return
   }
 
-  // Use the same validation logic as EmailConfigGenerator
-  const { isValid, domain } = validateEmailAndDomain(localEmail.value)
+  // Use fixed mail.inleed.com server for all emails
+  const { isValid } = validateEmailAndDomain(localEmail.value)
   
-  if (isValid && domain) {
+  if (isValid) {
     const [username] = localEmail.value.split('@')
     emailInfo.value = {
-      domain,
+      domain: 'inleed.com',
       username,
-      incomingServer: `mail.${domain}`,
-      outgoingServer: `mail.${domain}`
+      incomingServer: 'mail.inleed.com',
+      outgoingServer: 'mail.inleed.com'
     }
   } else {
     emailInfo.value = {
-      domain: '',
+      domain: 'inleed.com',
       username: '',
-      incomingServer: '',
-      outgoingServer: ''
+      incomingServer: 'mail.inleed.com',
+      outgoingServer: 'mail.inleed.com'
     }
   }
   

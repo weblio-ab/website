@@ -550,13 +550,7 @@
     "emailSetup": {
       "title": "Konfigurera e-post på telefon",
       "description": "Få hjälp att ställa in e-post på din telefon med denna enkla guide",
-      "intro": "Vi hjälper dig att konfigurera e-post på din telefon steg för steg. Börja genom att välja din enhetstyp.",
-      "helper": {
-        "title": "Gör guiden personlig (valfritt)",
-        "description": "Ange din e-postadress så anpassas guiden för dig.",
-        "placeholder": "{'din@email.se'}",
-        "detected": "Domän upptäckt: {domain}"
-      },
+      "intro": "Vi hjälper dig att konfigurera e-post på din telefon steg för steg. Börja genom att välja din enhetstyp. Alla inställningar använder mail.inleed.com som server.",
       "device": {
         "title": "Vilken enhet använder du?",
         "description": "Välj din telefon för att få rätt instruktioner.",
@@ -592,7 +586,7 @@
         "incoming": "Inkommande server",
         "outgoing": "Utgående server",
         "defaultEmail": "{'din@email.se'}",
-        "defaultServer": "mail.dindoman.se",
+        "defaultServer": "mail.inleed.com",
         "incomingSettings": "Server: {server}\nPort: 993\nSäkerhet: SSL/TLS\nAnvändarnamn: {username}",
         "outgoingSettings": "Server: {server}\nPort: 587\nSäkerhet: STARTTLS\nAutentisering: Ja",
         "nativeIphone": {
@@ -691,7 +685,7 @@
         "title": "Logga in på webmail",
         "description": "Gå till din webmail-inloggningssida och ange dina inloggningsuppgifter",
         "urlInfo": "Webmail-adressen är:",
-        "url": "https://dindomän.se/webmail"
+        "url": "https://webmail.inleed.com"
       },
       "step2": {
         "title": "Navigera i gränssnittet",
@@ -734,8 +728,8 @@
         "settingsTitle": "Exempel på serverinställningar:",
         "incoming": "Inkommande (IMAP)",
         "outgoing": "Utgående (SMTP)",
-        "incomingCode": "Server: mail.example.com\nPort: 993 (SSL) eller 143\nSäkerhet: SSL/TLS",
-        "outgoingCode": "Server: mail.example.com\nPort: 587 (TLS) eller 465 (SSL)\nSäkerhet: STARTTLS eller SSL",
+        "incomingCode": "Server: mail.inleed.com\nPort: 993 (SSL) eller 143\nSäkerhet: SSL/TLS",
+        "outgoingCode": "Server: mail.inleed.com\nPort: 587 (TLS) eller 465 (SSL)\nSäkerhet: STARTTLS eller SSL",
         "settingsWarning": "Dessa inställningar kan variera. Kontakta din e-postleverantör för exakta detaljer."
       },
       "step4": {
