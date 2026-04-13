@@ -105,6 +105,20 @@
         "category": "Restaurang",
         "url": "https://zar-restaurang.se",
         "imageUrl": "/assets/projects/zar-restaurang.png"
+      },
+      "avloppseliten": {
+        "title": "Avloppseliten",
+        "description": "Professionell hemsida för avloppsservice och VVS-tjänster",
+        "category": "VVS",
+        "url": "https://avloppseliten.se/",
+        "imageUrl": "/assets/projects/avloppseliten-weblio.png"
+      },
+      "brf": {
+        "title": "BRF Hemsida",
+        "description": "Modern hemsida för bostadsrättsförening med medlemsinformation",
+        "category": "Bostadsrättsförening",
+        "url": "https://brfboklokgranen.se/",
+        "imageUrl": "/assets/projects/brf-weblio.png"
       }
     }
   },
