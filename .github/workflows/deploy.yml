@@ -25,6 +25,10 @@ on:
         default: 'development'
         type: string
 
+permissions:
+  contents: read
+  packages: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -50,8 +54,12 @@ jobs:
       with:
         node-version: ${{ vars.NODE_VERSION || 'latest' }}
         cache: 'pnpm'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@weblio-ab'
     
     - name: Install dependencies
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: ${{ vars.INSTALL_COMMAND || 'pnpm install' }}
       
     - name: Build frontend
