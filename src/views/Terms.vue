@@ -99,8 +99,7 @@
 <script setup>
 import { onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import EmailObfuscate from '../components/EmailObfuscate.vue'
-import PhoneObfuscate from '../components/PhoneObfuscate.vue'
+import { EmailObfuscate, PhoneObfuscate } from '@weblio-ab/vue-obfuscate'
 import { useSEO } from '../composables/useSEO'
 
 const { tm } = useI18n()

@@ -73,8 +73,7 @@
 </template>
 
 <script setup>
-import EmailObfuscate from '../components/EmailObfuscate.vue'
-import PhoneObfuscate from '../components/PhoneObfuscate.vue'
+import { EmailObfuscate, PhoneObfuscate } from '@weblio-ab/vue-obfuscate'
 </script>
 
 <style scoped>

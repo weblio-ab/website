@@ -53,8 +53,7 @@
 
 <script setup>
 import ContactForm from '../../components/ContactForm.vue'
-import EmailObfuscate from '../../components/EmailObfuscate.vue'
-import PhoneObfuscate from '../../components/PhoneObfuscate.vue'
+import { EmailObfuscate, PhoneObfuscate } from '@weblio-ab/vue-obfuscate'
 </script>
 
 <style scoped>

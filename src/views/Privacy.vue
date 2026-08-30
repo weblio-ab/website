@@ -133,8 +133,7 @@
 import { onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useSEO } from '../composables/useSEO'
-import EmailObfuscate from '../components/EmailObfuscate.vue'
-import PhoneObfuscate from '../components/PhoneObfuscate.vue'
+import { EmailObfuscate, PhoneObfuscate } from '@weblio-ab/vue-obfuscate'
 
 const { tm, t } = useI18n()
 
