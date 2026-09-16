@@ -275,7 +275,8 @@
       "success": "Tack för ditt meddelande! Vi återkommer inom 24 timmar.",
       "validationError": "Formulärdata är ogiltig. Kontrollera att alla obligatoriska fält är ifyllda.",
       "serverError": "Ett serverfel uppstod. Försök igen senare.",
-      "networkError": "Det gick inte att skicka meddelandet. Kontrollera din internetanslutning och försök igen."
+      "networkError": "Det gick inte att skicka meddelandet. Kontrollera din internetanslutning och försök igen.",
+      "rateLimitError": "För många försök. Vänta ett ögonblick och försök igen."
     },
     "info": {
       "title": "Kontaktinformation",

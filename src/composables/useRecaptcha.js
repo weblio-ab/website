@@ -6,48 +6,40 @@ import { ref, onMounted } from 'vue'
 export function useRecaptcha() {
   const isLoaded = ref(false)
   const isLoading = ref(false)
-  
-  // This should match your reCAPTCHA site key
-  const siteKey = '6LfQvXArAAAAAEc6eycVp2Bkq6FfCVW0RUg2lOQf'
-  const actionName = 'form_submission' // Default action name, can be customized
-  
-  /**
-   * Wait for reCAPTCHA to be loaded
-   */
+  const actionName = 'form_submission'
+  const siteKey = (import.meta.env.VITE_RECAPTCHA_SITE_KEY || '').trim()
+  const isEnabled = Boolean(siteKey) && String(import.meta.env.VITE_FORM_PROXY_RECAPTCHA_REQUIRED ?? 'false').toLowerCase() === 'true'
+
   const waitForRecaptcha = () => {
     return new Promise((resolve) => {
-      if (window.grecaptcha && window.grecaptcha.ready) {
-        window.grecaptcha.ready(() => {
-          isLoaded.value = true
-          resolve(true)
-        })
-      } else {
-        // Poll for reCAPTCHA to be available
-        const checkRecaptcha = () => {
-          if (window.grecaptcha && window.grecaptcha.ready) {
-            window.grecaptcha.ready(() => {
-              isLoaded.value = true
-              resolve(true)
-            })
-          } else {
-            setTimeout(checkRecaptcha, 100)
-          }
-        }
-        checkRecaptcha()
+      if (!isEnabled || !window.grecaptcha || !window.grecaptcha.ready) {
+        resolve(false)
+        return
       }
+
+      window.grecaptcha.ready(() => {
+        isLoaded.value = true
+        resolve(true)
+      })
     })
   }
-  
-  /**
-   * Execute reCAPTCHA and get token
-   */
+
   const executeRecaptcha = async (action = actionName) => {
+    if (!isEnabled || !siteKey) {
+      return null
+    }
+
     if (!isLoaded.value) {
       await waitForRecaptcha()
     }
-    
+
     try {
       isLoading.value = true
+
+      if (!window.grecaptcha || !window.grecaptcha.execute) {
+        return null
+      }
+
       const token = await window.grecaptcha.execute(siteKey, { action })
       return token
     } catch (error) {
@@ -57,10 +49,7 @@ export function useRecaptcha() {
       isLoading.value = false
     }
   }
-  
-  /**
-   * Get reCAPTCHA token for form submission
-   */
+
   const getToken = async () => {
     try {
       return await executeRecaptcha()
@@ -69,16 +58,18 @@ export function useRecaptcha() {
       return null
     }
   }
-  
-  // Initialize on mount
+
   onMounted(() => {
-    waitForRecaptcha()
+    if (isEnabled) {
+      waitForRecaptcha()
+    }
   })
-  
+
   return {
     isLoaded,
     isLoading,
     getToken,
-    executeRecaptcha
+    executeRecaptcha,
+    isEnabled,
   }
 }
