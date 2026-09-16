@@ -3,32 +3,66 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRecaptcha } from '../composables/useRecaptcha'
 
-export const useContactStore = defineStore('contact', () => {
-  // Composables
-  const { t } = useI18n()
-  const { getToken: getRecaptchaToken } = useRecaptcha()
-  
-  // State
-  const isSubmittingForm = ref(false)
-  const formSubmissionStatus = ref(null) // 'success', 'error', or null
-  const formSubmissionMessage = ref('')
-  const contactForm = ref({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
+const EMPTY_FORM = Object.freeze({
+  name: '',
+  email: '',
+  phone: '',
+  company: '',
+  message: '',
+})
+
+function normalizeFieldErrors(inputErrors) {
+  const normalized = {}
+
+  if (!inputErrors || typeof inputErrors !== 'object') {
+    return normalized
+  }
+
+  Object.entries(inputErrors).forEach(([key, value]) => {
+    if (Array.isArray(value) && value.length > 0) {
+      normalized[key] = String(value[0])
+      return
+    }
+
+    if (typeof value === 'string') {
+      normalized[key] = value
+      return
+    }
+
+    if (value && typeof value === 'object') {
+      if (typeof value.message === 'string') {
+        normalized[key] = value.message
+        return
+      }
+
+      if (Array.isArray(value.errors) && value.errors.length > 0) {
+        normalized[key] = String(value.errors[0])
+      }
+    }
   })
 
-  // Actions
+  return normalized
+}
+
+export const useContactStore = defineStore('contact', () => {
+  const { t } = useI18n()
+  const { getToken: getRecaptchaToken } = useRecaptcha()
+
+  const isSubmittingForm = ref(false)
+  const formSubmissionStatus = ref(null)
+  const formSubmissionMessage = ref('')
+  const fieldErrors = ref({})
+  const lastSubmissionAttempt = ref(0)
+  const pendingIdempotencyKey = ref(null)
+  const contactForm = ref({ ...EMPTY_FORM })
+
+  function resetContactFields() {
+    contactForm.value = { ...EMPTY_FORM }
+    fieldErrors.value = {}
+  }
+
   function resetContactForm() {
-    contactForm.value = {
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      message: '',
-    }
+    resetContactFields()
     formSubmissionStatus.value = null
     formSubmissionMessage.value = ''
   }
@@ -38,53 +72,119 @@ export const useContactStore = defineStore('contact', () => {
     formSubmissionMessage.value = ''
   }
 
+  function createIdempotencyKey() {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+      return crypto.randomUUID()
+    }
+
+    return `contact-form-${Date.now()}-${Math.random().toString(16).slice(2)}`
+  }
+
+  function getRequiresRecaptcha() {
+    return String(import.meta.env.VITE_FORM_PROXY_RECAPTCHA_REQUIRED ?? 'false').toLowerCase() === 'true'
+  }
+
+  function getFormProxyUrl() {
+    const baseUrl = (import.meta.env.VITE_FORM_PROXY_URL || 'https://forms.weblio.se').replace(/\/$/, '')
+    const formId = (import.meta.env.VITE_FORM_PROXY_ID || '').trim()
+
+    if (!formId) {
+      throw new Error('Form proxy configuration is missing')
+    }
+
+    return `${baseUrl}/api/v1/forms/${formId}/submissions`
+  }
+
   async function submitContactForm() {
     if (isSubmittingForm.value) return
-    
+
+    const now = Date.now()
+    if (now - lastSubmissionAttempt.value < 1000) {
+      formSubmissionStatus.value = 'error'
+      formSubmissionMessage.value = t('contact.form.rateLimitError') || 'Please wait a moment before trying again.'
+      return
+    }
+
     isSubmittingForm.value = true
     clearFormStatus()
-    
+    fieldErrors.value = {}
+    lastSubmissionAttempt.value = now
+
+    const idempotencyKey = pendingIdempotencyKey.value || createIdempotencyKey()
+    pendingIdempotencyKey.value = idempotencyKey
+
     try {
-      // Get reCAPTCHA token
-      const recaptchaToken = await getRecaptchaToken()
-      
-      if (!recaptchaToken) {
-        throw new Error('Failed to get reCAPTCHA token')
-      }
-      
-      // Prepare form data in the format expected by the backend
+
       const formData = new FormData()
-      formData.append('properties[name]', contactForm.value.name)
-      formData.append('properties[email]', contactForm.value.email)
-      formData.append('properties[phone]', contactForm.value.phone)
-      formData.append('properties[company]', contactForm.value.company)
-      formData.append('properties[message]', contactForm.value.message)
-      formData.append('recaptcha_token', recaptchaToken)
-      
-      // Get API base URL from environment variable
-      const apiEndpoint = `${import.meta.env.VITE_FORM_SERVICE_URL}/submit/${import.meta.env.VITE_FORM_SERVICE_CUSTOMER_ID}/${import.meta.env.VITE_FORM_SERVICE_FORM_IDENTIFIER}`
-      
-      const response = await fetch(apiEndpoint, {
-        method: 'POST',
-        body: formData
+
+      Object.entries(contactForm.value).forEach(([key, value]) => {
+        if (value === null || value === undefined || value === '') {
+          return
+        }
+
+        formData.append(`fields[${key}]`, String(value))
       })
-      
+
+      if (getRequiresRecaptcha()) {
+        const recaptchaToken = await getRecaptchaToken()
+
+        if (!recaptchaToken) {
+          throw new Error('Failed to get reCAPTCHA token')
+        }
+
+        formData.append('recaptchaToken', recaptchaToken)
+      }
+
+      const response = await fetch(getFormProxyUrl(), {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json',
+          'Idempotency-Key': idempotencyKey,
+        },
+      })
+
+      const payload = await response.json().catch(() => null)
+
       if (response.ok) {
-        // Success (200)
         formSubmissionStatus.value = 'success'
-        formSubmissionMessage.value = t('contact.form.success')
-        resetContactForm()
-      } else if (response.status === 400) {
-        // Validation error
+        formSubmissionMessage.value = payload?.message || t('contact.form.success')
+        resetContactFields()
+        pendingIdempotencyKey.value = null
+        return
+      }
+
+      if (response.status === 400 || response.status === 403 || response.status === 413 || response.status === 415 || response.status === 422) {
+        fieldErrors.value = normalizeFieldErrors(payload?.errors)
+        pendingIdempotencyKey.value = null
         formSubmissionStatus.value = 'error'
         formSubmissionMessage.value = t('contact.form.validationError')
-      } else {
-        // Server error (500) or other errors
-        formSubmissionStatus.value = 'error'
-        formSubmissionMessage.value = t('contact.form.serverError')
+        return
       }
+
+      if (response.status === 409) {
+        if (payload?.error === 'idempotency_in_progress') {
+          formSubmissionStatus.value = 'error'
+          formSubmissionMessage.value = payload?.message || 'Your message is already being processed. Please wait a moment and try again.'
+          return
+        }
+
+        pendingIdempotencyKey.value = null
+        formSubmissionStatus.value = 'error'
+        formSubmissionMessage.value = payload?.message || t('contact.form.serverError')
+        return
+      }
+
+      if (response.status === 429) {
+        formSubmissionStatus.value = 'error'
+        formSubmissionMessage.value = t('contact.form.rateLimitError') || 'Too many attempts. Please wait a moment and try again.'
+        return
+      }
+
+      formSubmissionStatus.value = 'error'
+      formSubmissionMessage.value = payload?.message || t('contact.form.serverError')
     } catch (error) {
-      console.error('Network Error:', error)
+      console.error('Form submission failed:', error)
       formSubmissionStatus.value = 'error'
       formSubmissionMessage.value = t('contact.form.networkError')
     } finally {
@@ -93,15 +193,13 @@ export const useContactStore = defineStore('contact', () => {
   }
 
   return {
-    // State
     isSubmittingForm,
     contactForm,
     formSubmissionStatus,
     formSubmissionMessage,
-    
-    // Actions
+    fieldErrors,
     resetContactForm,
     clearFormStatus,
-    submitContactForm
+    submitContactForm,
   }
 })
