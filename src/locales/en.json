@@ -289,7 +289,8 @@
       "success": "Thank you for your message! We'll get back to you within 24 hours.",
       "validationError": "Form data is invalid. Please check that all required fields are filled in.",
       "serverError": "A server error occurred. Please try again later.",
-      "networkError": "Could not send the message. Please check your internet connection and try again."
+      "networkError": "Could not send the message. Please check your internet connection and try again.",
+      "rateLimitError": "Too many attempts. Please wait a moment and try again."
     },
     "info": {
       "title": "Contact information",

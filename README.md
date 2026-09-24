@@ -37,24 +37,43 @@ Webbplatsen stödjer svenska och engelska. Språkfiler finns i:
 - `src/locales/sv.json` - Svenska texter
 - `src/locales/en.json` - Engelska texter
 
-## 🔐 Environment Secrets
+## 🔐 GitHub Actions-konfiguration
 
-Följande environment secrets måste konfigureras i GitHub Actions/Secrets
+Följande värden används av GitHub Actions-workflowet. Lägg secrets och variables i den GitHub Environment som används av deploymenten (`staging` eller `production`), om de inte ska gälla för hela repot.
 
-| Secret Name | Beskrivning | Exempel | Obligatorisk |
-|-------------|-------------|---------|--------------|
-| `FTP_SERVER` | FTP server för deployment | `ftp.weblio.se` | ✅ |
-| `FTP_USERNAME` | FTP användarnamn | `your-ftp-user` | ✅ |
-| `FTP_PASSWORD` | FTP lösenord | `your-ftp-password` | ✅ |
-| `DEPLOY_PATH` | Sökväg på servern för deployment | `/public_html/` | ✅ |
-| `FORM_SERVICE_CUSTOMER_ID` | Kund Id hos form service | 1 | ✅ |
-| `FORM_SERVICE_FORM_IDENTIFIER` | Identifierare för formuläret hos form service | contact-form | ✅ |
+### Secrets
 
-### Sätta upp secrets:
+| Secret Name | Beskrivning | Obligatorisk |
+|-------------|-------------|--------------|
+| `VITE_RECAPTCHA_SITE_KEY` | Publik site key för Google reCAPTCHA | ✅ |
+| `FTP_USERNAME` | FTP-användare | ✅ |
+| `FTP_PASSWORD` | FTP-lösenord | ✅ |
+
+### Variables
+
+| Variable Name | Beskrivning | Obligatorisk |
+|---------------|-------------|--------------|
+| `FTP_SERVER` | FTP-server för deployment | ✅ |
+| `DEPLOY_PATH` | Sökväg på servern för deployment | ✅ |
+| `VITE_FORM_PROXY_URL` | URL till form-proxytjänsten | ✅ |
+| `VITE_FORM_PROXY_ID` | Formulärets ID hos proxytjänsten | ✅ |
+| `VITE_FORM_PROXY_RECAPTCHA_REQUIRED` | Om reCAPTCHA ska krävas (`true` eller `false`) | ✅ |
+| `PNPM_VERSION` | pnpm-version, standard är `10` | ❌ |
+| `NODE_VERSION` | Node.js-version, standard är `latest` | ❌ |
+| `INSTALL_COMMAND` | Kommando för installation, standard är `pnpm install` | ❌ |
+| `BUILD_COMMAND` | Kommando för build, standard är `pnpm run build` | ❌ |
+| `BUILD_DIR` | Build-katalog, standard är `./dist/` | ❌ |
+
+`GITHUB_TOKEN` används automatiskt av GitHub för autentisering mot GitHub Packages och behöver inte läggas till manuellt.
+
+`VITE_ENVIRONMENT` sätts automatiskt av workflowet utifrån branch eller manuellt vald environment.
+
+### Sätta upp secrets och variables:
 1. Gå till ditt GitHub repository
 2. Klicka på **Settings** → **Environments**
-3. Skapa eller välj miljö
-4. Lägg till varje secret från tabellen ovan
+3. Skapa eller välj `staging` eller `production`
+4. Lägg till secrets under **Environment secrets**
+5. Lägg till variables under **Environment variables**
 
 ---
 

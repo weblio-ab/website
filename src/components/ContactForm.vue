@@ -16,53 +16,63 @@
           <input 
             type="text" 
             class="form-control" 
+            :class="{ 'is-invalid': fieldErrors.name }"
             id="name"
             v-model="contactForm.name"
             :placeholder="$t('contact.form.namePlaceholder')"
             required
           >
+          <div v-if="fieldErrors.name" class="invalid-feedback d-block">{{ fieldErrors.name }}</div>
         </div>
         <div class="col-md-6">
           <label for="email" class="form-label">{{ $t('common.email') }}</label>
           <input 
             type="email" 
             class="form-control" 
+            :class="{ 'is-invalid': fieldErrors.email }"
             id="email"
             v-model="contactForm.email"
             :placeholder="$t('contact.form.emailPlaceholder')"
             required
           >
+          <div v-if="fieldErrors.email" class="invalid-feedback d-block">{{ fieldErrors.email }}</div>
         </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">{{ $t('common.phone') }}</label>
           <input 
             type="tel" 
             class="form-control" 
+            :class="{ 'is-invalid': fieldErrors.phone }"
             id="phone"
             v-model="contactForm.phone"
             :placeholder="$t('contact.form.phonePlaceholder')"
           >
+          <div v-if="fieldErrors.phone" class="invalid-feedback d-block">{{ fieldErrors.phone }}</div>
         </div>
         <div v-if="isBusiness" class="col-md-6">
           <label for="company" class="form-label">{{ $t('contact.form.company') }}</label>
           <input 
             type="text" 
             class="form-control" 
+            :class="{ 'is-invalid': fieldErrors.company }"
             id="company"
             v-model="contactForm.company"
             :placeholder="$t('contact.form.companyPlaceholder')"
           >
+          <div v-if="fieldErrors.company" class="invalid-feedback d-block">{{ fieldErrors.company }}</div>
         </div>
         <div class="col-12">
           <label for="message" class="form-label">{{ $t('contact.form.message') }}</label>
           <textarea 
             class="form-control" 
+            :class="{ 'is-invalid': fieldErrors.message }"
             id="message" 
             rows="5"
             v-model="contactForm.message"
             :placeholder="$t('contact.form.messagePlaceholder')"
             required
           ></textarea>
+          <div v-if="fieldErrors.message" class="invalid-feedback d-block">{{ fieldErrors.message }}</div>
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary btn-lg" :disabled="isSubmittingForm">
@@ -93,7 +103,7 @@ const appStore = useAppStore()
 const { isBusiness } = storeToRefs(appStore)
 
 const contactStore = useContactStore()
-const { contactForm, isSubmittingForm, formSubmissionStatus, formSubmissionMessage } = storeToRefs(contactStore)
+const { contactForm, isSubmittingForm, formSubmissionStatus, formSubmissionMessage, fieldErrors } = storeToRefs(contactStore)
 const { submitContactForm, clearFormStatus } = contactStore
 
 function handleSubmit() {

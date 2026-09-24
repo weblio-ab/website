@@ -65,24 +65,25 @@ jobs:
     - name: Build frontend
       env:
         VITE_ENVIRONMENT: ${{ env.ENVIRONMENT_NAME }}
-        VITE_FORM_SERVICE_URL: ${{ env.ENVIRONMENT_NAME == 'production' && 'https://api.form.weblio.se' || 'https://api.form.staging.weblio.se' }}
-        VITE_FORM_SERVICE_CUSTOMER_ID: ${{ secrets.FORM_SERVICE_CUSTOMER_ID }}
-        VITE_FORM_SERVICE_FORM_IDENTIFIER: ${{ secrets.FORM_SERVICE_FORM_IDENTIFIER }}
+        VITE_FORM_PROXY_URL: ${{ vars.VITE_FORM_PROXY_URL }}
+        VITE_FORM_PROXY_ID: ${{ vars.VITE_FORM_PROXY_ID }}
+        VITE_FORM_PROXY_RECAPTCHA_REQUIRED: ${{ vars.VITE_FORM_PROXY_RECAPTCHA_REQUIRED }}
+        VITE_RECAPTCHA_SITE_KEY: ${{ secrets.VITE_RECAPTCHA_SITE_KEY }}
       run: ${{ vars.BUILD_COMMAND || 'pnpm run build' }}
         
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
-        server: ${{ secrets.FTP_SERVER }}
+        server: ${{ vars.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ${{ vars.BUILD_DIR || './dist/' }}
-        server-dir: ${{ secrets.DEPLOY_PATH }}
+        server-dir: ${{ vars.DEPLOY_PATH }}
           
     - name: Deployment notification
       run: |
         echo "✅ Application successfully deployed to ${{ env.ENVIRONMENT_NAME }} environment"
-        echo "📁 Deployed to: ${{ secrets.DEPLOY_PATH }}"
+        echo "📁 Deployed to: ${{ vars.DEPLOY_PATH }}"
         echo "🎯 Frontend: Static files deployed to root"
         if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
           echo "🚀 Manual deployment triggered"
