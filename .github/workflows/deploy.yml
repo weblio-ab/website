@@ -50,7 +50,7 @@ jobs:
         version: ${{ vars.PNPM_VERSION || '10' }}
     
     - name: Setup Node.js
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v7
       with:
         node-version: ${{ vars.NODE_VERSION || 'latest' }}
         cache: 'pnpm'
